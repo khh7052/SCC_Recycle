@@ -163,8 +163,6 @@ namespace Cainos.CustomizablePixelCharacter
 
         private float ghostRestTime = 0;
 
-        private IInteractable hitInteractable;
-
         private float getDownPlatformTimer;
 
         private Vector2 surfaceNormal;
@@ -2100,7 +2098,6 @@ namespace Cainos.CustomizablePixelCharacter
         private void InteractCheck()
         {
             if (interactEnabled == false || inputInteract == false) return;
-            if (hitInteractable != null) hitInteractable.Interact();
             inputInteract = false;
         }
 
@@ -2399,12 +2396,6 @@ namespace Cainos.CustomizablePixelCharacter
                 GameManager.Instance.PlayerDie();
             }
 
-            if (collision.gameObject.CompareTag("Interaction"))
-            {
-                IInteractable temp = collision.gameObject.GetComponent<IInteractable>();
-                if (hitInteractable != temp) hitInteractable = temp;
-                hitInteractable.InteractEnter();
-            }
         }
 
         private void OnTriggerExit2D(Collider2D collision)
@@ -2416,12 +2407,6 @@ namespace Cainos.CustomizablePixelCharacter
                     this.ladder = null;
                     isClimbingLadder = false;
                 }
-            }
-
-            if(hitInteractable != null)
-            {
-                hitInteractable.InteractExit();
-                hitInteractable = null;
             }
         }
 
