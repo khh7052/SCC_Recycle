@@ -14,7 +14,6 @@ namespace Cainos.CustomizablePixelCharacter
         public PixelCharacterController controller;
         [HideInInspector]
         public PixelCharacterInputMouseAndKeyboard input;
-        public Inventory inventory;
 
         #region - REFERENCE -
         [FoldoutGroup("Reference")] public Animator animator;
@@ -587,7 +586,6 @@ namespace Cainos.CustomizablePixelCharacter
             instance = this;
             controller = GetComponent<PixelCharacterController>();
             input = GetComponent<PixelCharacterInputMouseAndKeyboard>();
-            inventory = GetComponent<Inventory>();
         }
 
         private void Start()
@@ -598,11 +596,6 @@ namespace Cainos.CustomizablePixelCharacter
             if (blinkTimer < 0.1f) blinkTimer = 0.1f;
 
             animator.SetFloat("CycleOffset", Random.value);
-
-            if (inventory)
-            {
-                GameManager.OnPlayerDie.AddListener(inventory.ResetItem);
-            }
         }
 
         private void Update()

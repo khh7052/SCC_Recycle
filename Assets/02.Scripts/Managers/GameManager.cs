@@ -35,9 +35,6 @@ public class GameManager : Singleton<GameManager>
         if (savePoint) 
             PixelCharacter.instance.transform.position = savePoint.position; // 세이브 위치로 이동
 
-        PixelCharacter.instance.inventory.ResetItem(); // 인벤토리 비움
-
-
         //Player.Instance.Init();
     }
 

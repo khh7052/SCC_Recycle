@@ -5,10 +5,8 @@ using Cainos.LucidEditor;
 
 namespace Cainos.PixelArtPlatformer_VillageProps
 {
-    public class Chest : MonoBehaviour, IInteractable
+    public class Chest : MonoBehaviour
     {
-        public Item item;
-
         [FoldoutGroup("Reference")]
         public Animator animator;
 
@@ -24,7 +22,6 @@ namespace Cainos.PixelArtPlatformer_VillageProps
 
                 if (isOpened)
                 {
-                    PoolManager.Instance.Pop(item.gameObject, transform.position, Quaternion.identity);
                     SoundManager.Instance.PlaySFX("ChestOpen", transform.position);
                     enabled = false;
                 }
