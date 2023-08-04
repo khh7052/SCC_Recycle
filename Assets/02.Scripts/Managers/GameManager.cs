@@ -13,12 +13,18 @@ public class GameManager : Singleton<GameManager>
     public static float globalSpeed;
     public static float score;
     public static float currentLeftTime;
-    public GameObject uiGameOver;
-    public Image timeBar;
-    public TMP_Text scoreText;
+
+    [Header("Event")]
     public UnityEvent OnStart;
     public UnityEvent OnHit;
     public UnityEvent OnGameOver;
+
+    [Header("Option")]
+    public GameObject uiOption;
+    public GameObject uiGameOver;
+    public Image timeBar;
+    public TMP_Text scoreText;
+    
 
     public static bool IsLive
     {
@@ -84,9 +90,17 @@ public class GameManager : Singleton<GameManager>
         globalSpeed = ORIGIN_SPEED;
         Score = 0;
         LeftTime = LEFT_TIME;
+
+        uiOption.SetActive(false);
         uiGameOver.SetActive(false);
 
         OnStart.Invoke();
+    }
+
+    public void ActiveOption()
+    {
+        uiOption.SetActive(true);
+        Time.timeScale = 0f;
     }
 
     public void HitDamage()

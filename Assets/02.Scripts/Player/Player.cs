@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
         HIT // 장애물 충돌할 때 히트
     }
 
+    [Header("Option")]
+    public KeyCode optionKey;
     [Header("Jump")]
     public KeyCode jumpKey;
     public int jumpMaxCount = 2;
@@ -42,6 +44,11 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(jumpKey))
         {
             Jump();
+        }
+
+        if (Input.GetKeyDown(optionKey))
+        {
+            GameManager.Instance.ActiveOption();
         }
 
         AnimUpdate();
