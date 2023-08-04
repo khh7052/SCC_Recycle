@@ -35,6 +35,8 @@ public class Player : MonoBehaviour
     void Start()
     {
         jumpCurrentCount = 0;
+        animController.Run();
+        animController.SetVelocityX(10);
     }
 
     void Update()
@@ -56,6 +58,7 @@ public class Player : MonoBehaviour
     {
         Vector2 velocity = rigd.velocity;
         velocity.y = isGround ? 0 : rigd.velocity.y;
+        
         animController.SetVelocityY(velocity.y);
         animController.SetIsGrounded(isGround);
     }
@@ -65,7 +68,6 @@ public class Player : MonoBehaviour
         if (jumpCurrentCount >= jumpMaxCount) return;
         isJumping = true;
         jumpCurrentCount++;
-        print(jumpCurrentCount);
 
         float power = jumpCurrentCount == 1 ? startJumpPower : jumpPower;
         rigd.velocity = Vector2.zero;
@@ -79,7 +81,6 @@ public class Player : MonoBehaviour
         {
             jumpCurrentCount = 0;
             isGround = true;
-            print("isground");
         }
     }
 
@@ -93,6 +94,9 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.CompareTag("Item"))
+        {
+            collision.gameObject.SetActive(false);
+        }
     }
 }
