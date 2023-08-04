@@ -23,11 +23,13 @@ public class Player : MonoBehaviour
 
     private Rigidbody2D rigd;
     private Animator anim;
+    private CharacterAnimationController animController;
 
     private void Awake()
     {
         rigd = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        animController = GetComponent<CharacterAnimationController>();
     }
 
     void Start()
@@ -41,6 +43,8 @@ public class Player : MonoBehaviour
         {
             Jump();
         }
+
+        AnimUpdate();
     }
 
     private void FixedUpdate()
@@ -48,15 +52,25 @@ public class Player : MonoBehaviour
         
     }
 
+    void AnimUpdate()
+    {
+        Vector2 velocity = rigd.velocity;
+        velocity.y = isGround ? 0 : rigd.velocity.y;
+        animController.SetVelocityY(velocity.y);
+        animController.SetIsGrounded(isGround);
+    }
+
     void Jump()
     {
-        if (jumpCurrentCount > jumpMaxCount) return;
+        if (jumpCurrentCount >= jumpMaxCount) return;
         isJumping = true;
         jumpCurrentCount++;
+        print(jumpCurrentCount);
 
         float power = jumpCurrentCount == 1 ? startJumpPower : jumpPower;
-
+        rigd.velocity = Vector2.zero;
         rigd.AddForce(power * Vector2.up, ForceMode2D.Impulse);
+        SoundManager.Instance.PlaySFX("Jump");
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -65,7 +79,7 @@ public class Player : MonoBehaviour
         {
             jumpCurrentCount = 0;
             isGround = true;
-            
+            print("isground");
         }
     }
 

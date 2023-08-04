@@ -22,7 +22,7 @@ namespace Cainos.PixelArtPlatformer_VillageProps
 
                 if (isOpened)
                 {
-                    SoundManager.Instance.PlaySFX("ChestOpen", transform.position);
+                    SoundManager.Instance.PlaySFX("ChestOpen");
                     enabled = false;
                 }
             }

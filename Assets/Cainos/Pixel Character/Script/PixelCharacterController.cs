@@ -2282,9 +2282,9 @@ namespace Cainos.CustomizablePixelCharacter
 
         void SoundEventInit()
         {
-            onJump.AddListener(() => SoundManager.Instance.PlaySFX("Jump", transform.position));
-            onFootstep.AddListener(() => SoundManager.Instance.PlaySFX("Step", transform.position));
-            onLand.AddListener(() => SoundManager.Instance.PlaySFX("Landing", transform.position));
+            onJump.AddListener(() => SoundManager.Instance.PlaySFX("Jump"));
+            onFootstep.AddListener(() => SoundManager.Instance.PlaySFX("Step"));
+            onLand.AddListener(() => SoundManager.Instance.PlaySFX("Landing"));
         }
 
         #endregion

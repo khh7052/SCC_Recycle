@@ -16,6 +16,20 @@ public class CharacterAnimationController : MonoBehaviour
     {
         animator.SetFloat("MoveBlend", moveBlend);
     }
+    public void SetIsGrounded(bool isGrounded)
+    {
+        animator.SetBool("IsGrounded", isGrounded);
+    }
+
+    public void SetVelocityX(float amount)
+    {
+        animator.SetFloat("VelocityX", amount);
+    }
+
+    public void SetVelocityY(float amount)
+    {
+        animator.SetFloat("VelocityY", amount);
+    }
 
     public void Idle()
     {
@@ -59,6 +73,16 @@ public class CharacterAnimationController : MonoBehaviour
     {
         animator.SetBool("IsDodging", true);
         animator.SetInteger("DodgeDir", -1);
+    }
+
+    public void AirDown()
+    {
+
+    }
+
+    public void Land()
+    {
+        animator.SetBool("IsGrounded", true);
     }
 
     public void Crawl(bool isCrawling, Vector2 move, int moveDir)
