@@ -41,10 +41,6 @@ namespace Cainos.PixelArtPlatformer_VillageProps
             IsOpened = false;
         }
 
-        public void Start()
-        {
-            GameManager.OnPlayerDie.AddListener(() => Close());
-        }
 
         public void Interact()
         {

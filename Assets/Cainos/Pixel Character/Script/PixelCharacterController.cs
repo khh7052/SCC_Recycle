@@ -2136,7 +2136,6 @@ namespace Cainos.CustomizablePixelCharacter
         private void FallingCheck()
         {
             if (!isPlayer) return;
-            if (transform.position.y <= -10f) GameManager.Instance.PlayerDie();
         }
 
         #endregion
@@ -2293,11 +2292,6 @@ namespace Cainos.CustomizablePixelCharacter
         
         void GameManagerEventInit()
         {
-            if (isPlayer)
-            {
-                GameManager.OnPlayerDie.AddListener(GhostStop);
-                GameManager.OnPlayerDie.AddListener(() => SetGliding(false, 1));
-            }
         }
 
         #endregion
@@ -2393,7 +2387,6 @@ namespace Cainos.CustomizablePixelCharacter
 
             if (collision.gameObject.CompareTag("Damage"))
             {
-                GameManager.Instance.PlayerDie();
             }
 
         }
