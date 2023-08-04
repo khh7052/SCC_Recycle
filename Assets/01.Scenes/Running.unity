@@ -132,6 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 66403267}
+  - component: {fileID: 66403268}
   m_Layer: 0
   m_Name: Ground Set
   m_TagString: Untagged
@@ -159,6 +160,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &66403268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 66403266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c74bf01e3dff714798847099ebc120d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  count: 0
+  speed: 2
 --- !u!1 &329026481
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,6 +185,7 @@ GameObject:
   - component: {fileID: 329026482}
   - component: {fileID: 329026483}
   - component: {fileID: 329026484}
+  - component: {fileID: 329026485}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Ground
@@ -289,6 +305,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 3}
   m_EdgeRadius: 0
+--- !u!114 &329026485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329026481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88c3c71050957be44855bceace3a86a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &349866289
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,6 +327,7 @@ GameObject:
   m_Component:
   - component: {fileID: 349866290}
   - component: {fileID: 349866291}
+  - component: {fileID: 349866292}
   m_Layer: 0
   m_Name: Sky
   m_TagString: Untagged
@@ -373,6 +402,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &349866292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349866289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88c3c71050957be44855bceace3a86a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &351666171
 GameObject:
   m_ObjectHideFlags: 0
@@ -383,6 +424,7 @@ GameObject:
   m_Component:
   - component: {fileID: 351666172}
   - component: {fileID: 351666173}
+  - component: {fileID: 351666174}
   m_Layer: 0
   m_Name: Sky
   m_TagString: Untagged
@@ -457,6 +499,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &351666174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351666171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88c3c71050957be44855bceace3a86a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &355930018
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -529,6 +583,7 @@ GameObject:
   - component: {fileID: 417177303}
   - component: {fileID: 417177304}
   - component: {fileID: 417177305}
+  - component: {fileID: 417177306}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Ground
@@ -648,6 +703,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 3}
   m_EdgeRadius: 0
+--- !u!114 &417177306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 417177302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88c3c71050957be44855bceace3a86a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &550885819
 GameObject:
   m_ObjectHideFlags: 0
@@ -658,6 +725,7 @@ GameObject:
   m_Component:
   - component: {fileID: 550885820}
   - component: {fileID: 550885821}
+  - component: {fileID: 550885822}
   m_Layer: 0
   m_Name: Back B
   m_TagString: Untagged
@@ -732,6 +800,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &550885822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550885819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88c3c71050957be44855bceace3a86a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &719117281
 GameObject:
   m_ObjectHideFlags: 0
@@ -742,6 +822,7 @@ GameObject:
   m_Component:
   - component: {fileID: 719117282}
   - component: {fileID: 719117283}
+  - component: {fileID: 719117284}
   m_Layer: 0
   m_Name: Sky
   m_TagString: Untagged
@@ -816,6 +897,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &719117284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719117281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88c3c71050957be44855bceace3a86a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &739299354
 GameObject:
   m_ObjectHideFlags: 0
@@ -825,6 +918,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 739299355}
+  - component: {fileID: 739299356}
   m_Layer: 0
   m_Name: Cloud Set
   m_TagString: Untagged
@@ -849,6 +943,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &739299356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 739299354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c74bf01e3dff714798847099ebc120d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  count: 0
+  speed: 2
 --- !u!1 &844982509
 GameObject:
   m_ObjectHideFlags: 0
@@ -1036,6 +1144,7 @@ GameObject:
   - component: {fileID: 958241068}
   - component: {fileID: 958241069}
   - component: {fileID: 958241070}
+  - component: {fileID: 958241071}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Ground
@@ -1155,6 +1264,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 3}
   m_EdgeRadius: 0
+--- !u!114 &958241071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958241067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88c3c71050957be44855bceace3a86a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1054871287
 GameObject:
   m_ObjectHideFlags: 0
@@ -1164,6 +1285,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1054871288}
+  - component: {fileID: 1054871289}
   m_Layer: 0
   m_Name: Sky Set
   m_TagString: Untagged
@@ -1191,6 +1313,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1054871289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054871287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c74bf01e3dff714798847099ebc120d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  count: 0
+  speed: 2
 --- !u!1 &1178304517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1202,6 +1338,7 @@ GameObject:
   - component: {fileID: 1178304518}
   - component: {fileID: 1178304519}
   - component: {fileID: 1178304520}
+  - component: {fileID: 1178304521}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Ground
@@ -1321,6 +1458,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 3}
   m_EdgeRadius: 0
+--- !u!114 &1178304521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1178304517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88c3c71050957be44855bceace3a86a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1304599536
 GameObject:
   m_ObjectHideFlags: 0
@@ -1332,6 +1481,7 @@ GameObject:
   - component: {fileID: 1304599537}
   - component: {fileID: 1304599538}
   - component: {fileID: 1304599539}
+  - component: {fileID: 1304599540}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Ground
@@ -1451,6 +1601,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 3}
   m_EdgeRadius: 0
+--- !u!114 &1304599540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304599536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88c3c71050957be44855bceace3a86a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1420197717
 GameObject:
   m_ObjectHideFlags: 0
@@ -1461,6 +1623,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1420197718}
   - component: {fileID: 1420197719}
+  - component: {fileID: 1420197720}
   m_Layer: 0
   m_Name: Sky
   m_TagString: Untagged
@@ -1535,6 +1698,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1420197720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1420197717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88c3c71050957be44855bceace3a86a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1466110437
 GameObject:
   m_ObjectHideFlags: 0
@@ -1544,6 +1719,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1466110438}
+  - component: {fileID: 1466110439}
   m_Layer: 0
   m_Name: Back Set
   m_TagString: Untagged
@@ -1568,6 +1744,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1466110439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466110437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c74bf01e3dff714798847099ebc120d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  count: 0
+  speed: 2
 --- !u!1 &1672675396
 GameObject:
   m_ObjectHideFlags: 0
@@ -1578,6 +1768,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1672675397}
   - component: {fileID: 1672675398}
+  - component: {fileID: 1672675399}
   m_Layer: 0
   m_Name: Cloud B
   m_TagString: Untagged
@@ -1652,6 +1843,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1672675399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672675396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88c3c71050957be44855bceace3a86a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1831146888
 GameObject:
   m_ObjectHideFlags: 0
@@ -1662,6 +1865,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1831146889}
   - component: {fileID: 1831146890}
+  - component: {fileID: 1831146891}
   m_Layer: 0
   m_Name: Cloud A
   m_TagString: Untagged
@@ -1736,6 +1940,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1831146891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831146888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88c3c71050957be44855bceace3a86a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1871715022
 GameObject:
   m_ObjectHideFlags: 0
@@ -1746,6 +1962,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1871715023}
   - component: {fileID: 1871715024}
+  - component: {fileID: 1871715025}
   m_Layer: 0
   m_Name: Sky
   m_TagString: Untagged
@@ -1820,6 +2037,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1871715025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871715022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88c3c71050957be44855bceace3a86a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1976879179
 GameObject:
   m_ObjectHideFlags: 0
@@ -1830,6 +2059,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1976879180}
   - component: {fileID: 1976879181}
+  - component: {fileID: 1976879182}
   m_Layer: 0
   m_Name: Back A
   m_TagString: Untagged
@@ -1904,6 +2134,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1976879182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1976879179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88c3c71050957be44855bceace3a86a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2106094339
 GameObject:
   m_ObjectHideFlags: 0
@@ -1967,7 +2209,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3
+  orthographic size: 4
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1991,7 +2233,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2106094339}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3, z: -10}
+  m_LocalPosition: {x: 0, y: 4, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
