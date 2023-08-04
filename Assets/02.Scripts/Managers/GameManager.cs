@@ -12,13 +12,21 @@ public class GameManager : Singleton<GameManager>
 
     public static float globalSpeed;
     public static float score;
-    public static bool isLive;
     public static float currentLeftTime;
     public GameObject uiGameOver;
     public Image timeBar;
+    public TMP_Text scoreText;
     public UnityEvent OnStart;
     public UnityEvent OnHit;
     public UnityEvent OnGameOver;
+
+    public static bool IsLive
+    {
+        get
+        {
+            return currentLeftTime > 0f;
+        }
+    }
 
     public float LeftTime
     {
@@ -38,18 +46,27 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
-    private new void Awake()
+    public float Score
     {
-        base.Awake();
+        get { return score; }
+        set
+        {
+            score = value;
+            ScoreTextUpdate();
+        }
+    }
+
+    private void Start()
+    {
         Init();
     }
 
     private void Update()
     {
-        if (isLive) {
-            score += Time.deltaTime * 2;
-            LeftTime -= Time.deltaTime;
-        }
+        if (!IsLive) return;
+
+        Score += Time.deltaTime * 2;
+        LeftTime -= Time.deltaTime;
     }
 
     void TimeBarUpdate()
@@ -57,10 +74,15 @@ public class GameManager : Singleton<GameManager>
         timeBar.fillAmount = LeftTime / LEFT_TIME;
     }
 
+    void ScoreTextUpdate()
+    {
+        scoreText.text = score.ToString("N0");
+    }
+
     public void Init()
     {
-        isLive = true;
         globalSpeed = ORIGIN_SPEED;
+        Score = 0;
         LeftTime = LEFT_TIME;
         uiGameOver.SetActive(false);
 

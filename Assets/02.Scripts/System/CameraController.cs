@@ -9,25 +9,44 @@ public class CameraController : MonoBehaviour
 
     Vector3 initialPosition;
     Vector3 shakeOffset;
-    public bool isShaking = true;
+    public bool isShaking = false;
+
+    private Coroutine shakeCamCoroutine;
 
     void Start()
     {
         initialPosition = transform.position;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void StartShakeCamera(float shakeTime)
     {
-        if (isShaking)
+        shakeCamCoroutine = StartCoroutine(ShakeCamera(shakeTime));
+    }
+
+    public void StopShakeCamera()
+    {
+        if (shakeCamCoroutine == null) return;
+        StopCoroutine(shakeCamCoroutine);
+        shakeCamCoroutine = null;
+        transform.position = initialPosition;
+        isShaking = false;
+    }
+
+    IEnumerator ShakeCamera(float time)
+    {
+        if (isShaking) yield break;
+
+        isShaking = true;
+
+        while (time > 0f)
         {
             Vector3 pos = transform.position;
             Vector3 offsetPos = pos + shakeOffset;
             float currentDistance = offsetPos.y - initialPosition.y;
 
-            if(shakeSpeed >= 0)
+            if (shakeSpeed >= 0)
             {
-                if(currentDistance > shakeDistance)
+                if (currentDistance > shakeDistance)
                 {
                     shakeSpeed *= -1;
                 }
@@ -44,6 +63,13 @@ public class CameraController : MonoBehaviour
 
             shakeOffset.y = Mathf.Clamp(shakeOffset.y, -shakeDistance, shakeDistance);
             transform.position = initialPosition + shakeOffset;
+
+            time -= Time.deltaTime;
+            yield return null;
         }
+
+        transform.position = initialPosition;
+
+        isShaking = false;
     }
 }

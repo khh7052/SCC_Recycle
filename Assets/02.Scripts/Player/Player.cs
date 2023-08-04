@@ -37,6 +37,8 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (!GameManager.IsLive) return;
+
         if (Input.GetKeyDown(jumpKey))
         {
             Jump();
@@ -84,13 +86,19 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Item"))
+        if (collision.CompareTag("Coin"))
         {
             collision.gameObject.SetActive(false);
+            GameManager.Instance.Score += 20;
         }
         else if (collision.CompareTag("Damage"))
         {
             GameManager.Instance.HitDamage();
+        }
+        else if (collision.CompareTag("Trash"))
+        {
+            collision.gameObject.SetActive(false);
+
         }
     }
 }
