@@ -19,8 +19,8 @@ public class SoundManager : Singleton<SoundManager>
 
     private void OnEnable()
     {
-        string sceneName = SceneManager.GetActiveScene().name;
-        PlayBGM(sceneName);
+        //string sceneName = SceneManager.GetActiveScene().name;
+        //PlayBGM(sceneName);
     }
 
     // Dictionary 초기화
@@ -64,7 +64,7 @@ public class SoundManager : Singleton<SoundManager>
     }
 
     // 입력된 SFX 실행
-    public void PlaySFX(string name, Vector2 pos, bool random = true)
+    public void PlaySFX(string name, bool random = true)
     {
         if (!sfxDictionary.ContainsKey(name)) return;
         Sound sound = sfxDictionary[name];
@@ -79,18 +79,9 @@ public class SoundManager : Singleton<SoundManager>
         sfxSource.clip = clip;
 
 
-        GameObject speakerObject = PoolManager.Instance.Pop(sfxSpeaker.gameObject, pos, Quaternion.identity);
-        if (!sfxSpeakers.ContainsKey(speakerObject))
-        {
-            sfxSpeakers.Add(speakerObject, speakerObject.GetComponent<AudioSource>());
-        }
         //AudioSource audioSource = PoolManager.Instance.Pop(sfxSpeaker.gameObject, pos, Quaternion.identity).GetComponent<AudioSource>();
-        AudioSource speaker = sfxSpeakers[speakerObject];
-        speaker.volume = sound.volume;
-        speaker.clip = clip;
-        speaker.Play();
 
-        /*
+        
         if (sfxSource.isPlaying)
         {
             sfxSource.PlayOneShot(clip);
@@ -100,7 +91,7 @@ public class SoundManager : Singleton<SoundManager>
             sfxSource.clip = clip;
             sfxSource.Play();
         }
-        */
+        
 
     }
 
