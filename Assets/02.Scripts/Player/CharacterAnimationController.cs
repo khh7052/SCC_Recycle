@@ -21,6 +21,21 @@ public class CharacterAnimationController : MonoBehaviour
         animator.SetBool("IsGrounded", isGrounded);
     }
 
+    public void InjuredFront()
+    {
+        animator.SetTrigger("InjuredFront");
+    }
+
+    public void InjuredBack()
+    {
+        animator.SetTrigger("InjuredBack");
+    }
+
+    public void IsDead(bool isDead)
+    {
+        animator.SetBool("IsDead", isDead);
+    }
+
     public void SetVelocityX(float amount)
     {
         animator.SetFloat("VelocityX", amount);

@@ -16,19 +16,15 @@ public class Player : MonoBehaviour
     public int jumpMaxCount = 2;
     public float startJumpPower = 5f;
     public float jumpPower = 5f;
-    public float jumpHeight = 2f;
     private int jumpCurrentCount = 0;
-    private bool isJumping = false;
     private bool isGround = false;
 
     private Rigidbody2D rigd;
-    private Animator anim;
     private CharacterAnimationController animController;
 
     private void Awake()
     {
         rigd = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
         animController = GetComponent<CharacterAnimationController>();
     }
 
@@ -49,11 +45,6 @@ public class Player : MonoBehaviour
         AnimUpdate();
     }
 
-    private void FixedUpdate()
-    {
-        
-    }
-
     void AnimUpdate()
     {
         Vector2 velocity = rigd.velocity;
@@ -66,7 +57,6 @@ public class Player : MonoBehaviour
     void Jump()
     {
         if (jumpCurrentCount >= jumpMaxCount) return;
-        isJumping = true;
         jumpCurrentCount++;
 
         float power = jumpCurrentCount == 1 ? startJumpPower : jumpPower;
@@ -97,6 +87,10 @@ public class Player : MonoBehaviour
         if (collision.CompareTag("Item"))
         {
             collision.gameObject.SetActive(false);
+        }
+        else if (collision.CompareTag("Damage"))
+        {
+            GameManager.Instance.HitDamage();
         }
     }
 }

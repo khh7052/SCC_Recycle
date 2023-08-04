@@ -5,7 +5,7 @@ using UnityEngine;
 public class Scroller : MonoBehaviour
 {
     public int count = 0;
-    public float speed = 1f;
+    public float speedRate = 1f;
 
     void Start()
     {
@@ -14,6 +14,7 @@ public class Scroller : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(speed * -1 * Time.deltaTime, 0, 0);
+        float totalSpeed = GameManager.globalSpeed * speedRate * -1 * Time.deltaTime;
+        transform.Translate(totalSpeed, 0, 0);
     }
 }

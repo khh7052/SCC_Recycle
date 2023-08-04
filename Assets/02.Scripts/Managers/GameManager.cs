@@ -4,42 +4,78 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
-using Cainos.CustomizablePixelCharacter;
-using System.Runtime.InteropServices;
-using UnityEngine.SceneManagement;
-using UnityEngine.UIElements.Experimental;
 
 public class GameManager : Singleton<GameManager>
 {
-    public static bool ApplicationIsQuitting = false;
-    public static UnityEvent OnPlayerDie = new();
-    public bool isPlayerDying = false;
-    public Transform savePoint;
+    const float ORIGIN_SPEED = 4f;
+    const float LEFT_TIME = 60f;
 
-    private void Start()
+    public static float globalSpeed;
+    public static float score;
+    public static bool isLive;
+    public static float currentLeftTime;
+    public GameObject uiGameOver;
+    public Image timeBar;
+    public UnityEvent OnStart;
+    public UnityEvent OnHit;
+    public UnityEvent OnGameOver;
+
+    public float LeftTime
     {
-        ApplicationIsQuitting = false;
+        get { return currentLeftTime; }
+        set
+        {
+            currentLeftTime = value;
+
+            if (currentLeftTime <= 0)
+            {
+                currentLeftTime = 0f;
+                globalSpeed = 0f;
+                GameOver();
+            }
+
+            TimeBarUpdate();
+        }
     }
 
-    public void PlayerDie()
+    private new void Awake()
     {
-        isPlayerDying = true;
-        ResetPlayer();
-        OnPlayerDie.Invoke();
-        isPlayerDying = false;
+        base.Awake();
+        Init();
     }
 
-
-    public void ResetPlayer()
+    private void Update()
     {
-        if (savePoint) 
-            PixelCharacter.instance.transform.position = savePoint.position; // 세이브 위치로 이동
-
-        //Player.Instance.Init();
+        if (isLive) {
+            score += Time.deltaTime * 2;
+            LeftTime -= Time.deltaTime;
+        }
     }
 
-    private void OnApplicationQuit()
+    void TimeBarUpdate()
     {
-        ApplicationIsQuitting = true;
+        timeBar.fillAmount = LeftTime / LEFT_TIME;
+    }
+
+    public void Init()
+    {
+        isLive = true;
+        globalSpeed = ORIGIN_SPEED;
+        LeftTime = LEFT_TIME;
+        uiGameOver.SetActive(false);
+
+        OnStart.Invoke();
+    }
+
+    public void HitDamage()
+    {
+        LeftTime -= 20f;
+        OnHit.Invoke();
+    }
+
+    void GameOver()
+    {
+        uiGameOver.SetActive(true);
+        OnGameOver.Invoke();
     }
 }
