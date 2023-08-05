@@ -48,7 +48,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(optionKey))
         {
-            GameManager.Instance.ActiveOption();
+            GameManager.Instance.ActiveOption(true);
         }
 
         AnimUpdate();

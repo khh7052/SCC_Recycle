@@ -77,11 +77,13 @@ public class GameManager : Singleton<GameManager>
 
     void TimeBarUpdate()
     {
+        if (!timeBar) return;
         timeBar.fillAmount = LeftTime / LEFT_TIME;
     }
 
     void ScoreTextUpdate()
     {
+        if (!scoreText) return;
         scoreText.text = score.ToString("N0");
     }
 
@@ -94,13 +96,15 @@ public class GameManager : Singleton<GameManager>
         uiOption.SetActive(false);
         uiGameOver.SetActive(false);
 
+        Time.timeScale = 1f;
+
         OnStart.Invoke();
     }
 
-    public void ActiveOption()
+    public void ActiveOption(bool active)
     {
-        uiOption.SetActive(true);
-        Time.timeScale = 0f;
+        uiOption.SetActive(active);
+        Time.timeScale = active ? 0f : 1f;
     }
 
     public void HitDamage()
