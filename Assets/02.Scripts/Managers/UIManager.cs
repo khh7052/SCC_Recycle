@@ -15,4 +15,9 @@ public class UIManager : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public static void Continue()
+    {
+        Time.timeScale = 1.0f;
+    }
 }

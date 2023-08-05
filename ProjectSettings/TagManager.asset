@@ -6,7 +6,8 @@ TagManager:
   tags:
   - Ground
   - Damage
-  - Item
+  - Coin
+  - Trash
   layers:
   - Default
   - TransparentFX

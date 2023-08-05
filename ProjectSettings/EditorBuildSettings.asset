@@ -6,8 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/01.Scenes/Lobby.unity
+    path: Assets/01.Scenes/Open.unity
     guid: a6d2d67d515f20f44824c9710a4c2a6b
+  - enabled: 1
+    path: Assets/01.Scenes/Lobby.unity
+    guid: 8d1c492050aebdc488f0408caf0c956a
+  - enabled: 1
+    path: Assets/01.Scenes/SperateEmissions.unity
+    guid: cf26ee1f20308c040ada54441d5be54d
+  - enabled: 1
+    path: Assets/01.Scenes/Recycle.unity
+    guid: 90b90c232f379e644856622a006978ef
   - enabled: 1
     path: Assets/01.Scenes/Play.unity
     guid: e19ccf5ff1a631d4fbef0be8cec0bc14

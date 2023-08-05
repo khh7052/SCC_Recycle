@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
         HIT // 장애물 충돌할 때 히트
     }
 
+    [Header("Option")]
+    public KeyCode optionKey;
     [Header("Jump")]
     public KeyCode jumpKey;
     public int jumpMaxCount = 2;
@@ -37,9 +39,16 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (!GameManager.IsLive) return;
+
         if (Input.GetKeyDown(jumpKey))
         {
             Jump();
+        }
+
+        if (Input.GetKeyDown(optionKey))
+        {
+            GameManager.Instance.ActiveOption(true);
         }
 
         AnimUpdate();
@@ -84,13 +93,19 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Item"))
+        if (collision.CompareTag("Coin"))
         {
             collision.gameObject.SetActive(false);
+            GameManager.Instance.Score += 20;
         }
         else if (collision.CompareTag("Damage"))
         {
             GameManager.Instance.HitDamage();
+        }
+        else if (collision.CompareTag("Trash"))
+        {
+            collision.gameObject.SetActive(false);
+
         }
     }
 }

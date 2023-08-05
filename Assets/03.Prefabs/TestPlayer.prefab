@@ -152,11 +152,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81dcf8652937abc458cfa0dc88ca24dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  optionKey: 27
   jumpKey: 32
   jumpMaxCount: 2
   startJumpPower: 15
   jumpPower: 12
-  jumpHeight: 2
 --- !u!114 &4925942790512843034
 MonoBehaviour:
   m_ObjectHideFlags: 0
