@@ -10,6 +10,9 @@ public class SoundManager : Singleton<SoundManager>
     private Dictionary<string, Sound> bgmDictionary, sfxDictionary = new();
     public AudioSource sfxSpeaker;
     private Dictionary<GameObject, AudioSource> sfxSpeakers = new();
+    public float bgmVolume = 1f;
+    public float sfxVolume = 1f;
+    private Sound currentBGM, currentSFX;
 
     public override void Awake()
     {
@@ -19,8 +22,8 @@ public class SoundManager : Singleton<SoundManager>
 
     private void OnEnable()
     {
-        //string sceneName = SceneManager.GetActiveScene().name;
-        //PlayBGM(sceneName);
+        string sceneName = SceneManager.GetActiveScene().name;
+        PlayBGM(sceneName);
     }
 
     // Dictionary 초기화
@@ -47,6 +50,7 @@ public class SoundManager : Singleton<SoundManager>
     public void PlayBGM(string name, bool random = true)
     {
         if (!bgmDictionary.ContainsKey(name)) return;
+        if (bgmDictionary[name].clips.Length == 0) return;
         Sound sound = bgmDictionary[name];
 
         AudioClip[] clips = sound.clips;
@@ -55,12 +59,11 @@ public class SoundManager : Singleton<SoundManager>
         int idx = random ? Random.Range(0, clips.Length) : 0;
         bgmSource.clip = clips[idx];
 
-        /*
-        bgmSource.volume = sound.volume;
-        */
         bgmSource.volume = 0f;
         bgmSource.Play();
         StartCoroutine(FadingBGM(sound.volume));
+
+        currentBGM = sound;
     }
 
     // 입력된 SFX 실행
@@ -75,12 +78,8 @@ public class SoundManager : Singleton<SoundManager>
         int idx = random ? Random.Range(0, clips.Length) : 0;
         AudioClip clip = clips[idx];
         
-        sfxSource.volume = sound.volume;
+        sfxSource.volume = sound.volume * sfxVolume;
         sfxSource.clip = clip;
-
-
-        //AudioSource audioSource = PoolManager.Instance.Pop(sfxSpeaker.gameObject, pos, Quaternion.identity).GetComponent<AudioSource>();
-
         
         if (sfxSource.isPlaying)
         {
@@ -91,8 +90,8 @@ public class SoundManager : Singleton<SoundManager>
             sfxSource.clip = clip;
             sfxSource.Play();
         }
-        
 
+        currentSFX = sound;
     }
 
     // 현재 BGM 중지
@@ -122,25 +121,23 @@ public class SoundManager : Singleton<SoundManager>
     // BGM 볼륨 조절
     public void BGMVolume(float volume)
     {
-        bgmSource.volume = volume;
+        bgmVolume = Mathf.Clamp01(volume);
+        bgmSource.volume = bgmVolume * currentBGM.volume;
     }
 
     // SFX 볼륨 조절
     public void SFXVolume(float volume)
     {
-        sfxSource.volume = volume;
+        sfxVolume = Mathf.Clamp01(volume);
+        sfxSource.volume = sfxVolume * currentSFX.volume;
     }
 
     IEnumerator FadingBGM(float targetVolume)
     {
-        while (bgmSource.volume != targetVolume)
+        while (bgmSource.volume != targetVolume * bgmVolume)
         {
-            bgmSource.volume = Mathf.MoveTowards(bgmSource.volume, targetVolume, Time.deltaTime);
+            bgmSource.volume = Mathf.MoveTowards(bgmSource.volume, targetVolume * bgmVolume, Time.deltaTime);
             yield return null;
         }
-
-        if (bgmSource.volume == 0f)
-            bgmSource.Stop();
-
     }
 }

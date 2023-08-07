@@ -288,7 +288,7 @@ Transform:
   - {fileID: 1347600395583317571}
   - {fileID: 5814790791994402825}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4882158929424426221
 MonoBehaviour:
@@ -306,20 +306,19 @@ MonoBehaviour:
   bgmSource: {fileID: 4865025998398999311}
   sfxSource: {fileID: 5869814330490394311}
   bgmSounds:
-  - name: Village
+  - name: Lobby
     clips:
     - {fileID: 8300000, guid: 35ee3726409d17e4d92b5e686d5c6870, type: 3}
     volume: 1
-  - name: Dungein00
-    clips:
-    - {fileID: 8300000, guid: afd2ae4022bfb7e48b34fb19a691f6f2, type: 3}
+  - name: Play
+    clips: []
     volume: 1
   sfxSounds:
   - name: Jump
     clips:
     - {fileID: 8300000, guid: 3c1c3816bd1ce6d49b63339fd7b6918b, type: 3}
     volume: 0.4
-  - name: AddItem
+  - name: Coin
     clips:
     - {fileID: 8300000, guid: 35357de0c9f9b2a4bba6215cd9a39a4b, type: 3}
     volume: 1
@@ -347,4 +346,6 @@ MonoBehaviour:
     clips:
     - {fileID: 8300000, guid: 21b8cf9003458804eaa5ec3b24c296e7, type: 3}
     volume: 0.6
-  sfxSpeaker: {fileID: 5324295252484099124, guid: f1a1e7cb8cc5ef7429192aa1664fd9b7, type: 3}
+  sfxSpeaker: {fileID: 5869814330490394311}
+  bgmVolume: 1
+  sfxVolume: 1
