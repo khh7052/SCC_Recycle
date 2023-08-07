@@ -48,7 +48,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(optionKey))
         {
-            GameManager.Instance.ActiveOption(true);
+            UIManager.Instance.ActiveOption(true);
         }
 
         AnimUpdate();
@@ -97,10 +97,12 @@ public class Player : MonoBehaviour
         {
             collision.gameObject.SetActive(false);
             GameManager.Instance.Score += 20;
+            SoundManager.Instance.PlaySFX("Coin");
         }
         else if (collision.CompareTag("Damage"))
         {
             GameManager.Instance.HitDamage();
+            SoundManager.Instance.PlaySFX("Damage");
         }
         else if (collision.CompareTag("Trash"))
         {

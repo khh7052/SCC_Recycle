@@ -19,13 +19,6 @@ public class GameManager : Singleton<GameManager>
     public UnityEvent OnHit;
     public UnityEvent OnGameOver;
 
-    [Header("Option")]
-    public GameObject uiOption;
-    public GameObject uiGameOver;
-    public Image timeBar;
-    public TMP_Text scoreText;
-    
-
     public static bool IsLive
     {
         get
@@ -48,7 +41,7 @@ public class GameManager : Singleton<GameManager>
                 GameOver();
             }
 
-            TimeBarUpdate();
+            UIManager.Instance.TimeBarUpdate(currentLeftTime / LEFT_TIME);
         }
     }
 
@@ -58,7 +51,7 @@ public class GameManager : Singleton<GameManager>
         set
         {
             score = value;
-            ScoreTextUpdate();
+            UIManager.Instance.ScoreTextUpdate(score);
         }
     }
 
@@ -75,36 +68,15 @@ public class GameManager : Singleton<GameManager>
         LeftTime -= Time.deltaTime;
     }
 
-    void TimeBarUpdate()
-    {
-        if (!timeBar) return;
-        timeBar.fillAmount = LeftTime / LEFT_TIME;
-    }
-
-    void ScoreTextUpdate()
-    {
-        if (!scoreText) return;
-        scoreText.text = score.ToString("N0");
-    }
-
     public void Init()
     {
         globalSpeed = ORIGIN_SPEED;
         Score = 0;
         LeftTime = LEFT_TIME;
 
-        uiOption.SetActive(false);
-        uiGameOver.SetActive(false);
-
         Time.timeScale = 1f;
 
         OnStart.Invoke();
-    }
-
-    public void ActiveOption(bool active)
-    {
-        uiOption.SetActive(active);
-        Time.timeScale = active ? 0f : 1f;
     }
 
     public void HitDamage()
@@ -115,7 +87,7 @@ public class GameManager : Singleton<GameManager>
 
     void GameOver()
     {
-        uiGameOver.SetActive(true);
+        UIManager.Instance.ActiveGameOver(true);
         OnGameOver.Invoke();
     }
 }
