@@ -23,16 +23,45 @@ public class SaveFile
 public class TrashManager : Singleton<TrashManager>
 {
     public Trash[] trashes;
-    private SortedDictionary<TrashType, int> trashInventory = new();
+    private SortedDictionary<TrashType, Trash> trashInform = new();
+    public SortedDictionary<TrashType, int> trashInventory = new();
 
     private void OnEnable()
     {
+        TrashInformInit();
         LoadTrashFile();
     }
 
     private void OnDisable()
     {
         SaveTrashFile();
+    }
+
+    public int GetTrashNum(TrashType type)
+    {
+        if (!trashInventory.ContainsKey(type)) return -1;
+
+        return trashInventory[type];
+    }
+
+    public Trash GetTrash(TrashType type)
+    {
+        if (!trashInform.ContainsKey(type))
+        {
+            TrashInformInit();
+            if (!trashInform.ContainsKey(type)) return null;
+        }
+
+        return trashInform[type];
+    }
+    public void TrashInformInit()
+    {
+        trashInform.Clear();
+
+        foreach (var trash in trashes)
+        {
+            trashInform.Add(trash.type, trash);
+        }
     }
 
     public void SaveTrashFile()
