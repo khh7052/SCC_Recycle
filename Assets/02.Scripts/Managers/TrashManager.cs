@@ -69,7 +69,7 @@ public class TrashManager : Singleton<TrashManager>
         print("Add " + type);
         trashInventory[type]++;
 
-        SaveTrashFile();
+        // SaveTrashFile();
     }
 
     public Trash GetRandomTrash()
