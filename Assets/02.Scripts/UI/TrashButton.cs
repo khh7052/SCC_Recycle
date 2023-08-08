@@ -16,7 +16,6 @@ public class TrashButton : MonoBehaviour
         Trash trash = TrashManager.Instance.GetTrash(type);
         iconImage.sprite = trash.sprite;
         nameText.text = trash.trashName;
-        // numText.text = TrashManager.Instance.trashInventory[type].ToString();
         numText.text = TrashManager.Instance.GetTrashNum(type).ToString();
     }
 }

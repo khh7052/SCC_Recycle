@@ -14,7 +14,6 @@ public class Reposition : MonoBehaviour
         if (transform.position.x > repositionPoint) return;
 
         transform.Translate(moveX, 0, 0);
-        // transform.position = new Vector3 (moveX, transform.position.y, transform.position.z);
         OnReposition.Invoke();
     }
 
