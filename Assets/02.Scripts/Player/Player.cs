@@ -107,7 +107,9 @@ public class Player : MonoBehaviour
         else if (collision.CompareTag("Trash"))
         {
             collision.gameObject.SetActive(false);
-
+            SoundManager.Instance.PlaySFX("Trash");
+            TrashObject trash = collision.GetComponent<TrashObject>();
+            TrashManager.Instance.AddTrash(trash.Type);
         }
     }
 }
