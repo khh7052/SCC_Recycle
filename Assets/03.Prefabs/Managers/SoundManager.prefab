@@ -288,7 +288,7 @@ Transform:
   - {fileID: 1347600395583317571}
   - {fileID: 5814790791994402825}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4882158929424426221
 MonoBehaviour:
@@ -345,6 +345,10 @@ MonoBehaviour:
   - name: Damage
     clips:
     - {fileID: 8300000, guid: 21b8cf9003458804eaa5ec3b24c296e7, type: 3}
+    volume: 0.6
+  - name: Trash
+    clips:
+    - {fileID: 8300000, guid: aae4cc67359e794458e7812208a2a822, type: 3}
     volume: 0.6
   sfxSpeaker: {fileID: 5869814330490394311}
   bgmVolume: 1

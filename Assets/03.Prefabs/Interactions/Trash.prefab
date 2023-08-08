@@ -11,8 +11,7 @@ GameObject:
   - component: {fileID: 5010482658998786283}
   - component: {fileID: 5096143469981249381}
   - component: {fileID: 7254561413029634322}
-  - component: {fileID: 2315656029043903865}
-  - component: {fileID: 5605733260066164484}
+  - component: {fileID: 3933522972929866091}
   m_Layer: 0
   m_Name: Trash
   m_TagString: Trash
@@ -27,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1328530846566029250}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 12, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -132,7 +131,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
---- !u!114 &2315656029043903865
+--- !u!114 &3933522972929866091
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,47 +140,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1328530846566029250}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88c3c71050957be44855bceace3a86a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnReposition:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5605733260066164484}
-        m_TargetAssemblyTypeName: ChangeObject, Assembly-CSharp
-        m_MethodName: Change
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1328530846566029250}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-  repositionPoint: -18
-  moveX: 42
---- !u!114 &5605733260066164484
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1328530846566029250}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cac3c3ab9c33a624994f02444eef0d51, type: 3}
+  m_Script: {fileID: 11500000, guid: 716f4aadcc64bea4695cab421a227143, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

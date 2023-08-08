@@ -145,3 +145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: bfa776e65050f754faefb1988f5891e0, type: 3}
   coll: {fileID: 1402386027237891271}
+  trashName: 
+  description: 
+  num: 0
+  type: 1
