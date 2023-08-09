@@ -20,8 +20,16 @@ public class TrashSaveData
 public class SaveFile
 {
     public float score;
+    public float maxScore;
     public TrashSaveData[] datas;
     private SortedDictionary<TrashType, int> trashInventory = new();
+
+    public void SaveScore()
+    {
+        score += GameManager.score;
+        GameManager.score = 0;
+        maxScore = GameManager.maxScore;
+    }
 
     // 인벤토리 저장
     public void SaveTrashInventory()
@@ -92,8 +100,7 @@ public class SaveManager : MonoBehaviour
     public static void Save()
     {
         // Score
-        saveFile.score += GameManager.score;
-        GameManager.score = 0;
+        saveFile.SaveScore();
 
         // TrashSaveData
         saveFile.SaveTrashInventory();
@@ -117,7 +124,6 @@ public class SaveManager : MonoBehaviour
         string json = File.ReadAllText(path);
         saveFile = JsonUtility.FromJson<SaveFile>(json);
         saveFile.LoadTrashInventory();
-        print("load");
         OnLoad.Invoke(saveFile);
     }
 
