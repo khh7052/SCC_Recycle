@@ -2,103 +2,47 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class SaveData
-{
-    public TrashType type;
-    public int num;
-
-    public SaveData(TrashType type, int num)
-    {
-        this.type = type;
-        this.num = num;
-    }
-}
-
-public class SaveFile
-{
-    public SaveData[] datas;
-}
-
 public class TrashManager : Singleton<TrashManager>
 {
     public Trash[] trashes;
-    private SortedDictionary<TrashType, Trash> trashInform = new();
-    public SortedDictionary<TrashType, int> trashInventory = new();
+    public static SortedDictionary<TrashType, Trash> TrashInform = new();
+    public static SortedDictionary<TrashType, int> TrashInventory = new();
 
-    private void OnEnable()
+
+    public override void Awake()
     {
+        base.Awake();
         TrashInformInit();
-        LoadTrashFile();
+        TrashInventory.Clear();
     }
 
-    private void OnDisable()
-    {
-        SaveTrashFile();
-    }
-
-    public int GetTrashNum(TrashType type)
-    {
-        if (!trashInventory.ContainsKey(type)) return -1;
-
-        return trashInventory[type];
-    }
 
     public Trash GetTrash(TrashType type)
     {
-        if (!trashInform.ContainsKey(type))
+        if (!TrashInform.ContainsKey(type))
         {
             TrashInformInit();
-            if (!trashInform.ContainsKey(type)) return null;
+            if (!TrashInform.ContainsKey(type)) return null;
         }
 
-        return trashInform[type];
+        return TrashInform[type];
     }
     public void TrashInformInit()
     {
-        trashInform.Clear();
+        TrashInform.Clear();
 
         foreach (var trash in trashes)
         {
-            trashInform.Add(trash.type, trash);
-        }
-    }
-
-    public void SaveTrashFile()
-    {
-        SaveFile saveFile = new();
-        List<SaveData> datas = new();
-
-        foreach (var item in trashInventory)
-        {
-            datas.Add(new(item.Key, item.Value));
-        }
-
-        saveFile.datas = datas.ToArray();
-        SaveManager.Save(saveFile);
-    }
-
-    public void LoadTrashFile()
-    {
-        SaveFile saveFile = SaveManager.Load<SaveFile>();
-
-        foreach (var item in saveFile.datas)
-        {
-            if (!trashInventory.ContainsKey(item.type)) trashInventory.Add(item.type, 0);
-
-            trashInventory[item.type] = item.num;
-            Debug.Log(item.num);
+            TrashInform.Add(trash.type, trash);
         }
     }
 
     public void AddTrash(TrashType type)
     {
-        if(!trashInventory.ContainsKey(type)) trashInventory.Add(type, 0);
+        if(!TrashInventory.ContainsKey(type)) TrashInventory.Add(type, 0);
 
         print("Add " + type);
-        trashInventory[type]++;
-
-        // SaveTrashFile();
+        TrashInventory[type]++;
     }
 
     public Trash GetRandomTrash()
