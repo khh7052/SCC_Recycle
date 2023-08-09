@@ -122,14 +122,18 @@ public class SoundManager : Singleton<SoundManager>
     public void BGMVolume(float volume)
     {
         bgmVolume = Mathf.Clamp01(volume);
-        bgmSource.volume = bgmVolume * currentBGM.volume;
+
+        if (currentBGM != null)
+            bgmSource.volume = bgmVolume * currentBGM.volume;
     }
 
     // SFX º¼·ý Á¶Àý
     public void SFXVolume(float volume)
     {
         sfxVolume = Mathf.Clamp01(volume);
-        sfxSource.volume = sfxVolume * currentSFX.volume;
+
+        if(currentSFX != null) 
+            sfxSource.volume = sfxVolume * currentSFX.volume;
     }
 
     IEnumerator FadingBGM(float targetVolume)

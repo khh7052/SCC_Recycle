@@ -12,6 +12,13 @@ public class UIManager : Singleton<UIManager>
     public GameObject uiGameOver;
     public Image timeBar;
     public TMP_Text scoreText;
+    public TMP_Text maxScoreText;
+
+    public override void Awake()
+    {
+        base.Awake();
+        SaveManager.OnLoad.AddListener(Init);
+    }
 
     private void Start()
     {
@@ -34,6 +41,11 @@ public class UIManager : Singleton<UIManager>
         ActiveOption(false);
     }
     
+    public void Init(SaveFile saveFile)
+    {
+        MaxScoreTextUpdate(saveFile.maxScore);
+    }
+
     public void ActiveOption(bool active)
     {
         if (!uiOption) return;
@@ -58,5 +70,12 @@ public class UIManager : Singleton<UIManager>
     {
         if (!scoreText) return;
         scoreText.text = amount.ToString("N0");
+
+    }
+
+    public void MaxScoreTextUpdate(float amount)
+    {
+        if (!maxScoreText) return;
+        maxScoreText.text = amount.ToString("N0");
     }
 }

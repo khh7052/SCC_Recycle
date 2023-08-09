@@ -12,12 +12,16 @@ public class GameManager : Singleton<GameManager>
 
     public static float globalSpeed;
     public static float score;
+    public static float maxScore;
     public static float currentLeftTime;
 
     [Header("Event")]
     public UnityEvent OnStart;
     public UnityEvent OnHit;
     public UnityEvent OnGameOver;
+    public UnityEvent<float> OnLeftTimeChange;
+    public UnityEvent<float> OnScoreChange;
+    public UnityEvent<float> OnMaxScoreChange;
 
     public static bool IsLive
     {
@@ -41,7 +45,7 @@ public class GameManager : Singleton<GameManager>
                 GameOver();
             }
 
-            UIManager.Instance.TimeBarUpdate(currentLeftTime / LEFT_TIME);
+            OnLeftTimeChange.Invoke(currentLeftTime / LEFT_TIME);
         }
     }
 
@@ -51,13 +55,20 @@ public class GameManager : Singleton<GameManager>
         set
         {
             score = value;
-            UIManager.Instance.ScoreTextUpdate(score);
+            OnScoreChange.Invoke(score);
+
+            if(score > maxScore)
+            {
+                maxScore = score;
+                OnMaxScoreChange.Invoke(score);
+            }
         }
     }
 
-    private void Start()
+    public override void Awake()
     {
-        Init();
+        base.Awake();
+        SaveManager.OnLoad.AddListener(Init);
     }
 
     private void Update()
@@ -68,13 +79,15 @@ public class GameManager : Singleton<GameManager>
         LeftTime -= Time.deltaTime;
     }
 
-    public void Init()
+    public void Init(SaveFile saveFile)
     {
         globalSpeed = ORIGIN_SPEED;
         Score = 0;
         LeftTime = LEFT_TIME;
 
         Time.timeScale = 1f;
+
+        maxScore = saveFile.maxScore;
 
         OnStart.Invoke();
     }
