@@ -11,11 +11,17 @@ public class TrashButton : MonoBehaviour
     public TMP_Text numText;
     public TrashType type;
 
-    private void Start()
+    private void Awake()
+    {
+        SaveManager.OnLoad.AddListener(Init);
+    }
+
+    void Init(SaveFile saveFile)
     {
         Trash trash = TrashManager.Instance.GetTrash(type);
         iconImage.sprite = trash.sprite;
         nameText.text = trash.trashName;
-        numText.text = TrashManager.Instance.GetTrashNum(type).ToString();
+
+        numText.text = saveFile.GetTrashNum(type).ToString();
     }
 }

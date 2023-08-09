@@ -6,7 +6,8 @@ public enum TrashType
 {
     CAN,
     PLASTIC,
-    PAPER
+    PAPER,
+    LENGTH
 }
 
 public class Trash : MonoBehaviour
