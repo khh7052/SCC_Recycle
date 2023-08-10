@@ -28,7 +28,8 @@ public class SaveFile
     {
         score += GameManager.score;
         GameManager.score = 0;
-        maxScore = GameManager.maxScore;
+
+        maxScore = Mathf.Max(maxScore, GameManager.maxScore);
     }
 
     // 인벤토리 저장
