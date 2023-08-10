@@ -2406,6 +2406,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 664cede1e10537f4b8c4dc9452d44dfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onDontDestroy: 0
+  uiOption: {fileID: 0}
+  uiGameOver: {fileID: 0}
+  timeBar: {fileID: 0}
+  scoreText: {fileID: 0}
+  maxScoreText: {fileID: 0}
 --- !u!1 &1580952990
 GameObject:
   m_ObjectHideFlags: 0
@@ -3180,7 +3186,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4934356806858973331, guid: 8cecf34b6904cef4a805ba61a5e1ba2f, type: 3}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 5
