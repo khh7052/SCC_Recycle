@@ -5,8 +5,8 @@ using UnityEngine;
 public class TrashManager : Singleton<TrashManager>
 {
     public Trash[] trashes;
-    public static SortedDictionary<TrashType, Trash> TrashInform = new();
-    public static SortedDictionary<TrashType, int> TrashInventory = new();
+    public static SortedDictionary<string, Trash> TrashInform = new();
+    public static SortedDictionary<string, int> TrashInventory = new();
 
 
     public override void Awake()
@@ -17,15 +17,15 @@ public class TrashManager : Singleton<TrashManager>
     }
 
 
-    public Trash GetTrash(TrashType type)
+    public Trash GetTrash(string name)
     {
-        if (!TrashInform.ContainsKey(type))
+        if (!TrashInform.ContainsKey(name))
         {
             TrashInformInit();
-            if (!TrashInform.ContainsKey(type)) return null;
+            if (!TrashInform.ContainsKey(name)) return null;
         }
 
-        return TrashInform[type];
+        return TrashInform[name];
     }
     public void TrashInformInit()
     {
@@ -33,16 +33,16 @@ public class TrashManager : Singleton<TrashManager>
 
         foreach (var trash in trashes)
         {
-            TrashInform.Add(trash.type, trash);
+            TrashInform.Add(trash.trashName, trash);
         }
     }
 
-    public void AddTrash(TrashType type)
+    public void AddTrash(string name)
     {
-        if(!TrashInventory.ContainsKey(type)) TrashInventory.Add(type, 0);
+        if(!TrashInventory.ContainsKey(name)) TrashInventory.Add(name, 0);
 
-        print("Add " + type);
-        TrashInventory[type]++;
+        print("Add " + name);
+        TrashInventory[name]++;
     }
 
     public Trash GetRandomTrash()

@@ -10,12 +10,11 @@ public enum TrashType
     LENGTH
 }
 
-public class Trash : MonoBehaviour
+[CreateAssetMenu(menuName = "Create Trash")]
+public class Trash : ScriptableObject
 {
     public Sprite sprite;
-    public BoxCollider2D coll;
     public string trashName;
     public string description;
-    public int num;
     public TrashType type;
 }

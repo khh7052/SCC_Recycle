@@ -5,23 +5,12 @@ using UnityEngine;
 public class TrashObject : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
-    private BoxCollider2D coll;
-    private TrashType type;
-
-    public TrashType Type
-    {
-        get { return type; }
-        set
-        {
-            type = value;
-
-        }
-    }
+    private Collider2D coll;
 
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        coll = GetComponent<BoxCollider2D>();
+        coll = GetComponent<Collider2D>();
     }
 
     private void Start()
@@ -31,11 +20,10 @@ public class TrashObject : MonoBehaviour
 
     public void ChangeRandomTrash()
     {
-        Trash t = TrashManager.Instance.GetRandomTrash();
-        type = t.type;
-        spriteRenderer.sprite = t.sprite;
-        coll.offset = t.coll.offset;
-        coll.size = t.coll.size;
+        Trash trash = TrashManager.Instance.GetRandomTrash();
+        spriteRenderer.sprite = trash.sprite;
+        name = trash.trashName;
+        coll.CreateMesh(true, true);
     }
 
 }
