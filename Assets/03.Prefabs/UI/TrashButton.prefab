@@ -275,7 +275,7 @@ MonoBehaviour:
   iconImage: {fileID: 202563561610269502}
   nameText: {fileID: 2583312280070204229}
   numText: {fileID: 5214499102811585996}
-  type: 0
+  trash: {fileID: 11400000, guid: b2897935f3bcb4e40ad67aca1bd86ced, type: 2}
 --- !u!1 &8549819157352199943
 GameObject:
   m_ObjectHideFlags: 0

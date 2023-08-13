@@ -46,5 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onDontDestroy: 0
   trashes:
-  - {fileID: -9182735596227462511, guid: 3c879b23d11252e408d4579987978db1, type: 3}
-  - {fileID: 8220475167878438266, guid: ea2b2f31879cc914394df370d49bbede, type: 3}
+  - {fileID: 11400000, guid: b2897935f3bcb4e40ad67aca1bd86ced, type: 2}
+  - {fileID: 11400000, guid: 47b4ef76d5fe0bd40b6cd4c7be2a042d, type: 2}

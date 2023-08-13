@@ -7,29 +7,30 @@ using UnityEngine.Events;
 [System.Serializable]
 public class TrashSaveData
 {
-    public TrashType type;
+    public string trashName;
     public int num;
 
-    public TrashSaveData(TrashType type, int num)
+    public TrashSaveData(string trashName, int num)
     {
-        this.type = type;
+        this.trashName = trashName;
         this.num = num;
     }
 }
 
 public class SaveFile
 {
-    public float score;
-    public float maxScore;
+    public int score;
+    public int maxScore;
+    public int recyclePoint;
     public TrashSaveData[] datas;
-    private SortedDictionary<TrashType, int> trashInventory = new();
+    private SortedDictionary<string, int> trashInventory = new();
 
     public void SaveScore()
     {
-        score += GameManager.score;
+        score += (int)GameManager.score;
         GameManager.score = 0;
 
-        maxScore = Mathf.Max(maxScore, GameManager.maxScore);
+        maxScore = Mathf.Max(maxScore, (int)GameManager.maxScore);
     }
 
     // 인벤토리 저장
@@ -40,10 +41,10 @@ public class SaveFile
         List<TrashSaveData> trashSaveDatas = new();
         foreach (var item in TrashManager.TrashInventory)
         {
-            TrashType type = item.Key;
+            string trashName = item.Key;
             int num = item.Value;
 
-            trashInventory[type] += num;
+            trashInventory[trashName] += num;
         }
 
         foreach (var item in trashInventory)
@@ -60,24 +61,23 @@ public class SaveFile
         Debug.Log("LoadInventory");
         trashInventory.Clear();
 
-        for (int i = 0; i < (int)TrashType.LENGTH; i++)
+        foreach (var item in TrashManager.Instance.trashes)
         {
-            TrashType type = (TrashType)i;
-            trashInventory.Add(type, 0);
+            trashInventory.Add(item.trashName, 0);
         }
 
         foreach (var item in datas)
         {
-            Debug.Log(item.type);
-            trashInventory[item.type] = item.num;
+            Debug.Log(item.trashName);
+            trashInventory[item.trashName] = item.num;
         }
     }
 
-    public int GetTrashNum(TrashType type)
+    public int GetTrashNum(string trashName)
     {
-        if (!trashInventory.ContainsKey(type)) return 0;
+        if (!trashInventory.ContainsKey(trashName)) return 0;
 
-        return trashInventory[type];
+        return trashInventory[trashName];
     }
 
 }

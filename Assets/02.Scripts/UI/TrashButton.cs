@@ -9,7 +9,7 @@ public class TrashButton : MonoBehaviour
     public Image iconImage;
     public TMP_Text nameText;
     public TMP_Text numText;
-    public TrashType type;
+    public Trash trash;
 
     private void Awake()
     {
@@ -18,10 +18,15 @@ public class TrashButton : MonoBehaviour
 
     void Init(SaveFile saveFile)
     {
-        Trash trash = TrashManager.Instance.GetTrash(type);
+        if (!trash)
+        {
+            nameText.text = "";
+            numText.text = "";
+            return;
+        }
+
         iconImage.sprite = trash.sprite;
         nameText.text = trash.trashName;
-
-        numText.text = saveFile.GetTrashNum(type).ToString();
+        numText.text = saveFile.GetTrashNum(trash.trashName).ToString();
     }
 }
