@@ -4,10 +4,11 @@ using UnityEngine;
 
 
 
-public class StageManager : MonoBehaviour
+public class StageManager : Singleton<StageManager>
 {
     public Stage[] stages;
     private int stageIndex;
+    private float time = 0f;
 
     public Stage CurrentStage
     {
@@ -19,11 +20,18 @@ public class StageManager : MonoBehaviour
 
     private void Update()
     {
-        if(Time.time > CurrentStage.stageTime)
+        time += Time.deltaTime;
+        if(time > CurrentStage.stageTime)
         {
-            stageIndex = Mathf.Max(stageIndex++, stages.Length-1);
+            time = 0f;
+            NextStage();
         }
     }
 
-
+    void NextStage()
+    {
+        stageIndex = Mathf.Min(stageIndex + 1, stages.Length - 1);
+        print("NextStage");
+    }
+    
 }
