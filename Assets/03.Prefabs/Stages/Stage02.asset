@@ -16,4 +16,5 @@ MonoBehaviour:
   skySprite: {fileID: 21300000, guid: 73c3f17bbee267148a2f224712eecba7, type: 3}
   patterns:
   - {fileID: 1563934818124191171, guid: 7c292e27eee5ee341905c08357826716, type: 3}
+  - {fileID: 8790761310507657123, guid: d53b764772147814ba4a4d014c1fbe38, type: 3}
   stageTime: 30

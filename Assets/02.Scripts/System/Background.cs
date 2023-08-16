@@ -21,7 +21,6 @@ public class Background : MonoBehaviour
 
     public void SpriteUpdate()
     {
-        print("!!#!#!#");
         Stage stage = StageManager.Instance.CurrentStage;
 
         switch (bakcgroundType)

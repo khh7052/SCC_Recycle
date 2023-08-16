@@ -18,6 +18,11 @@ public class StageManager : Singleton<StageManager>
         }
     }
 
+    private void Start()
+    {
+        StartCoroutine(CreatePattern());
+    }
+
     private void Update()
     {
         time += Time.deltaTime;
@@ -28,10 +33,24 @@ public class StageManager : Singleton<StageManager>
         }
     }
 
+
     void NextStage()
     {
         stageIndex = Mathf.Min(stageIndex + 1, stages.Length - 1);
         print("NextStage");
+    }
+
+    IEnumerator CreatePattern()
+    {
+        WaitForSeconds wait = new(5f);
+        Vector2 spawnPos = new(24f, 0f);
+
+        while (true)
+        {
+            GameObject pattern = CurrentStage.GetRandomPattern();
+            PoolManager.Instance.Pop(pattern, spawnPos, Quaternion.identity);
+            yield return wait;
+        }
     }
     
 }

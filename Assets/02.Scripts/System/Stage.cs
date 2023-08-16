@@ -9,4 +9,10 @@ public class Stage : ScriptableObject
     public Sprite skySprite;
     public GameObject[] patterns;
     public float stageTime = 30f; // 스테이지 시간
+
+    public GameObject GetRandomPattern()
+    {
+        int rand = Random.Range(0, patterns.Length);
+        return patterns[rand];
+    }
 }
