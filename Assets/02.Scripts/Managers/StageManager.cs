@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-
 public class StageManager : Singleton<StageManager>
 {
     public Stage[] stages;
@@ -40,6 +38,11 @@ public class StageManager : Singleton<StageManager>
         print("NextStage");
     }
 
+    public void PatternUpdate()
+    {
+
+    }
+
     IEnumerator CreatePattern()
     {
         WaitForSeconds wait = new(5f);
@@ -47,8 +50,7 @@ public class StageManager : Singleton<StageManager>
 
         while (true)
         {
-            GameObject pattern = CurrentStage.GetRandomPattern();
-            PoolManager.Instance.Pop(pattern, spawnPos, Quaternion.identity);
+            PoolManager.Instance.Pop(CurrentStage.GetRandomPattern());
             yield return wait;
         }
     }
