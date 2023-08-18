@@ -18,7 +18,13 @@ public class ItemButton : MonoBehaviour
 
     void Init()
     {
-        if (!item) return;
+        if (!item)
+        {
+            iconImage.sprite = null;
+            nameText.text = "";
+            pointText.text = "";
+            return;
+        }
 
         iconImage.sprite = item.sprite;
         nameText.text = item.itemName;
