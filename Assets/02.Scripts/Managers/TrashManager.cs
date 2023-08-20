@@ -16,7 +16,6 @@ public class TrashManager : Singleton<TrashManager>
         TrashInventory.Clear();
     }
 
-
     public Trash GetTrash(string name)
     {
         if (!TrashInform.ContainsKey(name))
@@ -27,6 +26,7 @@ public class TrashManager : Singleton<TrashManager>
 
         return TrashInform[name];
     }
+
     public void TrashInformInit()
     {
         TrashInform.Clear();
