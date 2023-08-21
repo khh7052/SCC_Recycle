@@ -11,7 +11,7 @@ public class TrashCan : MonoBehaviour
     {
         if (collision.CompareTag("Trash"))
         {
-            Trash trash = TrashManager.Instance.GetTrash(collision.name);
+            Trash trash = TrashManager.Instance.GetTrashInform(collision.name);
 
             if(trash == null)
             {
@@ -25,6 +25,7 @@ public class TrashCan : MonoBehaviour
             }
 
             collision.gameObject.SetActive(false);
+            TrashManager.Instance.RecycleTrash(collision.name);
         }
     }
 }

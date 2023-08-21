@@ -7,7 +7,7 @@ public class TrashManager : Singleton<TrashManager>
     public Trash[] trashes;
     public static SortedDictionary<string, Trash> TrashInform = new();
     public static SortedDictionary<string, int> TrashInventory = new();
-
+    public static SortedDictionary<string, int> TrashInventory_Refine = new();
 
     public override void Awake()
     {
@@ -16,7 +16,14 @@ public class TrashManager : Singleton<TrashManager>
         TrashInventory.Clear();
     }
 
-    public Trash GetTrash(string name)
+    public int GetTrashNum(string name)
+    {
+        if (!TrashInventory.ContainsKey(name)) return 0;
+
+        return TrashInventory[name];
+    }
+
+    public Trash GetTrashInform(string name)
     {
         if (!TrashInform.ContainsKey(name))
         {
@@ -49,5 +56,13 @@ public class TrashManager : Singleton<TrashManager>
     {
         int rand = Random.Range(0, trashes.Length);
         return trashes[rand];
+    }
+
+    public void RecycleTrash(string name)
+    {
+        if (GetTrashNum(name) == 0) return;
+
+        TrashInventory[name]--;
+
     }
 }

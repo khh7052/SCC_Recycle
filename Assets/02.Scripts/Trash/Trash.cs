@@ -17,4 +17,5 @@ public class Trash : ScriptableObject
     public string trashName;
     public string description;
     public TrashType type;
+    public GameObject trashObject;
 }
