@@ -8,12 +8,12 @@ using UnityEngine.Events;
 public class TrashSaveData
 {
     public string trashName;
-    public int num;
+    public int trashNum;
 
-    public TrashSaveData(string trashName, int num)
+    public TrashSaveData(string trashName, int trashNum)
     {
         this.trashName = trashName;
-        this.num = num;
+        this.trashNum = trashNum;
     }
 }
 
@@ -36,8 +36,6 @@ public class SaveFile
     // 인벤토리 저장
     public void SaveTrashInventory()
     {
-        // 문제점 : 저장 개수가 다름
-        // 
         List<TrashSaveData> trashSaveDatas = new();
         foreach (var item in TrashManager.TrashInventory)
         {
@@ -59,17 +57,11 @@ public class SaveFile
     public void LoadTrashInventory()
     {
         Debug.Log("LoadInventory");
-        trashInventory.Clear();
-
-        foreach (var item in TrashManager.Instance.trashes)
-        {
-            trashInventory.Add(item.trashName, 0);
-        }
-
+        
         foreach (var item in datas)
         {
-            Debug.Log(item.trashName);
-            trashInventory[item.trashName] = item.num;
+            Debug.Log(item.trashName + " " + item.trashNum);
+            trashInventory[item.trashName] = item.trashNum;
         }
     }
 
@@ -78,6 +70,29 @@ public class SaveFile
         if (!trashInventory.ContainsKey(trashName)) return 0;
 
         return trashInventory[trashName];
+    }
+
+    public List<Trash> GetTrashList()
+    {
+        List<Trash> list = new();
+
+        foreach (var item in trashInventory)
+        {
+            string trashName = item.Key;
+            int trashNum = item.Value;
+
+            Trash t = TrashManager.Instance.GetTrashInform(trashName);
+
+            if (t == null) continue;
+
+            for (int i = 0; i < trashNum; i++)
+            {
+                list.Add(t);
+            }
+        }
+        Debug.Log(list.Count);
+        Utility.Shuffle(list);
+        return list;
     }
 
 }
