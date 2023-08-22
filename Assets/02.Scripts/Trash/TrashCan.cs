@@ -1,11 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class TrashCan : MonoBehaviour
 {
     public TrashType type;
+    public TMP_Text typeText;
 
+    private void Awake()
+    {
+        typeText.text = type.ToString();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -22,6 +28,11 @@ public class TrashCan : MonoBehaviour
             if(trash.type == type)
             {
                 print("Á¤´ä");
+                SoundManager.Instance.PlaySFX("Correct");
+            }
+            else
+            {
+                SoundManager.Instance.PlaySFX("Incorrect");
             }
 
             collision.gameObject.SetActive(false);
