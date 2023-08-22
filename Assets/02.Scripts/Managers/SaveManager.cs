@@ -42,7 +42,8 @@ public class SaveFile
             string trashName = item.Key;
             int num = item.Value;
 
-            trashInventory[trashName] += num;
+            if (trashInventory.ContainsKey(trashName)) trashInventory[trashName] += num;
+            else trashInventory.Add(trashName, num);
         }
 
         foreach (var item in trashInventory)

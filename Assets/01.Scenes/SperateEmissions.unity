@@ -428,6 +428,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5001901592248326708, guid: 0d2a75f759133d84eb7c6939afb462f5, type: 3}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7673112034836458763, guid: 0d2a75f759133d84eb7c6939afb462f5, type: 3}
       propertyPath: m_Name
       value: TrashCan (1)
@@ -1596,6 +1600,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4882158929424426221, guid: 4d6c2209adb324a49acfedd229945224, type: 3}
+      propertyPath: sfxSounds.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4882158929424426221, guid: 4d6c2209adb324a49acfedd229945224, type: 3}
+      propertyPath: sfxSounds.Array.data[8].name
+      value: Correct
+      objectReference: {fileID: 0}
+    - target: {fileID: 4882158929424426221, guid: 4d6c2209adb324a49acfedd229945224, type: 3}
+      propertyPath: sfxSounds.Array.data[9].name
+      value: Incorrect
+      objectReference: {fileID: 0}
+    - target: {fileID: 4882158929424426221, guid: 4d6c2209adb324a49acfedd229945224, type: 3}
+      propertyPath: sfxSounds.Array.data[8].volume
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4882158929424426221, guid: 4d6c2209adb324a49acfedd229945224, type: 3}
+      propertyPath: sfxSounds.Array.data[9].volume
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4882158929424426221, guid: 4d6c2209adb324a49acfedd229945224, type: 3}
+      propertyPath: sfxSounds.Array.data[8].clips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4882158929424426221, guid: 4d6c2209adb324a49acfedd229945224, type: 3}
+      propertyPath: sfxSounds.Array.data[9].clips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4882158929424426221, guid: 4d6c2209adb324a49acfedd229945224, type: 3}
+      propertyPath: sfxSounds.Array.data[8].clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: aae4cc67359e794458e7812208a2a822, type: 3}
+    - target: {fileID: 4882158929424426221, guid: 4d6c2209adb324a49acfedd229945224, type: 3}
+      propertyPath: sfxSounds.Array.data[9].clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 748bfaff907ecaa4b9ead1b20071465f, type: 3}
     - target: {fileID: 8234366570533540025, guid: 4d6c2209adb324a49acfedd229945224, type: 3}
       propertyPath: m_Name
       value: SoundManager
@@ -1810,6 +1850,10 @@ PrefabInstance:
     - target: {fileID: 3753973693186863255, guid: 0d2a75f759133d84eb7c6939afb462f5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5001901592248326708, guid: 0d2a75f759133d84eb7c6939afb462f5, type: 3}
+      propertyPath: type
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7673112034836458763, guid: 0d2a75f759133d84eb7c6939afb462f5, type: 3}
       propertyPath: m_Name
@@ -4068,6 +4112,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5001901592248326708, guid: 0d2a75f759133d84eb7c6939afb462f5, type: 3}
+      propertyPath: type
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7673112034836458763, guid: 0d2a75f759133d84eb7c6939afb462f5, type: 3}
       propertyPath: m_Name
       value: TrashCan (3)
@@ -4728,6 +4776,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 180831139903404806, guid: 0d2a75f759133d84eb7c6939afb462f5, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 967271300}
+    - target: {fileID: 1639788659887723624, guid: 0d2a75f759133d84eb7c6939afb462f5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 3753973693186863255, guid: 0d2a75f759133d84eb7c6939afb462f5, type: 3}
       propertyPath: m_RootOrder
       value: 4
