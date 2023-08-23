@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Glass
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 66695d98e7738f8478f94d2e70df1726, type: 3}
-  trashName: "\uD398\uD2B8\uBCD1"
+  trashName: "\uC720\uB9AC\uBCD1"
   description: 
   type: 3
   trashObject: {fileID: 0}

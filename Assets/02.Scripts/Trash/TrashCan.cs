@@ -36,7 +36,7 @@ public class TrashCan : MonoBehaviour
             }
 
             collision.gameObject.SetActive(false);
-            TrashManager.Instance.RecycleTrash(collision.name);
+            SaveManager.SaveFile.RecycleTrash(collision.name);
         }
     }
 }
