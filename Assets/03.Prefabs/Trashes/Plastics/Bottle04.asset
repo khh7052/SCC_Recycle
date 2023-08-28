@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6c9cd319d50538409578ca4e80419d1, type: 3}
   m_Name: Bottle04
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: bfa776e65050f754faefb1988f5891e0, type: 3}
-  trashName: "\uD398\uD2B8\uBCD1"
+  sprite: {fileID: 21300000, guid: 36f3608a524f4af419548b89726415a1, type: 3}
+  trashName: "\uD398\uD2B8\uBCD104"
   description: 
   type: 1
+  trashObject: {fileID: 0}

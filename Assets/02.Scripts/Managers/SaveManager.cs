@@ -24,6 +24,7 @@ public class SaveFile
     public int recyclePoint;
     public TrashSaveData[] datas;
     private SortedDictionary<string, int> trashInventory = new();
+    private SortedDictionary<string, int> trashRecycleInventory = new();
 
     public void SaveScore()
     {
