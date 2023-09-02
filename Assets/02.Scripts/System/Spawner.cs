@@ -1,22 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Spawner : MonoBehaviour
 {
+    public UnityEvent OnSpawnEnd;
+
     public Transform spawnPoint;
-    public GameObject spawnObject;
     public float spawnRate = 5f;
+
+    private Coroutine spawnCoroutine;
 
     private void Awake()
     {
         SaveManager.OnLoad.AddListener(SpawnStart);
     }
 
+    private void OnDisable()
+    {
+        SpawnStop();
+    }
+
     void SpawnStart(SaveFile saveFile)
     {
+        spawnCoroutine = StartCoroutine(Spawn(saveFile));
+    }
 
-        StartCoroutine(Spawn(saveFile));
+    void SpawnStop()
+    {
+        StopCoroutine(spawnCoroutine);
     }
 
     IEnumerator Spawn(SaveFile saveFile)
@@ -29,14 +42,13 @@ public class Spawner : MonoBehaviour
         {
             print(trash.trashName);
 
-            
-            GameObject trashObject = PoolManager.Instance.Pop(spawnObject, spawnPoint.position, Quaternion.identity);
-            trashObject.GetComponent<TrashObject>().ChangeTrash(trash);
+            GameObject spawnObject = TrashManager.Instance.GetTrashInform(trash.trashName).trashObject;
+            PoolManager.Instance.Pop(spawnObject, spawnPoint.position, Quaternion.identity);
 
             yield return wait;
         }
 
-        print("end");
+        OnSpawnEnd.Invoke();
     }
 
 }

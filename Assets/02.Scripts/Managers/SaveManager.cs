@@ -24,6 +24,7 @@ public class SaveFile
     public int recyclePoint;
     public TrashSaveData[] datas;
     private SortedDictionary<string, int> trashInventory = new();
+    private SortedDictionary<string, int> trashRecycleInventory = new();
 
     public void SaveScore()
     {
@@ -96,6 +97,14 @@ public class SaveFile
         return list;
     }
 
+    public void RecycleTrash(string name)
+    {
+        if (GetTrashNum(name) == 0) return;
+
+        trashInventory[name]--;
+        Debug.Log(trashInventory[name]);
+    }
+
 }
 
 public class SaveManager : MonoBehaviour
@@ -106,6 +115,14 @@ public class SaveManager : MonoBehaviour
     private readonly static string path = Application.dataPath + "/save.json";
 
     private static SaveFile saveFile = new();
+
+    public static SaveFile SaveFile
+    {
+        get
+        {
+            return saveFile;
+        }
+    }
 
     public static void Save(object data)
     {
