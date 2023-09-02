@@ -13,6 +13,9 @@ EditorBuildSettings:
     guid: 8d1c492050aebdc488f0408caf0c956a
   - enabled: 1
     path: Assets/01.Scenes/SperateEmissions.unity
+    guid: 21c7d7b00ad3f814f8b7143b07f3895f
+  - enabled: 1
+    path: Assets/01.Scenes/SperateEmissions_Game.unity
     guid: cf26ee1f20308c040ada54441d5be54d
   - enabled: 1
     path: Assets/01.Scenes/Recycle.unity

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class StageManager : Singleton<StageManager>
 {
+    public Transform spawnParent;
     public Stage[] stages;
     private int stageIndex;
     private float time = 0f;
@@ -46,11 +47,17 @@ public class StageManager : Singleton<StageManager>
     IEnumerator CreatePattern()
     {
         WaitForSeconds wait = new(5f);
-        Vector2 spawnPos = new(24f, 0f);
 
         while (true)
         {
-            PoolManager.Instance.Pop(CurrentStage.GetRandomPattern());
+            GameObject pattern = CurrentStage.GetRandomPattern();
+
+            for(int i = 0; i < pattern.transform.childCount; i++)
+            {
+                Transform child = pattern.transform.GetChild(i);
+                PoolManager.Instance.Pop(child.gameObject, child.position, child.rotation).transform.SetParent(spawnParent);
+            }
+            
             yield return wait;
         }
     }

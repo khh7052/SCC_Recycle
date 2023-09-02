@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c6c9cd319d50538409578ca4e80419d1, type: 3}
-  m_Name: Paper
+  m_Name: Bottle02
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 87efd989460f6134fbbe861f42fb0077, type: 3}
-  trashName: "\uC885\uC774"
+  sprite: {fileID: 21300000, guid: 1530e9e34915e4246bfce370447f426e, type: 3}
+  trashName: "\uD398\uD2B8\uBCD102"
   description: 
-  type: 2
-  trashObject: {fileID: 0}
+  type: 1
+  trashObject: {fileID: 557580014763435950, guid: f8e5db4c6bf749e48b409a9704042301, type: 3}
