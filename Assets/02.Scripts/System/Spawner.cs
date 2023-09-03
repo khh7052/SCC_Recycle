@@ -38,7 +38,7 @@ public class Spawner : MonoBehaviour
     {
         WaitForSeconds wait = new(spawnRate);
 
-        List<Trash> trashList = saveFile.GetTrashList();
+        List<Trash> trashList = saveFile.GetRandomTrashList();
 
         foreach (var trash in trashList)
         {
