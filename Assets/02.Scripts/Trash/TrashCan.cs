@@ -7,11 +7,18 @@ public class TrashCan : MonoBehaviour
 {
     public TrashType type;
     public TMP_Text typeText;
+    private int count = 0;
+
+    public int TrashCount
+    {
+        get { return count; }
+    }
 
     private void Awake()
     {
         typeText.text = type.ToString();
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Trash"))
@@ -26,7 +33,7 @@ public class TrashCan : MonoBehaviour
 
             if(trash.type == type)
             {
-                print("Á¤´ä");
+                count++;
                 SoundManager.Instance.PlaySFX("Correct");
             }
             else

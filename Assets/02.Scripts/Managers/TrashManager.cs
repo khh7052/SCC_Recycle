@@ -43,6 +43,8 @@ public class TrashManager : Singleton<TrashManager>
 
     public void TrashSettingInit()
     {
+        TrashObjectSetting.Clear();
+
         foreach (var setting in trashObjectSettings)
         {
             TrashObjectSetting.Add(setting.sceneName, setting);

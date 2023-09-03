@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class SperateEmissionManager : MonoBehaviour
 {
-    public int currentCount;
-    public int maxCount;
-
     private void Awake()
     {
         SaveManager.OnLoad.AddListener(GameStart);
@@ -14,7 +11,16 @@ public class SperateEmissionManager : MonoBehaviour
 
     public void GameStart(SaveFile saveFile)
     {
-        maxCount = saveFile.GetTrashNum();
+        int trashNum = saveFile.GetTrashNum();
+
+        if(trashNum == 0)
+        {
+            UIManager.Instance.ActiveSperateError(true);
+        }
+        else
+        {
+            UIManager.Instance.ActiveSperateError(false);
+        }
     }
 
 }

@@ -15,7 +15,7 @@ public class DragObject : MonoBehaviour
     private void OnMouseDown()
     {
         coll.enabled = false;
-        offset = GetMousePos() - transform.position;
+        offset = transform.position - GetMousePos();
     }
 
     private void OnMouseDrag()

@@ -26,6 +26,7 @@ public class SaveFile
     private SortedDictionary<string, int> trashInventory = new();
     private SortedDictionary<string, int> trashRecycleInventory = new();
 
+
     public SortedDictionary<string, int> TrashInventory
     {
         get { return trashInventory; }
