@@ -45,6 +45,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onDontDestroy: 0
+  trashObjectSettings:
+  - sceneName: Play
+    rigdType: 1
+    gravity: 0
+    isTrigger: 1
+    onDrag: 0
+  - sceneName: SperateEmissions
+    rigdType: 0
+    gravity: 0
+    isTrigger: 1
+    onDrag: 1
+  - sceneName: SperateEmissions_Game
+    rigdType: 0
+    gravity: 1
+    isTrigger: 0
+    onDrag: 1
   trashes:
   - {fileID: 11400000, guid: b2897935f3bcb4e40ad67aca1bd86ced, type: 2}
   - {fileID: 11400000, guid: 47b4ef76d5fe0bd40b6cd4c7be2a042d, type: 2}

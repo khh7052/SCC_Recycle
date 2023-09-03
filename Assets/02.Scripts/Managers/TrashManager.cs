@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class TrashManager : Singleton<TrashManager>
 {
+    public TrashObjectSetting[] trashObjectSettings;
+    public static SortedDictionary<string, TrashObjectSetting> TrashObjectSetting = new();
+
     public Trash[] trashes;
     public static SortedDictionary<string, Trash> TrashInform = new();
     public static SortedDictionary<string, int> TrashInventory = new();
@@ -13,6 +16,7 @@ public class TrashManager : Singleton<TrashManager>
     {
         base.Awake();
         TrashInformInit();
+        TrashSettingInit();
         TrashInventory.Clear();
     }
 
@@ -34,6 +38,14 @@ public class TrashManager : Singleton<TrashManager>
         foreach (var trash in trashes)
         {
             TrashInform.Add(trash.trashName, trash);
+        }
+    }
+
+    public void TrashSettingInit()
+    {
+        foreach (var setting in trashObjectSettings)
+        {
+            TrashObjectSetting.Add(setting.sceneName, setting);
         }
     }
 

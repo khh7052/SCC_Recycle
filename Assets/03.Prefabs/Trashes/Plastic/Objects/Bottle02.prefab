@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 8192386602090617871}
   - component: {fileID: 5611099617035765760}
   - component: {fileID: 3556211144977471330}
+  - component: {fileID: -1471468795933120017}
+  - component: {fileID: -5912644277096508527}
   m_Layer: 0
   m_Name: Bottle02
   m_TagString: Trash
@@ -164,3 +166,27 @@ PolygonCollider2D:
       - {x: 0.328125, y: 0.46875}
       - {x: 0.2421875, y: 0.875}
   m_UseDelaunayMesh: 0
+--- !u!114 &-1471468795933120017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557580014763435950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5ce32eab0c0245438f9c23077bb089c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-5912644277096508527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557580014763435950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d10b6eadcef46174ca6232ba56a52989, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

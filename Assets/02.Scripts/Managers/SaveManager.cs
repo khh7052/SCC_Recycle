@@ -26,6 +26,11 @@ public class SaveFile
     private SortedDictionary<string, int> trashInventory = new();
     private SortedDictionary<string, int> trashRecycleInventory = new();
 
+    public SortedDictionary<string, int> TrashInventory
+    {
+        get { return trashInventory; }
+    }
+
     public void SaveScore()
     {
         score += (int)GameManager.score;
@@ -66,6 +71,19 @@ public class SaveFile
             trashInventory[item.trashName] = item.trashNum;
         }
     }
+
+    public int GetTrashNum()
+    {
+        int count = 0;
+
+        foreach (int num in trashInventory.Values)
+        {
+            count += num;
+        }
+
+        return count;
+    }
+
 
     public int GetTrashNum(string trashName)
     {

@@ -22,8 +22,10 @@ public class Spawner : MonoBehaviour
         SpawnStop();
     }
 
+
     void SpawnStart(SaveFile saveFile)
     {
+        UIManager.Instance.CurrentTrashNumTextUpdate();
         spawnCoroutine = StartCoroutine(Spawn(saveFile));
     }
 
@@ -43,7 +45,8 @@ public class Spawner : MonoBehaviour
             print(trash.trashName);
 
             GameObject spawnObject = TrashManager.Instance.GetTrashInform(trash.trashName).trashObject;
-            PoolManager.Instance.Pop(spawnObject, spawnPoint.position, Quaternion.identity);
+            GameObject t = PoolManager.Instance.Pop(spawnObject, spawnPoint.position, Quaternion.identity);
+            t.name = trash.trashName;
 
             yield return wait;
         }

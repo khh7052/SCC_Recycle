@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 634725172091746923}
   - component: {fileID: 2475819071662380454}
   - component: {fileID: 594522268918776069}
+  - component: {fileID: -647082149416964721}
+  - component: {fileID: 2524533488963896931}
   m_Layer: 0
   m_Name: Paper
   m_TagString: Trash
@@ -188,3 +190,27 @@ PolygonCollider2D:
       - {x: 0.125, y: -0.796875}
       - {x: 0.2109375, y: -0.765625}
   m_UseDelaunayMesh: 0
+--- !u!114 &-647082149416964721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 113704478545666410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5ce32eab0c0245438f9c23077bb089c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2524533488963896931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 113704478545666410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d10b6eadcef46174ca6232ba56a52989, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

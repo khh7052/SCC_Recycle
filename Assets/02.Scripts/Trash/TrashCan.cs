@@ -12,7 +12,6 @@ public class TrashCan : MonoBehaviour
     {
         typeText.text = type.ToString();
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Trash"))
@@ -37,6 +36,14 @@ public class TrashCan : MonoBehaviour
 
             collision.gameObject.SetActive(false);
             SaveManager.SaveFile.RecycleTrash(collision.name);
+
+            int trashNum = SaveManager.SaveFile.GetTrashNum();
+            UIManager.Instance.CurrentTrashNumTextUpdate();
+
+            if(trashNum == 0)
+            {
+                UIManager.Instance.ActiveSperateGameEnd(true);
+            }
         }
     }
 }
