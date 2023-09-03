@@ -8,11 +8,19 @@ using TMPro;
 
 public class UIManager : Singleton<UIManager>
 {
+    [Header("Common")]
     public GameObject uiOption;
+
+    [Header("Collect Game")]
     public GameObject uiGameOver;
     public Image timeBar;
     public TMP_Text scoreText;
     public TMP_Text maxScoreText;
+
+    [Header("SperateEmission")]
+    public GameObject uiSperateError;
+    public GameObject uiSperateGameEnd;
+    public TMP_Text currentTrashNumText; // 현재 남은 쓰레기 개수
 
     public override void Awake()
     {
@@ -24,6 +32,7 @@ public class UIManager : Singleton<UIManager>
     {
         ActiveOption(false);
         ActiveGameOver(false);
+        ActiveSperateGameEnd(false);
     }
 
     public void LoadScene(string sceneName)
@@ -72,10 +81,35 @@ public class UIManager : Singleton<UIManager>
         scoreText.text = amount.ToString("N0");
 
     }
-
     public void MaxScoreTextUpdate(float amount)
     {
         if (!maxScoreText) return;
         maxScoreText.text = amount.ToString("N0");
     }
+
+    #region Sperate
+
+    public void ActiveSperateError(bool active)
+    {
+        if (!uiSperateError) return;
+
+        uiSperateError.SetActive(active);
+    }
+
+    public void ActiveSperateGameEnd(bool active)
+    {
+        if (!uiSperateGameEnd) return;
+
+        uiSperateGameEnd.SetActive(active);
+    }
+
+    public void CurrentTrashNumTextUpdate()
+    {
+        if (!currentTrashNumText) return;
+
+        int trashNum = SaveManager.SaveFile.GetTrashNum();
+        currentTrashNumText.text = trashNum.ToString();
+    }
+
+    #endregion
 }

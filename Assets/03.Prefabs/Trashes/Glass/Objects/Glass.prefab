@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 3590753984969995552}
   - component: {fileID: 1718223228427136621}
   - component: {fileID: 5786598043623725711}
+  - component: {fileID: -142609398000376243}
+  - component: {fileID: 6581443449573443655}
   m_Layer: 0
   m_Name: Glass
   m_TagString: Trash
@@ -189,3 +191,27 @@ PolygonCollider2D:
       - {x: -0.8515625, y: -1}
       - {x: 0.8515625, y: -1}
   m_UseDelaunayMesh: 0
+--- !u!114 &-142609398000376243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7573532624684763613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5ce32eab0c0245438f9c23077bb089c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6581443449573443655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7573532624684763613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d10b6eadcef46174ca6232ba56a52989, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

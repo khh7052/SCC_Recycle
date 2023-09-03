@@ -7,6 +7,12 @@ public class TrashCan : MonoBehaviour
 {
     public TrashType type;
     public TMP_Text typeText;
+    private int count = 0;
+
+    public int TrashCount
+    {
+        get { return count; }
+    }
 
     private void Awake()
     {
@@ -27,7 +33,7 @@ public class TrashCan : MonoBehaviour
 
             if(trash.type == type)
             {
-                print("Á¤´ä");
+                count++;
                 SoundManager.Instance.PlaySFX("Correct");
             }
             else
@@ -37,6 +43,14 @@ public class TrashCan : MonoBehaviour
 
             collision.gameObject.SetActive(false);
             SaveManager.SaveFile.RecycleTrash(collision.name);
+
+            int trashNum = SaveManager.SaveFile.GetTrashNum();
+            UIManager.Instance.CurrentTrashNumTextUpdate();
+
+            if(trashNum == 0)
+            {
+                UIManager.Instance.ActiveSperateGameEnd(true);
+            }
         }
     }
 }
