@@ -55,11 +55,8 @@ public class TrashSpawner : MonoBehaviour
 
         foreach (var trash in trashList)
         {
-            print(trash.trashName);
-
-            GameObject spawnObject = TrashManager.Instance.GetTrashInform(trash.trashName).trashObject;
+            GameObject spawnObject = TrashManager.Instance.GetTrashInform(trash.trashSaveName).trashObject;
             GameObject t = PoolManager.Instance.Pop(spawnObject, spawnPoint.position, Quaternion.identity);
-            t.name = trash.trashName;
 
             OnSpawn.Invoke(trash);
 

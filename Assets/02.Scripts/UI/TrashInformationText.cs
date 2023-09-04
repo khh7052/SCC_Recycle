@@ -29,7 +29,7 @@ public class TrashInformationText : MonoBehaviour
         switch (type)
         {
             case TrashInformationType.NAME:
-                text.text = trash.trashName;
+                text.text = trash.trashRealName;
                 break;
             case TrashInformationType.TYPE:
                 text.text = trash.type.ToString();

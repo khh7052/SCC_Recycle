@@ -15,7 +15,9 @@ public enum TrashType
 public class Trash : ScriptableObject
 {
     public Sprite sprite;
-    public string trashName;
+    public string trashSaveName; // 저장, 정보 불러오기에서 사용되는 이름
+    public string trashRealName; // UI 표시에서 사용되는 이름
+    
     [TextArea(3, 10)]
     public string description;
     public TrashType type;

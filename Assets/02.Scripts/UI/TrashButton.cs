@@ -26,7 +26,7 @@ public class TrashButton : MonoBehaviour
         }
 
         iconImage.sprite = trash.sprite;
-        nameText.text = trash.trashName;
-        numText.text = saveFile.GetTrashNum(trash.trashName).ToString();
+        nameText.text = trash.trashRealName;
+        numText.text = saveFile.GetTrashNum(trash.trashSaveName).ToString();
     }
 }

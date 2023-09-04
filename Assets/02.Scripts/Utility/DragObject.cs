@@ -7,7 +7,6 @@ public class DragObject : MonoBehaviour
     private Animator anim;
     private Collider2D coll;
     private Vector3 offset;
-    private bool isEnter = false;
 
     public bool OnDrag
     {
@@ -28,38 +27,38 @@ public class DragObject : MonoBehaviour
     private void OnMouseEnter()
     {
         if (!OnDrag) return;
-        if (isEnter) return;
 
-        isEnter = true;
         if (anim) anim.SetBool("OnMouse", true);
-
     }
 
     private void OnMouseExit()
     {
         if (!OnDrag) return;
-        isEnter = false;
+
         if (anim) anim.SetBool("OnMouse", false);
     }
 
     private void OnMouseDown()
     {
         if (!OnDrag) return;
-        coll.enabled = false;
+
+        coll.isTrigger = true;
         offset = transform.position - GetMousePos();
     }
 
     private void OnMouseDrag()
     {
         if (!OnDrag) return;
+
         transform.position = GetMousePos() + offset;
     }
 
     private void OnMouseUp()
     {
         if (!OnDrag) return;
-        isEnter = true;
-        coll.enabled = true;
+
+        transform.position = GetMousePos() + offset;
+        coll.isTrigger = false;
     }
 
     Vector3 GetMousePos()

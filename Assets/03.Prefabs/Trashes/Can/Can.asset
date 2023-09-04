@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Can
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 6f98413a8d0fe72469e6c85be75e9c7b, type: 3}
-  trashName: "\uCE94"
+  trashSaveName: "\uCE9401"
+  trashRealName: "\uCE94"
   description: 
   type: 0
   trashObject: {fileID: 5315049714560499970, guid: 503d723efac4f0c42acec05c3b3d2c96, type: 3}

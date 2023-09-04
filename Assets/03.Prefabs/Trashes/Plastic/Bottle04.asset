@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Bottle04
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 36f3608a524f4af419548b89726415a1, type: 3}
-  trashName: "\uD398\uD2B8\uBCD104"
+  trashSaveName: "\uD398\uD2B8\uBCD104"
+  trashRealName: "\uD398\uD2B8\uBCD1"
   description: "1. \uB0B4\uC6A9\uBB3C\uC744 \uBE44\uC6B0\uC138\uC694.\n2. \uB0B4\uBD80\uB97C
     \uD589\uAD88\uC8FC\uC138\uC694.\n3. \uAC01 \uC885\uB958\uC758 \uC4F0\uB808\uAE30\uB97C
     \uBD84\uB9AC\uD574\uC8FC\uC138\uC694."

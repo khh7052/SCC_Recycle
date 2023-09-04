@@ -34,7 +34,7 @@ public class TrashManager : Singleton<TrashManager>
 
         foreach (var trash in trashes)
         {
-            TrashInform.Add(trash.trashName, trash);
+            TrashInform.Add(trash.trashSaveName, trash);
         }
     }
 

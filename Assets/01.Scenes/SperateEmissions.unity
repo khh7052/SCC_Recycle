@@ -2859,6 +2859,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1636919907}
     - target: {fileID: 4934356806858973331, guid: 8cecf34b6904cef4a805ba61a5e1ba2f, type: 3}
+      propertyPath: trashNameText
+      value: 
+      objectReference: {fileID: 1476047406}
+    - target: {fileID: 4934356806858973331, guid: 8cecf34b6904cef4a805ba61a5e1ba2f, type: 3}
       propertyPath: uiSperateError
       value: 
       objectReference: {fileID: 1340685945}
@@ -2867,9 +2871,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 870114079}
     - target: {fileID: 4934356806858973331, guid: 8cecf34b6904cef4a805ba61a5e1ba2f, type: 3}
+      propertyPath: uiTrashInformation
+      value: 
+      objectReference: {fileID: 1996475498}
+    - target: {fileID: 4934356806858973331, guid: 8cecf34b6904cef4a805ba61a5e1ba2f, type: 3}
       propertyPath: currentTrashNumText
       value: 
       objectReference: {fileID: 203963896}
+    - target: {fileID: 4934356806858973331, guid: 8cecf34b6904cef4a805ba61a5e1ba2f, type: 3}
+      propertyPath: trashDescriptionText
+      value: 
+      objectReference: {fileID: 916849650}
     - target: {fileID: 5686336531378040052, guid: 8cecf34b6904cef4a805ba61a5e1ba2f, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -3607,9 +3619,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2117359803}
-        m_TargetAssemblyTypeName: TrashSpawner, Assembly-CSharp
-        m_MethodName: OnSpawnToggle
+      - m_Target: {fileID: 2187004724249039393}
+        m_TargetAssemblyTypeName: SperateEmissionManager, Assembly-CSharp
+        m_MethodName: SperateEmissionEndCheck
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4922,7 +4934,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1240866357
 Transform:
   m_ObjectHideFlags: 0
@@ -6821,18 +6833,6 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3753973693186863255, guid: 0d2a75f759133d84eb7c6939afb462f5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3753973693186863255, guid: 0d2a75f759133d84eb7c6939afb462f5, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3753973693186863255, guid: 0d2a75f759133d84eb7c6939afb462f5, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3753973693186863255, guid: 0d2a75f759133d84eb7c6939afb462f5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.15
       objectReference: {fileID: 0}
@@ -6874,14 +6874,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5001901592248326708, guid: 0d2a75f759133d84eb7c6939afb462f5, type: 3}
       propertyPath: OnRecycle.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5001901592248326708, guid: 0d2a75f759133d84eb7c6939afb462f5, type: 3}
-      propertyPath: OnRecycle.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5001901592248326708, guid: 0d2a75f759133d84eb7c6939afb462f5, type: 3}
-      propertyPath: OnRecycle.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      propertyPath: OnRecycle.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5001901592248326708, guid: 0d2a75f759133d84eb7c6939afb462f5, type: 3}
@@ -6889,39 +6885,19 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2187004724249039393}
     - target: {fileID: 5001901592248326708, guid: 0d2a75f759133d84eb7c6939afb462f5, type: 3}
-      propertyPath: OnRecycle.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 2187004724249039393}
-    - target: {fileID: 5001901592248326708, guid: 0d2a75f759133d84eb7c6939afb462f5, type: 3}
       propertyPath: OnRecycle.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5001901592248326708, guid: 0d2a75f759133d84eb7c6939afb462f5, type: 3}
-      propertyPath: OnRecycle.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5001901592248326708, guid: 0d2a75f759133d84eb7c6939afb462f5, type: 3}
       propertyPath: OnRecycle.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: TrashWaste
-      objectReference: {fileID: 0}
-    - target: {fileID: 5001901592248326708, guid: 0d2a75f759133d84eb7c6939afb462f5, type: 3}
-      propertyPath: OnRecycle.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: TrashNumDown
+      value: TrashNumMinus
       objectReference: {fileID: 0}
     - target: {fileID: 5001901592248326708, guid: 0d2a75f759133d84eb7c6939afb462f5, type: 3}
       propertyPath: OnRecycle.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: SperateEmissionManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5001901592248326708, guid: 0d2a75f759133d84eb7c6939afb462f5, type: 3}
-      propertyPath: OnRecycle.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: SperateEmissionManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 5001901592248326708, guid: 0d2a75f759133d84eb7c6939afb462f5, type: 3}
       propertyPath: OnRecycle.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 5001901592248326708, guid: 0d2a75f759133d84eb7c6939afb462f5, type: 3}
-      propertyPath: OnRecycle.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7673112034836458763, guid: 0d2a75f759133d84eb7c6939afb462f5, type: 3}
@@ -6999,19 +6975,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3403918457776303785, guid: 1f0cc42eadf19b342911350171dd0003, type: 3}
       propertyPath: OnSpawn.m_PersistentCalls.m_Calls.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3403918457776303785, guid: 1f0cc42eadf19b342911350171dd0003, type: 3}
       propertyPath: OnSpawnStart.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3403918457776303785, guid: 1f0cc42eadf19b342911350171dd0003, type: 3}
       propertyPath: OnSpawn.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3403918457776303785, guid: 1f0cc42eadf19b342911350171dd0003, type: 3}
       propertyPath: OnSpawn.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3403918457776303785, guid: 1f0cc42eadf19b342911350171dd0003, type: 3}
       propertyPath: OnSpawn.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
@@ -7020,15 +6996,15 @@ PrefabInstance:
     - target: {fileID: 3403918457776303785, guid: 1f0cc42eadf19b342911350171dd0003, type: 3}
       propertyPath: OnSpawn.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2187004724249039393}
+      objectReference: {fileID: 1476047406}
     - target: {fileID: 3403918457776303785, guid: 1f0cc42eadf19b342911350171dd0003, type: 3}
       propertyPath: OnSpawn.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1476047406}
+      objectReference: {fileID: 916849650}
     - target: {fileID: 3403918457776303785, guid: 1f0cc42eadf19b342911350171dd0003, type: 3}
       propertyPath: OnSpawn.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 916849650}
+      objectReference: {fileID: 2187004724249039393}
     - target: {fileID: 3403918457776303785, guid: 1f0cc42eadf19b342911350171dd0003, type: 3}
       propertyPath: OnSpawn.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
@@ -7055,7 +7031,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3403918457776303785, guid: 1f0cc42eadf19b342911350171dd0003, type: 3}
       propertyPath: OnSpawn.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: TrashWaste
+      value: TextUpdate
       objectReference: {fileID: 0}
     - target: {fileID: 3403918457776303785, guid: 1f0cc42eadf19b342911350171dd0003, type: 3}
       propertyPath: OnSpawn.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -7063,7 +7039,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3403918457776303785, guid: 1f0cc42eadf19b342911350171dd0003, type: 3}
       propertyPath: OnSpawn.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: TextUpdate
+      value: TrashNumPlus
       objectReference: {fileID: 0}
     - target: {fileID: 3403918457776303785, guid: 1f0cc42eadf19b342911350171dd0003, type: 3}
       propertyPath: OnSpawn.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
@@ -7083,7 +7059,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3403918457776303785, guid: 1f0cc42eadf19b342911350171dd0003, type: 3}
       propertyPath: OnSpawn.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: SperateEmissionManager, Assembly-CSharp
+      value: TrashInformationText, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3403918457776303785, guid: 1f0cc42eadf19b342911350171dd0003, type: 3}
       propertyPath: OnSpawn.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -7091,7 +7067,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3403918457776303785, guid: 1f0cc42eadf19b342911350171dd0003, type: 3}
       propertyPath: OnSpawn.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: TrashInformationText, Assembly-CSharp
+      value: SperateEmissionManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3403918457776303785, guid: 1f0cc42eadf19b342911350171dd0003, type: 3}
       propertyPath: OnSpawn.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName

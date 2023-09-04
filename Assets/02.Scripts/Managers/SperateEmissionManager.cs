@@ -5,6 +5,7 @@ using UnityEngine;
 public class SperateEmissionManager : Singleton<SperateEmissionManager>
 {
     public TrashSpawner spawner;
+    private int num = 0;
 
     public override void Awake()
     {
@@ -34,5 +35,28 @@ public class SperateEmissionManager : Singleton<SperateEmissionManager>
             UIManager.Instance.ActiveSperateGameEnd(true);
         }
     }
+
+    public void SperateEmissionEndCheck()
+    {
+        if (num == 0)
+        {
+            UIManager.Instance.ActiveSperateGameEnd(true);
+        }
+        else
+        {
+            spawner.OnSpawnToggle();
+        }
+    }
+
+    public void TrashNumPlus()
+    {
+        num++;
+    }
+
+    public void TrashNumMinus()
+    {
+        num--;
+    }
+
 
 }

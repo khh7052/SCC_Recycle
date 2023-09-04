@@ -14,7 +14,6 @@ public class RandomTrash : MonoBehaviour
         Trash trash = TrashManager.Instance.GetRandomTrash();
         GameObject trashObject = PoolManager.Instance.Pop(trash.trashObject, transform.position, transform.rotation);
         trashObject.transform.SetParent(StageManager.Instance.spawnParent, true);
-        trashObject.transform.name = trash.trashName;
     }
 
 }

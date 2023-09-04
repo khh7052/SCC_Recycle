@@ -20,6 +20,9 @@ public class UIManager : Singleton<UIManager>
     [Header("SperateEmission")]
     public GameObject uiSperateError;
     public GameObject uiSperateGameEnd;
+    public GameObject uiTrashInformation;
+    public TrashInformationText trashNameText;
+    public TrashInformationText trashDescriptionText;
 
     public override void Awake()
     {
@@ -32,6 +35,7 @@ public class UIManager : Singleton<UIManager>
         ActiveOption(false);
         ActiveGameOver(false);
         ActiveSperateGameEnd(false);
+        ActiveTrashInformation(false);
     }
 
     public void LoadScene(string sceneName)
@@ -100,6 +104,21 @@ public class UIManager : Singleton<UIManager>
         if (!uiSperateGameEnd) return;
 
         uiSperateGameEnd.SetActive(active);
+    }
+
+    public void ActiveTrashInformation(bool active)
+    {
+        if (!uiTrashInformation) return;
+
+        uiTrashInformation.SetActive(active);
+    }
+
+    public void TrashInformationUpdate(Trash trash)
+    {
+        if (trash == null) return;
+
+        if (trashNameText) trashNameText.TextUpdate(trash);
+        if (trashDescriptionText) trashDescriptionText.TextUpdate(trash);
     }
 
     #endregion
