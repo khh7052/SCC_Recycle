@@ -3,27 +3,35 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Spawner : MonoBehaviour
+public enum SpawnerType
 {
+    SECOND,
+    UNTIL
+}
+
+public class TrashSpawner : MonoBehaviour
+{
+    public UnityEvent<Trash> OnSpawn;
     public UnityEvent OnSpawnEnd;
 
+    public SpawnerType type;
     public Transform spawnPoint;
     public float spawnRate = 5f;
+    private bool onSpawn = false;
 
     private Coroutine spawnCoroutine;
-
-    private void Awake()
-    {
-        SaveManager.OnLoad.AddListener(SpawnStart);
-    }
 
     private void OnDisable()
     {
         SpawnStop();
     }
 
+    public void OnSpawnToggle()
+    {
+        onSpawn = !onSpawn;
+    }
 
-    void SpawnStart(SaveFile saveFile)
+    public void SpawnStart(SaveFile saveFile)
     {
         UIManager.Instance.CurrentTrashNumTextUpdate();
         spawnCoroutine = StartCoroutine(Spawn(saveFile));
@@ -31,12 +39,15 @@ public class Spawner : MonoBehaviour
 
     void SpawnStop()
     {
+        if (spawnCoroutine == null) return;
+
         StopCoroutine(spawnCoroutine);
     }
 
     IEnumerator Spawn(SaveFile saveFile)
     {
         WaitForSeconds wait = new(spawnRate);
+        WaitUntil until = new(() => onSpawn);
 
         List<Trash> trashList = saveFile.GetRandomTrashList();
 
@@ -48,7 +59,18 @@ public class Spawner : MonoBehaviour
             GameObject t = PoolManager.Instance.Pop(spawnObject, spawnPoint.position, Quaternion.identity);
             t.name = trash.trashName;
 
-            yield return wait;
+            OnSpawn.Invoke(trash);
+
+            switch (type)
+            {
+                case SpawnerType.SECOND:
+                    yield return wait;
+                    break;
+                case SpawnerType.UNTIL:
+                    yield return until;
+                    onSpawn = false;
+                    break;
+            }
         }
 
         OnSpawnEnd.Invoke();

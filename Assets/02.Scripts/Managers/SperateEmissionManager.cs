@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SperateEmissionManager : MonoBehaviour
 {
+    public TrashSpawner spawner;
+
     private void Awake()
     {
         SaveManager.OnLoad.AddListener(GameStart);
@@ -20,6 +22,8 @@ public class SperateEmissionManager : MonoBehaviour
         else
         {
             UIManager.Instance.ActiveSperateError(false);
+
+            spawner.SpawnStart(saveFile);
         }
     }
 
