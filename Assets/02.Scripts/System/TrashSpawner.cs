@@ -11,6 +11,7 @@ public enum SpawnerType
 
 public class TrashSpawner : MonoBehaviour
 {
+    public UnityEvent OnSpawnStart;
     public UnityEvent<Trash> OnSpawn;
     public UnityEvent OnSpawnEnd;
 
@@ -33,7 +34,6 @@ public class TrashSpawner : MonoBehaviour
 
     public void SpawnStart(SaveFile saveFile)
     {
-        UIManager.Instance.CurrentTrashNumTextUpdate();
         spawnCoroutine = StartCoroutine(Spawn(saveFile));
     }
 
@@ -46,6 +46,8 @@ public class TrashSpawner : MonoBehaviour
 
     IEnumerator Spawn(SaveFile saveFile)
     {
+        OnSpawnStart.Invoke();
+
         WaitForSeconds wait = new(spawnRate);
         WaitUntil until = new(() => onSpawn);
 

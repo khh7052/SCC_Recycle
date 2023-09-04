@@ -15,6 +15,7 @@ public struct TrashObjectSetting
 
 public class TrashObject : MonoBehaviour
 {
+    public Trash trash;
     private Rigidbody2D rigd;
     private Collider2D coll;
     private DragObject dragObject;
@@ -33,7 +34,11 @@ public class TrashObject : MonoBehaviour
 
     void SettingUpdate()
     {
-        TrashObjectSetting setting = TrashManager.TrashObjectSetting[SceneManager.GetActiveScene().name];
+        string sceneName = SceneManager.GetActiveScene().name;
+        if (!TrashManager.TrashObjectSetting.ContainsKey(sceneName)) TrashManager.Instance.TrashSettingInit();
+        if (!TrashManager.TrashObjectSetting.ContainsKey(sceneName)) return;
+
+        TrashObjectSetting setting = TrashManager.TrashObjectSetting[sceneName];
 
         if(rigd != null)
         {

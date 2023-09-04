@@ -7,7 +7,7 @@ public enum TrashInformationType
 {
     NAME,
     TYPE,
-    DESCRIPTION
+    DESCRIPTION,
 }
 
 public class TrashInformationText : MonoBehaviour
@@ -23,6 +23,9 @@ public class TrashInformationText : MonoBehaviour
 
     public void TextUpdate(Trash trash)
     {
+        if (text == null) return;
+        if (trash == null) return;
+
         switch (type)
         {
             case TrashInformationType.NAME:

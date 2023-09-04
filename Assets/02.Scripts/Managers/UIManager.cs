@@ -20,7 +20,6 @@ public class UIManager : Singleton<UIManager>
     [Header("SperateEmission")]
     public GameObject uiSperateError;
     public GameObject uiSperateGameEnd;
-    public TMP_Text currentTrashNumText; // 현재 남은 쓰레기 개수
 
     public override void Awake()
     {
@@ -101,14 +100,6 @@ public class UIManager : Singleton<UIManager>
         if (!uiSperateGameEnd) return;
 
         uiSperateGameEnd.SetActive(active);
-    }
-
-    public void CurrentTrashNumTextUpdate()
-    {
-        if (!currentTrashNumText) return;
-
-        int trashNum = SaveManager.SaveFile.GetTrashNum();
-        currentTrashNumText.text = trashNum.ToString();
     }
 
     #endregion
