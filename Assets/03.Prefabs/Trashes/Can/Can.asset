@@ -16,5 +16,5 @@ MonoBehaviour:
   trashSaveName: "\uCE9401"
   trashRealName: "\uCE94"
   description: 
-  type: 0
   trashObject: {fileID: 5315049714560499970, guid: 503d723efac4f0c42acec05c3b3d2c96, type: 3}
+  trashTypeInformation: {fileID: 11400000, guid: 4153de2a1bf3bd34893396121e070e6d, type: 2}

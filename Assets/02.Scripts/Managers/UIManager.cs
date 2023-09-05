@@ -23,6 +23,7 @@ public class UIManager : Singleton<UIManager>
     public GameObject uiTrashInformation;
     public TrashInformationText trashNameText;
     public TrashInformationText trashDescriptionText;
+    public TrashInformationImage trashTypeImage;
 
     public override void Awake()
     {
@@ -119,6 +120,7 @@ public class UIManager : Singleton<UIManager>
 
         if (trashNameText) trashNameText.TextUpdate(trash);
         if (trashDescriptionText) trashDescriptionText.TextUpdate(trash);
+        if (trashTypeImage) trashTypeImage.ImageUpdate(trash);
     }
 
     #endregion

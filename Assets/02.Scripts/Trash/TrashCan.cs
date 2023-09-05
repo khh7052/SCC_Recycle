@@ -33,7 +33,7 @@ public class TrashCan : MonoBehaviour
 
             if (trash == null) return;
 
-            if (trash.type == type)
+            if (trash.Type == type)
             {
                 count++;
                 SoundManager.Instance.PlaySFX("Correct");

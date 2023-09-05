@@ -32,7 +32,7 @@ public class TrashInformationText : MonoBehaviour
                 text.text = trash.trashRealName;
                 break;
             case TrashInformationType.TYPE:
-                text.text = trash.type.ToString();
+                text.text = trash.Type.ToString();
                 break;
             case TrashInformationType.DESCRIPTION:
                 text.text = trash.description;
