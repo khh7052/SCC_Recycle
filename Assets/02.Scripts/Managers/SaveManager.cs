@@ -124,7 +124,7 @@ public class SaveFile
                 list.Add(t);
             }
         }
-        Debug.Log(list.Count);
+
         Utility.Shuffle(list);
         return list;
     }
@@ -137,8 +137,6 @@ public class SaveFile
 
         if(trashRecycleInventory.ContainsKey(name)) trashRecycleInventory[name]++;
         else trashRecycleInventory.Add(name, 1);
-
-        Debug.Log(trashInventory[name]);
     }
 
 }
