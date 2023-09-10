@@ -12,13 +12,19 @@ public enum SpawnerType
 public class TrashSpawner : MonoBehaviour
 {
     public UnityEvent OnSpawnStart;
-    public UnityEvent<Trash> OnSpawn;
+    public UnityEvent<Trash, GameObject> OnSpawn;
     public UnityEvent OnSpawnEnd;
 
     public SpawnerType type;
     public Transform spawnPoint;
     public float spawnRate = 5f;
     private bool onSpawn = false;
+
+    private int restSpawnCount = -1; // 남은 스폰 수
+    public int RestSpawnCount
+    {
+        get { return restSpawnCount; }
+    }
 
     private Coroutine spawnCoroutine;
 
@@ -52,13 +58,15 @@ public class TrashSpawner : MonoBehaviour
         WaitUntil until = new(() => onSpawn);
 
         List<Trash> trashList = saveFile.GetRandomTrashList();
+        restSpawnCount = trashList.Count;
 
         foreach (var trash in trashList)
         {
             GameObject spawnObject = TrashManager.Instance.GetTrashInform(trash.trashSaveName).trashObject;
             GameObject t = PoolManager.Instance.Pop(spawnObject, spawnPoint.position, Quaternion.identity);
+            restSpawnCount--;
 
-            OnSpawn.Invoke(trash);
+            OnSpawn.Invoke(trash, t);
 
             switch (type)
             {

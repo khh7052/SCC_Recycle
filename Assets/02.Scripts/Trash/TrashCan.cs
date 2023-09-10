@@ -23,8 +23,6 @@ public class TrashCan : MonoBehaviour
         typeText.text = type.ToString();
     }
 
-
-
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Trash"))
