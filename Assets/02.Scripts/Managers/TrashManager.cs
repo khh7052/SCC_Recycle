@@ -9,15 +9,12 @@ public class TrashManager : Singleton<TrashManager>
 
     public Trash[] trashes;
     public static SortedDictionary<string, Trash> TrashInform = new();
-    public static SortedDictionary<string, int> TrashInventory = new();
-    public static SortedDictionary<string, int> TrashInventory_Refine = new();
 
     public override void Awake()
     {
         base.Awake();
         TrashInformInit();
         TrashSettingInit();
-        TrashInventory.Clear();
     }
 
     public Trash GetTrashInform(string name)
@@ -37,7 +34,7 @@ public class TrashManager : Singleton<TrashManager>
 
         foreach (var trash in trashes)
         {
-            TrashInform.Add(trash.trashName, trash);
+            TrashInform.Add(trash.trashSaveName, trash);
         }
     }
 
@@ -53,10 +50,11 @@ public class TrashManager : Singleton<TrashManager>
 
     public void AddTrash(string name)
     {
-        if(!TrashInventory.ContainsKey(name)) TrashInventory.Add(name, 0);
+        var inventory = SaveManager.SaveFile.TrashInventory;
 
-        print("Add " + name);
-        TrashInventory[name]++;
+        if (!inventory.ContainsKey(name)) inventory.Add(name, 0);
+
+        inventory[name]++;
     }
 
     public Trash GetRandomTrash()

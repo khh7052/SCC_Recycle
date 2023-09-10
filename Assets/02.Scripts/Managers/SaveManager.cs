@@ -22,7 +22,8 @@ public class SaveFile
     public int score;
     public int maxScore;
     public int recyclePoint;
-    public TrashSaveData[] datas;
+    public TrashSaveData[] trashInventoryDatas;
+    public TrashSaveData[] trashRecycleInventoryDatas;
     private SortedDictionary<string, int> trashInventory = new();
     private SortedDictionary<string, int> trashRecycleInventory = new();
 
@@ -44,35 +45,46 @@ public class SaveFile
     public void SaveTrashInventory()
     {
         List<TrashSaveData> trashSaveDatas = new();
-        foreach (var item in TrashManager.TrashInventory)
-        {
-            string trashName = item.Key;
-            int num = item.Value;
 
-            if (trashInventory.ContainsKey(trashName)) trashInventory[trashName] += num;
-            else trashInventory.Add(trashName, num);
-        }
-
+        // TrashInventory
         foreach (var item in trashInventory)
         {
             trashSaveDatas.Add(new(item.Key, item.Value));
         }
 
-        datas = trashSaveDatas.ToArray();
+        trashInventoryDatas = trashSaveDatas.ToArray();
+
+        // TrashRecycleInventory
+        trashSaveDatas.Clear();
+
+        foreach (var item in trashRecycleInventory)
+        {
+            trashSaveDatas.Add(new(item.Key, item.Value));
+        }
+
+        trashRecycleInventoryDatas = trashSaveDatas.ToArray();
     }
 
     // 인벤토리 불러오기
     public void LoadTrashInventory()
     {
-        Debug.Log("LoadInventory");
-        
-        foreach (var item in datas)
+        // TrashInventory
+        foreach (var item in trashInventoryDatas)
         {
-            Debug.Log(item.trashName + " " + item.trashNum);
-            trashInventory[item.trashName] = item.trashNum;
+            if (trashInventory.ContainsKey(item.trashName)) trashInventory[item.trashName] = item.trashNum;
+            else trashInventory.Add(item.trashName, item.trashNum);
+        }
+
+        // TrashRecycleInventory
+        foreach (var item in trashRecycleInventoryDatas)
+        {
+            if (trashRecycleInventory.ContainsKey(item.trashName)) trashRecycleInventory[item.trashName] = item.trashNum;
+            else trashRecycleInventory.Add(item.trashName, item.trashNum);
         }
     }
 
+
+    // 모든 쓰레기 숫자
     public int GetTrashNum()
     {
         int count = 0;
@@ -85,7 +97,7 @@ public class SaveFile
         return count;
     }
 
-
+    // 특정 쓰레기 숫자
     public int GetTrashNum(string trashName)
     {
         if (!trashInventory.ContainsKey(trashName)) return 0;
@@ -93,7 +105,8 @@ public class SaveFile
         return trashInventory[trashName];
     }
 
-    public List<Trash> GetTrashList()
+    // 랜덤한 쓰레기 종류 반환
+    public List<Trash> GetRandomTrashList()
     {
         List<Trash> list = new();
 
@@ -111,7 +124,7 @@ public class SaveFile
                 list.Add(t);
             }
         }
-        Debug.Log(list.Count);
+
         Utility.Shuffle(list);
         return list;
     }
@@ -121,7 +134,9 @@ public class SaveFile
         if (GetTrashNum(name) == 0) return;
 
         trashInventory[name]--;
-        Debug.Log(trashInventory[name]);
+
+        if(trashRecycleInventory.ContainsKey(name)) trashRecycleInventory[name]++;
+        else trashRecycleInventory.Add(name, 1);
     }
 
 }

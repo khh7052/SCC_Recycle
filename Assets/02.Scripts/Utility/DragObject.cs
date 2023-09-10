@@ -4,28 +4,61 @@ using UnityEngine;
 
 public class DragObject : MonoBehaviour
 {
+    private Animator anim;
     private Collider2D coll;
     private Vector3 offset;
 
+    public bool OnDrag
+    {
+        get { return enabled; }
+    }
+
     private void Awake()
     {
+        anim = GetComponent<Animator>();
         coll = GetComponent<Collider2D>();
+    }
+
+    private void Start()
+    {
+        
+    }
+
+    private void OnMouseEnter()
+    {
+        if (!OnDrag) return;
+
+        if (anim) anim.SetBool("OnMouse", true);
+    }
+
+    private void OnMouseExit()
+    {
+        if (!OnDrag) return;
+
+        if (anim) anim.SetBool("OnMouse", false);
     }
 
     private void OnMouseDown()
     {
-        coll.enabled = false;
+        if (!OnDrag) return;
+
+        coll.isTrigger = true;
         offset = transform.position - GetMousePos();
     }
 
     private void OnMouseDrag()
     {
+        if (!OnDrag) return;
+
         transform.position = GetMousePos() + offset;
     }
 
     private void OnMouseUp()
     {
-        coll.enabled = true;
+        if (!OnDrag) return;
+
+        transform.position = GetMousePos() + offset;
+        coll.isTrigger = false;
     }
 
     Vector3 GetMousePos()

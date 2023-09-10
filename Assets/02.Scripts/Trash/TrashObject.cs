@@ -15,6 +15,7 @@ public struct TrashObjectSetting
 
 public class TrashObject : MonoBehaviour
 {
+    public Trash trash;
     private Rigidbody2D rigd;
     private Collider2D coll;
     private DragObject dragObject;
@@ -28,12 +29,24 @@ public class TrashObject : MonoBehaviour
 
     private void OnEnable()
     {
+        NameUpdate();
         SettingUpdate();
+    }
+
+    void NameUpdate()
+    {
+        if (trash == null) return;
+
+        name = trash.trashSaveName;
     }
 
     void SettingUpdate()
     {
-        TrashObjectSetting setting = TrashManager.TrashObjectSetting[SceneManager.GetActiveScene().name];
+        string sceneName = SceneManager.GetActiveScene().name;
+        if (!TrashManager.TrashObjectSetting.ContainsKey(sceneName)) TrashManager.Instance.TrashSettingInit();
+        if (!TrashManager.TrashObjectSetting.ContainsKey(sceneName)) return;
+
+        TrashObjectSetting setting = TrashManager.TrashObjectSetting[sceneName];
 
         if(rigd != null)
         {
@@ -43,6 +56,26 @@ public class TrashObject : MonoBehaviour
 
         if(coll != null) coll.isTrigger = setting.isTrigger;
         if(dragObject != null) dragObject.enabled = setting.onDrag;
+    }
+
+    private void OnMouseEnter()
+    {
+        if (!enabled) return;
+
+        UIManager.Instance.ActiveTrashInformation(true);
+        UIManager.Instance.TrashInformationUpdate(trash);
+    }
+
+    private void OnMouseExit()
+    {
+        if (!enabled) return;
+
+        UIManager.Instance.ActiveTrashInformation(false);
+    }
+
+    private void OnMouseDown()
+    {
+        
     }
 
 }

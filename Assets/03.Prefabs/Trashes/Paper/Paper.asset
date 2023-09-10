@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Paper
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 87efd989460f6134fbbe861f42fb0077, type: 3}
-  trashName: "\uC885\uC774"
+  trashSaveName: "\uC885\uC77401"
+  trashRealName: "\uC885\uC774"
   description: 
-  type: 2
   trashObject: {fileID: 113704478545666410, guid: 1b63fc32e1edd49428a53b72d22b3423, type: 3}
+  trashTypeInformation: {fileID: 11400000, guid: ddfcbd7486af1ac4b991c8ce5f796600, type: 2}

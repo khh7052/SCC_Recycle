@@ -10,6 +10,7 @@ public class UIManager : Singleton<UIManager>
 {
     [Header("Common")]
     public GameObject uiOption;
+    public FadeText errorText;
 
     [Header("Collect Game")]
     public GameObject uiGameOver;
@@ -20,7 +21,10 @@ public class UIManager : Singleton<UIManager>
     [Header("SperateEmission")]
     public GameObject uiSperateError;
     public GameObject uiSperateGameEnd;
-    public TMP_Text currentTrashNumText; // 현재 남은 쓰레기 개수
+    public GameObject uiTrashInformation;
+    public TrashInformationText trashNameText;
+    public TrashInformationText trashDescriptionText;
+    public TrashInformationImage trashTypeImage;
 
     public override void Awake()
     {
@@ -33,6 +37,8 @@ public class UIManager : Singleton<UIManager>
         ActiveOption(false);
         ActiveGameOver(false);
         ActiveSperateGameEnd(false);
+        ActiveTrashInformation(false);
+        ErrorTextUpdate("");
     }
 
     public void LoadScene(string sceneName)
@@ -62,11 +68,20 @@ public class UIManager : Singleton<UIManager>
         uiOption.SetActive(active);
         Time.timeScale = active ? 0f : 1f;
     }
+
+
     public void ActiveGameOver(bool active)
     {
         if (!uiGameOver) return;
 
         uiGameOver.SetActive(active);
+    }
+
+    public void ErrorTextUpdate(string text)
+    {
+        if (!errorText) return;
+        errorText.TextUpdate(text);
+        errorText.StartFade();
     }
 
     public void TimeBarUpdate(float amount)
@@ -79,8 +94,8 @@ public class UIManager : Singleton<UIManager>
     {
         if (!scoreText) return;
         scoreText.text = amount.ToString("N0");
-
     }
+
     public void MaxScoreTextUpdate(float amount)
     {
         if (!maxScoreText) return;
@@ -103,12 +118,20 @@ public class UIManager : Singleton<UIManager>
         uiSperateGameEnd.SetActive(active);
     }
 
-    public void CurrentTrashNumTextUpdate()
+    public void ActiveTrashInformation(bool active)
     {
-        if (!currentTrashNumText) return;
+        if (!uiTrashInformation) return;
 
-        int trashNum = SaveManager.SaveFile.GetTrashNum();
-        currentTrashNumText.text = trashNum.ToString();
+        uiTrashInformation.SetActive(active);
+    }
+
+    public void TrashInformationUpdate(Trash trash)
+    {
+        if (trash == null) return;
+
+        if (trashNameText) trashNameText.TextUpdate(trash);
+        if (trashDescriptionText) trashDescriptionText.TextUpdate(trash);
+        if (trashTypeImage) trashTypeImage.ImageUpdate(trash);
     }
 
     #endregion

@@ -266,12 +266,12 @@ Transform:
   m_GameObject: {fileID: 7673112034836458763}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6, y: 2, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1639788659887723624}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8116774244919517913
 SpriteRenderer:
@@ -354,7 +354,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -382,5 +382,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f381a8fe7c0d8154e8a4449a8de9659f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnRecycle:
+    m_PersistentCalls:
+      m_Calls: []
   type: 0
   typeText: {fileID: 235635832340366359}
+  onRecycle: 0

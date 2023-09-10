@@ -51,12 +51,12 @@ MonoBehaviour:
     gravity: 0
     isTrigger: 1
     onDrag: 0
-  - sceneName: SperateEmissions
+  - sceneName: Seperate
     rigdType: 0
     gravity: 0
     isTrigger: 1
     onDrag: 1
-  - sceneName: SperateEmissions_Game
+  - sceneName: Emission
     rigdType: 0
     gravity: 1
     isTrigger: 0
