@@ -44,6 +44,13 @@ public class SeperateEmissionManager : Singleton<SeperateEmissionManager>
         trashNum--;
     }
     
+    public void TrashNumCheck()
+    {
+        if (SaveManager.SaveFile.GetTrashNum() == 0)
+        {
+            UIManager.Instance.ActiveSperateGameEnd(true);
+        }
+    }
 
     public void SuccessCheck()
     {
@@ -64,8 +71,6 @@ public class SeperateEmissionManager : Singleton<SeperateEmissionManager>
         {
             UIManager.Instance.ErrorTextUpdate("아직 쓰레기가 남아있습니다.");
         }
-
-        
     }
 
 
