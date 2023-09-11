@@ -49,5 +49,17 @@ MonoBehaviour:
     - m_Name: 2
       m_Hash: 450215437
       m_Sprite: {fileID: 206725048, guid: 8cbcb169534c31e48bcfe718dd561a13, type: 3}
+  - m_Name: Death
+    m_Hash: 646380074
+    m_CategoryList:
+    - m_Name: 0
+      m_Hash: 886824737
+      m_Sprite: {fileID: -608441165, guid: 8cbcb169534c31e48bcfe718dd561a13, type: 3}
+    - m_Name: 1
+      m_Hash: 64810935
+      m_Sprite: {fileID: -1308092052, guid: 8cbcb169534c31e48bcfe718dd561a13, type: 3}
+    - m_Name: 2
+      m_Hash: 450215437
+      m_Sprite: {fileID: -197616797, guid: 8cbcb169534c31e48bcfe718dd561a13, type: 3}
   m_ModificationHash: 0
   m_Version: 1

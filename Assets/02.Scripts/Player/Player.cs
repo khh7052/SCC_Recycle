@@ -75,6 +75,16 @@ public class Player : MonoBehaviour
         character.SetState(AnimationState.Jumping);
     }
 
+    public void Hit()
+    {
+        character.Animator.SetTrigger("Hit");
+    }
+
+    public void Death()
+    {
+        character.SetState(AnimationState.Dead);
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("Ground"))
