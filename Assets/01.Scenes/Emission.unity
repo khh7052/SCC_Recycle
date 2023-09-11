@@ -4502,7 +4502,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5001901592248326708, guid: 0d2a75f759133d84eb7c6939afb462f5, type: 3}
       propertyPath: OnRecycle.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: SperateEmissionManager, Assembly-CSharp
+      value: SeperateEmissionManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5001901592248326708, guid: 0d2a75f759133d84eb7c6939afb462f5, type: 3}
       propertyPath: OnRecycle.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -4918,6 +4918,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3403918457776303785, guid: 1f0cc42eadf19b342911350171dd0003, type: 3}
+      propertyPath: spawnRate
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3403918457776303785, guid: 1f0cc42eadf19b342911350171dd0003, type: 3}
       propertyPath: OnSpawn.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -5141,7 +5145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dir: {x: -1, y: 0}
-  speed: 1
+  speed: 0.5
 --- !u!1001 &1798828523
 PrefabInstance:
   m_ObjectHideFlags: 0
