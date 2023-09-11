@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5de27bfc3490e534182f271034c76419, type: 3}
   m_Name: Stage02
   m_EditorClassIdentifier: 
-  groundSprite: {fileID: 21300056, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}
+  groundSprite: {fileID: 21300000, guid: 0152c2d5fde7eef4b9143fa19b40ed5d, type: 3}
   skySprite: {fileID: 21300000, guid: 73c3f17bbee267148a2f224712eecba7, type: 3}
   patterns:
   - {fileID: 1563934818124191171, guid: 7c292e27eee5ee341905c08357826716, type: 3}

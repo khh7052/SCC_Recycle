@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Assets.PixelHeroes.Scripts.CharacterScrips;
+using AnimationState = Assets.PixelHeroes.Scripts.CharacterScrips.AnimationState;
 
 public class Player : MonoBehaviour
 {
@@ -22,19 +24,20 @@ public class Player : MonoBehaviour
     private bool isGround = false;
 
     private Rigidbody2D rigd;
-    private CharacterAnimationController animController;
+    private Character character;
 
     private void Awake()
     {
         rigd = GetComponent<Rigidbody2D>();
-        animController = GetComponent<CharacterAnimationController>();
+        character = GetComponent<Character>();
     }
 
     void Start()
     {
         jumpCurrentCount = 0;
-        animController.Run();
-        animController.SetVelocityX(10);
+
+        AnimUpdate();
+        print(character.GetState());
     }
 
     void Update()
@@ -51,16 +54,12 @@ public class Player : MonoBehaviour
             UIManager.Instance.ActiveOption(true);
         }
 
-        AnimUpdate();
+        print(character.GetState());
     }
 
     void AnimUpdate()
     {
-        Vector2 velocity = rigd.velocity;
-        velocity.y = isGround ? 0 : rigd.velocity.y;
-        
-        animController.SetVelocityY(velocity.y);
-        animController.SetIsGrounded(isGround);
+        character.SetState(AnimationState.Running);
     }
 
     void Jump()
@@ -72,6 +71,18 @@ public class Player : MonoBehaviour
         rigd.velocity = Vector2.zero;
         rigd.AddForce(power * Vector2.up, ForceMode2D.Impulse);
         SoundManager.Instance.PlaySFX("Jump");
+
+        character.SetState(AnimationState.Jumping);
+    }
+
+    public void Hit()
+    {
+        character.Animator.SetTrigger("Hit");
+    }
+
+    public void Death()
+    {
+        character.SetState(AnimationState.Dead);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -80,6 +91,8 @@ public class Player : MonoBehaviour
         {
             jumpCurrentCount = 0;
             isGround = true;
+
+            character.SetState(AnimationState.Running);
         }
     }
 

@@ -58,7 +58,7 @@ public class CharacterAnimationController : MonoBehaviour
 
     public void Run()
     {
-        animator.SetFloat("MoveBlend", 3f);
+        animator.SetBool("Running", true);
     }
 
     public void Dash(bool isDashing)
