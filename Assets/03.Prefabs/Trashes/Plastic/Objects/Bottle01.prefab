@@ -119,7 +119,7 @@ Transform:
   m_Children:
   - {fileID: 4411526669733267021}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &-7650956493343668343
 Animator:
@@ -205,7 +205,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
+    oldSize: {x: 0.5, y: 0.5}
     newSize: {x: 2, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -213,12 +213,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.1484375, y: 0.875}
-      - {x: -0.328125, y: 0.71875}
-      - {x: -0.328125, y: -0.875}
-      - {x: 0.328125, y: -0.875}
-      - {x: 0.328125, y: 0.46875}
-      - {x: 0.2421875, y: 0.875}
+    - - {x: -0.037109375, y: 0.21875}
+      - {x: -0.08203125, y: 0.1796875}
+      - {x: -0.08203125, y: -0.21875}
+      - {x: 0.08203125, y: -0.21875}
+      - {x: 0.08203125, y: 0.1171875}
+      - {x: 0.060546875, y: 0.21875}
   m_UseDelaunayMesh: 0
 --- !u!114 &6208505449631145929
 MonoBehaviour:
