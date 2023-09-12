@@ -92,6 +92,7 @@ public class Player : MonoBehaviour
             jumpCurrentCount = 0;
             isGround = true;
 
+            if (!GameManager.IsLive) return;
             character.SetState(AnimationState.Running);
         }
     }
