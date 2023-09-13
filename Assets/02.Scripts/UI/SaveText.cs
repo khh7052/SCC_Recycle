@@ -13,6 +13,7 @@ public enum TextType
 public class SaveText : MonoBehaviour
 {
     public TextType type;
+    public TrashType recycleType;
     TMP_Text text;
 
     private void Awake()
@@ -26,7 +27,7 @@ public class SaveText : MonoBehaviour
         switch (type)
         {
             case TextType.POINT:
-                text.text = saveFile.recyclePoint.ToString();
+                text.text = saveFile.GetRecyclePoint(recycleType).ToString();
                 break;
             case TextType.SCORE:
                 text.text = saveFile.score.ToString();

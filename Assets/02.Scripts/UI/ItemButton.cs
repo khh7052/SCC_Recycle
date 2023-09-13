@@ -8,12 +8,18 @@ public class ItemButton : MonoBehaviour
 {
     public Image iconImage;
     public TMP_Text nameText;
-    public TMP_Text pointText;
+    public Transform costParent;
+
     public Item item;
+    public ItemCostUI costUI;
 
     private void Awake()
     {
         Init();
+    }
+    private void Start()
+    {
+        CreateCostUI();
     }
 
     void Init()
@@ -22,12 +28,53 @@ public class ItemButton : MonoBehaviour
         {
             iconImage.sprite = null;
             nameText.text = "";
-            pointText.text = "";
             return;
         }
 
-        iconImage.sprite = item.sprite;
-        nameText.text = item.itemName;
-        pointText.text = item.point.ToString();
+        if(iconImage) iconImage.sprite = item.sprite;
+        if(nameText) nameText.text = item.itemName;
+    }
+
+    public void OnButtonClick()
+    {
+        UIManager.Instance.ActiveItemInventory(false);
+        UIManager.Instance.ActiveItemCreate(true);
+        UIManager.Instance.ItemButtonUpdate(item);
+    }
+    
+
+    [ContextMenu("Create Cost UI")]
+    public void CreateCostUI()
+    {
+        if (costUI == null) return;
+        if (costParent == null) return;
+
+        for (int i = costParent.childCount-1; i >= 0; i--)
+        {
+            DestroyImmediate(costParent.GetChild(i).gameObject);
+        }
+
+        foreach (var data in item.costDatas)
+        {
+            ItemCostUI ui = Instantiate(costUI, costParent);
+            ui.UI_Update(data);
+        }
+    }
+
+    public void CreateCostUI(Item item)
+    {
+        if (costUI == null) return;
+        if (costParent == null) return;
+
+        for (int i = costParent.childCount - 1; i >= 0; i--)
+        {
+            DestroyImmediate(costParent.GetChild(i).gameObject);
+        }
+
+        foreach (var data in item.costDatas)
+        {
+            ItemCostUI ui = Instantiate(costUI, costParent);
+            ui.UI_Update(data);
+        }
     }
 }
