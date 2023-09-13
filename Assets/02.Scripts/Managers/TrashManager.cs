@@ -10,6 +10,9 @@ public class TrashManager : Singleton<TrashManager>
     public Trash[] trashes;
     public static SortedDictionary<string, Trash> TrashInform = new();
 
+    public TrashTypeInformation[] typeInformations;
+    public static SortedDictionary<TrashType, TrashTypeInformation> TrashTypeInform = new();
+
     public override void Awake()
     {
         base.Awake();
@@ -28,6 +31,17 @@ public class TrashManager : Singleton<TrashManager>
         return TrashInform[name];
     }
 
+    public TrashTypeInformation GetTrashTypeInform(TrashType type)
+    {
+        if (!TrashTypeInform.ContainsKey(type))
+        {
+            TrashTypeInformInit();
+            if (!TrashTypeInform.ContainsKey(type)) return null;
+        }
+
+        return TrashTypeInform[type];
+    }
+
     public void TrashInformInit()
     {
         TrashInform.Clear();
@@ -35,6 +49,16 @@ public class TrashManager : Singleton<TrashManager>
         foreach (var trash in trashes)
         {
             TrashInform.Add(trash.trashSaveName, trash);
+        }
+    }
+
+    public void TrashTypeInformInit()
+    {
+        TrashTypeInform.Clear();
+
+        foreach (var type in typeInformations)
+        {
+            TrashTypeInform.Add(type.trashType, type);
         }
     }
 

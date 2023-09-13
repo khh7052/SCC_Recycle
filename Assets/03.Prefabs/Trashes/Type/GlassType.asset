@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   typeName: "\uC720\uB9AC"
   trashType: 3
-  typeSprite: {fileID: 21300000, guid: 22b905a892d37cb4b8280da615c9d41c, type: 3}
+  typeSprite: {fileID: 21300000, guid: 1a72881d3318f7b49b2be74e6f1613b2, type: 3}
   description: 

@@ -17,15 +17,27 @@ public class TrashSaveData
     }
 }
 
+[System.Serializable]
+public class RecycleSaveData
+{
+    public TrashType trashType;
+    public int recyclePoint;
+
+    public RecycleSaveData(TrashType trashType, int point)
+    {
+        this.trashType = trashType;
+        recyclePoint = point;
+    }
+}
+
 public class SaveFile
 {
     public int score;
     public int maxScore;
-    public int recyclePoint;
     public TrashSaveData[] trashInventoryDatas;
-    public TrashSaveData[] trashRecycleInventoryDatas;
+    public RecycleSaveData[] recycleInventorySaveDatas;
     private SortedDictionary<string, int> trashInventory = new();
-    private SortedDictionary<string, int> trashRecycleInventory = new();
+    private SortedDictionary<TrashType, int> recycleInventory = new();
 
 
     public SortedDictionary<string, int> TrashInventory
@@ -53,16 +65,19 @@ public class SaveFile
         }
 
         trashInventoryDatas = trashSaveDatas.ToArray();
+    }
 
-        // TrashRecycleInventory
-        trashSaveDatas.Clear();
+    public void SaveRecycleInventory()
+    {
+        List<RecycleSaveData> recycleSaveDatas = new();
 
-        foreach (var item in trashRecycleInventory)
+        // RecycleInventory
+        foreach (var item in recycleInventory)
         {
-            trashSaveDatas.Add(new(item.Key, item.Value));
+            recycleSaveDatas.Add(new(item.Key, item.Value));
         }
 
-        trashRecycleInventoryDatas = trashSaveDatas.ToArray();
+        recycleInventorySaveDatas = recycleSaveDatas.ToArray();
     }
 
     // 인벤토리 불러오기
@@ -74,12 +89,15 @@ public class SaveFile
             if (trashInventory.ContainsKey(item.trashName)) trashInventory[item.trashName] = item.trashNum;
             else trashInventory.Add(item.trashName, item.trashNum);
         }
+    }
 
-        // TrashRecycleInventory
-        foreach (var item in trashRecycleInventoryDatas)
+    public void LoadRecycleInventory()
+    {
+        // RecycleInventory
+        foreach (var item in recycleInventorySaveDatas)
         {
-            if (trashRecycleInventory.ContainsKey(item.trashName)) trashRecycleInventory[item.trashName] = item.trashNum;
-            else trashRecycleInventory.Add(item.trashName, item.trashNum);
+            if (recycleInventory.ContainsKey(item.trashType)) recycleInventory[item.trashType] = item.recyclePoint;
+            else recycleInventory.Add(item.trashType, item.recyclePoint);
         }
     }
 
@@ -129,14 +147,22 @@ public class SaveFile
         return list;
     }
 
+    // 모든 쓰레기 숫자
+    public int GetRecyclePoint(TrashType type)
+    {
+        return recycleInventory.ContainsKey(type)? recycleInventory[type]: 0;
+    }
+
     public void RecycleTrash(string name)
     {
         if (GetTrashNum(name) == 0) return;
 
         trashInventory[name]--;
 
-        if(trashRecycleInventory.ContainsKey(name)) trashRecycleInventory[name]++;
-        else trashRecycleInventory.Add(name, 1);
+        Trash trash = TrashManager.Instance.GetTrashInform(name);
+
+        if(recycleInventory.ContainsKey(trash.Type)) recycleInventory[trash.Type]++;
+        else recycleInventory.Add(trash.Type, 1);
     }
 
 }
@@ -167,11 +193,12 @@ public class SaveManager : MonoBehaviour
 
     public static void Save()
     {
-        // Score
+        // Score Score
         saveFile.SaveScore();
 
-        // TrashSaveData
+        // Save Data
         saveFile.SaveTrashInventory();
+        saveFile.SaveRecycleInventory();
 
         // Save
         string json = JsonUtility.ToJson(saveFile);
@@ -191,10 +218,13 @@ public class SaveManager : MonoBehaviour
     {
         string json = File.ReadAllText(path);
         saveFile = JsonUtility.FromJson<SaveFile>(json);
+
+        // Load Data
         saveFile.LoadTrashInventory();
+        saveFile.LoadRecycleInventory();
+
         OnLoad.Invoke(saveFile);
     }
-
 
     private void Start()
     {
