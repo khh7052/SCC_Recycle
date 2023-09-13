@@ -24,6 +24,11 @@ public class ItemButton : MonoBehaviour
 
     void Init()
     {
+        ItemUIUpdate();
+    }
+
+    void ItemUIUpdate()
+    {
         if (!item)
         {
             iconImage.sprite = null;
@@ -31,8 +36,8 @@ public class ItemButton : MonoBehaviour
             return;
         }
 
-        if(iconImage) iconImage.sprite = item.sprite;
-        if(nameText) nameText.text = item.itemName;
+        if (iconImage) iconImage.sprite = item.sprite;
+        if (nameText) nameText.text = item.itemName;
     }
 
     public void OnButtonClick()
@@ -48,6 +53,7 @@ public class ItemButton : MonoBehaviour
     {
         if (costUI == null) return;
         if (costParent == null) return;
+        if (item == null) return;
 
         for (int i = costParent.childCount-1; i >= 0; i--)
         {
@@ -59,22 +65,13 @@ public class ItemButton : MonoBehaviour
             ItemCostUI ui = Instantiate(costUI, costParent);
             ui.UI_Update(data);
         }
+
+        ItemUIUpdate();
     }
 
     public void CreateCostUI(Item item)
     {
-        if (costUI == null) return;
-        if (costParent == null) return;
-
-        for (int i = costParent.childCount - 1; i >= 0; i--)
-        {
-            DestroyImmediate(costParent.GetChild(i).gameObject);
-        }
-
-        foreach (var data in item.costDatas)
-        {
-            ItemCostUI ui = Instantiate(costUI, costParent);
-            ui.UI_Update(data);
-        }
+        this.item = item;
+        CreateCostUI();
     }
 }
