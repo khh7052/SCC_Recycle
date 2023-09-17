@@ -91,6 +91,9 @@ public class UIManager : Singleton<UIManager>
         if (!errorText) return;
         errorText.TextUpdate(text);
         errorText.StartFade();
+
+        if(text != "")
+            SoundManager.Instance.PlaySFX("Error");
     }
     #endregion
 
@@ -168,6 +171,12 @@ public class UIManager : Singleton<UIManager>
 
         createItemButton.CreateCostUI(item);
         makeButton.item = item;
+    }
+
+    public void OnRecycleBackButton()
+    {
+        ActiveItemInventory(true);
+        ActiveItemCreate(false);
     }
 
     #endregion
