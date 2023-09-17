@@ -16,5 +16,5 @@ MonoBehaviour:
   itemName: "\uD14C\uC2A4\uD2B8 \uC544\uC774\uD15C"
   description: 
   costDatas:
-  - trashType: 0
+  - trashType: 1
     cost: 2

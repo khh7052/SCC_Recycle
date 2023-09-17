@@ -2429,42 +2429,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4882158929424426221, guid: 4d6c2209adb324a49acfedd229945224, type: 3}
-      propertyPath: sfxSounds.Array.size
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4882158929424426221, guid: 4d6c2209adb324a49acfedd229945224, type: 3}
-      propertyPath: sfxSounds.Array.data[8].name
-      value: Correct
-      objectReference: {fileID: 0}
-    - target: {fileID: 4882158929424426221, guid: 4d6c2209adb324a49acfedd229945224, type: 3}
-      propertyPath: sfxSounds.Array.data[9].name
-      value: Incorrect
-      objectReference: {fileID: 0}
-    - target: {fileID: 4882158929424426221, guid: 4d6c2209adb324a49acfedd229945224, type: 3}
-      propertyPath: sfxSounds.Array.data[8].volume
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4882158929424426221, guid: 4d6c2209adb324a49acfedd229945224, type: 3}
-      propertyPath: sfxSounds.Array.data[9].volume
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4882158929424426221, guid: 4d6c2209adb324a49acfedd229945224, type: 3}
-      propertyPath: sfxSounds.Array.data[8].clips.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4882158929424426221, guid: 4d6c2209adb324a49acfedd229945224, type: 3}
-      propertyPath: sfxSounds.Array.data[9].clips.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4882158929424426221, guid: 4d6c2209adb324a49acfedd229945224, type: 3}
-      propertyPath: sfxSounds.Array.data[8].clips.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: aae4cc67359e794458e7812208a2a822, type: 3}
-    - target: {fileID: 4882158929424426221, guid: 4d6c2209adb324a49acfedd229945224, type: 3}
-      propertyPath: sfxSounds.Array.data[9].clips.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: 748bfaff907ecaa4b9ead1b20071465f, type: 3}
     - target: {fileID: 8234366570533540025, guid: 4d6c2209adb324a49acfedd229945224, type: 3}
       propertyPath: m_Name
       value: SoundManager
@@ -6204,6 +6168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 575ff3bb4b212104993f6c6b152ad059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeDelay: 1
   targetTime: 1
   startAlpha: 1
   endAlpha: 0

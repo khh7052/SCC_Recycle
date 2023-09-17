@@ -12,5 +12,9 @@ public class MakeButton : MonoBehaviour
         {
             UIManager.Instance.ErrorTextUpdate("현재 재료가 부족합니다!");
         }
+        else
+        {
+            SoundManager.Instance.PlaySFX("ItemMake");
+        }
     }
 }
