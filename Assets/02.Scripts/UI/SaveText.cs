@@ -20,24 +20,29 @@ public class SaveText : MonoBehaviour
     {
         text = GetComponent<TMP_Text>();
         SaveManager.OnLoad.AddListener(Init);
+        SaveFile.OnChange.AddListener(TextUpdate);
     }
 
     void Init(SaveFile saveFile)
     {
+        TextUpdate();
+    }
+
+    public void TextUpdate()
+    {
         switch (type)
         {
             case TextType.POINT:
-                text.text = saveFile.GetRecyclePoint(recycleType).ToString();
+                text.text = SaveManager.SaveFile.GetRecyclePoint(recycleType).ToString();
                 break;
             case TextType.SCORE:
-                text.text = saveFile.score.ToString();
+                text.text = SaveManager.SaveFile.score.ToString();
                 break;
             case TextType.MAX_SCORE:
-                text.text = saveFile.maxScore.ToString();
+                text.text = SaveManager.SaveFile.maxScore.ToString();
                 break;
             default:
                 break;
         }
-
     }
 }

@@ -5,6 +5,7 @@ using TMPro;
 
 public class FadeText : MonoBehaviour
 {
+    public float fadeDelay = 1f;
     public float targetTime = 1f;
     public float startAlpha = 0f;
     public float endAlpha = 0f;
@@ -40,9 +41,10 @@ public class FadeText : MonoBehaviour
     IEnumerator Fade()
     {
         isFading = true;
-        float time = 0f;
         text.alpha = startAlpha;
+        yield return new WaitForSeconds(fadeDelay);
 
+        float time = 0f;
         while (time < targetTime)
         {
             time += Time.deltaTime;

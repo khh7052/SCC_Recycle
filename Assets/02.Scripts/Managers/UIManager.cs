@@ -30,6 +30,7 @@ public class UIManager : Singleton<UIManager>
     public GameObject uiItemInventory;
     public GameObject uiItemCreate;
     public ItemButton createItemButton;
+    public MakeButton makeButton;
 
 
     public override void Awake()
@@ -166,6 +167,7 @@ public class UIManager : Singleton<UIManager>
         if (item == null) return;
 
         createItemButton.CreateCostUI(item);
+        makeButton.item = item;
     }
 
     #endregion
