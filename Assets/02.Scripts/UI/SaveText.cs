@@ -5,7 +5,8 @@ using TMPro;
 
 public enum TextType
 {
-    POINT,
+    RECYCLE_POINT, // 재활용 포인트
+    ITEM_NUM, // 아이템 개수
     SCORE,
     MAX_SCORE
 }
@@ -14,6 +15,7 @@ public class SaveText : MonoBehaviour
 {
     public TextType type;
     public TrashType recycleType;
+    public string itemName;
     TMP_Text text;
 
     private void Awake()
@@ -32,8 +34,11 @@ public class SaveText : MonoBehaviour
     {
         switch (type)
         {
-            case TextType.POINT:
+            case TextType.RECYCLE_POINT:
                 text.text = SaveManager.SaveFile.GetRecyclePoint(recycleType).ToString();
+                break;
+            case TextType.ITEM_NUM:
+                text.text = SaveManager.SaveFile.GetItemNum(itemName).ToString();
                 break;
             case TextType.SCORE:
                 text.text = SaveManager.SaveFile.score.ToString();

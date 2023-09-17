@@ -8,6 +8,7 @@ public class ItemButton : MonoBehaviour
 {
     public Image iconImage;
     public TMP_Text nameText;
+    public TMP_Text numText;
     public Transform costParent;
 
     public Item item;
@@ -16,6 +17,7 @@ public class ItemButton : MonoBehaviour
     private void Awake()
     {
         Init();
+        SaveFile.OnChange.AddListener(NumTextUpdate);
     }
     private void Start()
     {
@@ -25,6 +27,11 @@ public class ItemButton : MonoBehaviour
     void Init()
     {
         ItemUIUpdate();
+    }
+
+    void NumTextUpdate()
+    {
+        if (numText) numText.text = SaveManager.SaveFile.GetItemNum(item.itemName).ToString();
     }
 
     void ItemUIUpdate()
@@ -38,6 +45,7 @@ public class ItemButton : MonoBehaviour
 
         if (iconImage) iconImage.sprite = item.sprite;
         if (nameText) nameText.text = item.itemName;
+        NumTextUpdate();
     }
 
     public void OnButtonClick()
