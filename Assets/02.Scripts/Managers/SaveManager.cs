@@ -189,10 +189,16 @@ public class SaveFile
         return list;
     }
 
-    // 모든 쓰레기 숫자
+    // 재활용 포인트
     public int GetRecyclePoint(TrashType type)
     {
         return recycleInventory.ContainsKey(type)? recycleInventory[type]: 0;
+    }
+
+    // 재활용 아이템 개수
+    public int GetItemNum(string name)
+    {
+        return itemInventory.ContainsKey(name) ? itemInventory[name] : 0;
     }
 
     public void RecycleTrash(string name)
