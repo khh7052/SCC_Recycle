@@ -7,7 +7,7 @@ public class Conveyor : MonoBehaviour
     public Vector2 dir = Vector2.left;
     public float speed = 1f;
 
-    private HashSet<Transform> hitTransfomrs = new();
+    private HashSet<Transform> hitTransforms = new();
 
     private void FixedUpdate()
     {
@@ -16,7 +16,7 @@ public class Conveyor : MonoBehaviour
 
     void Move()
     {
-        foreach (var item in hitTransfomrs)
+        foreach (var item in hitTransforms)
         {
             item.transform.Translate(speed * Time.fixedDeltaTime * dir, Space.World);
         }
@@ -24,12 +24,12 @@ public class Conveyor : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (hitTransfomrs.Contains(collision.transform)) return;
-        hitTransfomrs.Add(collision.transform);
+        if (hitTransforms.Contains(collision.transform)) return;
+        hitTransforms.Add(collision.transform);
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        hitTransfomrs.Remove(collision.transform);
+        hitTransforms.Remove(collision.transform);
     }
 }

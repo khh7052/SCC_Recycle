@@ -23,30 +23,25 @@ public class TrashCan : MonoBehaviour
         typeText.text = type.ToString();
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("OnTriggerEnter2D " + collision.gameObject.name);
+
         if (collision.gameObject.CompareTag("Trash"))
         {
-            Trash trash = TrashManager.Instance.GetTrashInform(collision.gameObject.name);
+            TrashObject trashObject = collision.gameObject.GetComponent<TrashObject>();
 
-            if (trash == null) return;
+            if (trashObject == null) return;
+            Trash trash = trashObject.trash;
+            string sound = (trash.Type == type) ? "Correct" : "Incorrect";
+            trashObject.StartEquip(sound);
 
-            if (trash.Type == type)
-            {
-                count++;
-                SoundManager.Instance.PlaySFX("Correct");
-            }
-            else
-            {
-                SoundManager.Instance.PlaySFX("Incorrect");
-            }
+            if (trash.Type == type) count++;
 
             if (onRecycle) SaveManager.SaveFile.RecycleTrash(collision.gameObject.name);
-            collision.gameObject.SetActive(false);
 
             OnRecycle.Invoke();
         }
     }
-
 
 }
