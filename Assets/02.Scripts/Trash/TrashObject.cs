@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 [System.Serializable]
 public struct TrashObjectSetting
@@ -15,11 +16,14 @@ public struct TrashObjectSetting
 
 public class TrashObject : MonoBehaviour
 {
+    public UnityEvent OnEndEquip = new();
+
     public Trash trash;
     private Rigidbody2D rigd;
     private Collider2D coll;
     private DragObject dragObject;
     private Animator animator;
+    private string equipSFX = "Trash";
 
     private void Awake()
     {
@@ -60,18 +64,24 @@ public class TrashObject : MonoBehaviour
         if(dragObject != null) dragObject.enabled = setting.onDrag;
     }
 
-    public void StartEquip()
+    public void StartEquip(string equipSFXName)
     {
         coll.enabled = false;
+        rigd.bodyType = RigidbodyType2D.Static;
+        equipSFX = equipSFXName;
         animator.SetTrigger("Equip");
     }
 
     public void EndEquip()
     {
-        TrashManager.Instance.AddTrash(trash.trashSaveName);
+        if(SceneManager.GetActiveScene().name == "Play")
+            TrashManager.Instance.AddTrash(trash.trashSaveName);
+
         gameObject.SetActive(false);
         coll.enabled = true;
-        SoundManager.Instance.PlaySFX("Trash");
+        SoundManager.Instance.PlaySFX(equipSFX);
+
+        OnEndEquip.Invoke();
     }
 
     private void OnMouseEnter()
@@ -87,11 +97,6 @@ public class TrashObject : MonoBehaviour
         if (!enabled) return;
 
         UIManager.Instance.ActiveTrashInformation(false);
-    }
-
-    private void OnMouseDown()
-    {
-        
     }
 
 }

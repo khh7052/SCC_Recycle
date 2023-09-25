@@ -122,7 +122,7 @@ public class Player : MonoBehaviour
         {
             TrashObject trash = collision.gameObject.GetComponent<TrashObject>();
 
-            trash.StartEquip();
+            trash.StartEquip("Trash");
         }
     }
 }

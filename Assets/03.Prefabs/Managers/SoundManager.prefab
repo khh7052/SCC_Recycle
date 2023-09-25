@@ -322,7 +322,7 @@ MonoBehaviour:
     clips:
     - {fileID: 8300000, guid: 35357de0c9f9b2a4bba6215cd9a39a4b, type: 3}
     volume: 1
-  - name: ChestOpen
+  - name: Correct
     clips:
     - {fileID: 8300000, guid: aae4cc67359e794458e7812208a2a822, type: 3}
     - {fileID: 8300000, guid: f4c69b108b51a4f49b19e1e3a8b14223, type: 3}
