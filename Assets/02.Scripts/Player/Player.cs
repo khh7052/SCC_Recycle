@@ -53,8 +53,6 @@ public class Player : MonoBehaviour
         {
             UIManager.Instance.ActiveOption(true);
         }
-
-        print(character.GetState());
     }
 
     void AnimUpdate()
