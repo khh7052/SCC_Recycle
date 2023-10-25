@@ -1,1 +1,3 @@
-{"score":24928,"maxScore":844,"trashInventoryDatas":[{"trashName":"유리병01","trashNum":2},{"trashName":"종이01","trashNum":2},{"trashName":"캔01","trashNum":8},{"trashName":"테스트 아이템","trashNum":11},{"trashName":"페트병01","trashNum":0},{"trashName":"페트병02","trashNum":0},{"trashName":"페트병03","trashNum":0},{"trashName":"페트병04","trashNum":2}],"itemInventoryDatas":[{"itemName":"테스트 아이템","itemNum":1}],"recycleInventorySaveDatas":[{"trashType":0,"recyclePoint":11},{"trashType":1,"recyclePoint":4},{"trashType":2,"recyclePoint":20},{"trashType":3,"recyclePoint":21}]}
+version https://git-lfs.github.com/spec/v1
+oid sha256:71f0b04ae1057f753814c8e75fa9e68d7fb983ac4125bbf4b7a5d7f3e0cc2ca6
+size 617

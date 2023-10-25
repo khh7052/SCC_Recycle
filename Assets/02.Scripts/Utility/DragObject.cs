@@ -19,11 +19,6 @@ public class DragObject : MonoBehaviour
         coll = GetComponent<Collider2D>();
     }
 
-    private void Start()
-    {
-        
-    }
-
     private void OnMouseEnter()
     {
         if (!OnDrag) return;

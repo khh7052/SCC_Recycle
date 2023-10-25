@@ -6,8 +6,10 @@ public enum TrashType
 {
     CAN,
     PLASTIC,
+    VINYL,
     PAPER,
     GLASS,
+    COMMON,
     LENGTH
 }
 
