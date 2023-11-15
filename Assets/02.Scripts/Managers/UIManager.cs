@@ -21,6 +21,8 @@ public class UIManager : Singleton<UIManager>
     [Header("SperateEmission")]
     public GameObject uiSperateError;
     public GameObject uiSperateGameEnd;
+    public TMP_Text correctText;
+    public TMP_Text incorrectText;
     public GameObject uiTrashInformation;
     public TrashInformationText trashNameText;
     public TrashInformationText trashDescriptionText;

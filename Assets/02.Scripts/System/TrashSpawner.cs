@@ -52,13 +52,14 @@ public class TrashSpawner : MonoBehaviour
 
     IEnumerator Spawn(SaveFile saveFile)
     {
-        OnSpawnStart.Invoke();
-
         WaitForSeconds wait = new(spawnRate);
         WaitUntil until = new(() => onSpawn);
 
         List<Trash> trashList = saveFile.GetRandomTrashList();
         restSpawnCount = trashList.Count;
+        print(restSpawnCount);
+        
+        OnSpawnStart.Invoke();
 
         foreach (var trash in trashList)
         {
