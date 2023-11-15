@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 [System.Serializable]
 public struct TrashObjectSetting
@@ -15,16 +16,21 @@ public struct TrashObjectSetting
 
 public class TrashObject : MonoBehaviour
 {
+    public UnityEvent OnEndEquip = new();
+
     public Trash trash;
     private Rigidbody2D rigd;
     private Collider2D coll;
     private DragObject dragObject;
+    private Animator animator;
+    private string equipSFX = "Trash";
 
     private void Awake()
     {
         rigd = GetComponent<Rigidbody2D>();
         coll = GetComponent<Collider2D>();
         dragObject = GetComponent<DragObject>();
+        animator = GetComponent<Animator>();
     }
 
     private void OnEnable()
@@ -58,6 +64,26 @@ public class TrashObject : MonoBehaviour
         if(dragObject != null) dragObject.enabled = setting.onDrag;
     }
 
+    public void StartEquip(string equipSFXName)
+    {
+        coll.enabled = false;
+        rigd.bodyType = RigidbodyType2D.Static;
+        equipSFX = equipSFXName;
+        animator.SetTrigger("Equip");
+    }
+
+    public void EndEquip()
+    {
+        if(SceneManager.GetActiveScene().name == "Play")
+            TrashManager.Instance.AddTrash(trash.trashSaveName);
+
+        gameObject.SetActive(false);
+        coll.enabled = true;
+        SoundManager.Instance.PlaySFX(equipSFX);
+
+        OnEndEquip.Invoke();
+    }
+
     private void OnMouseEnter()
     {
         if (!enabled) return;
@@ -71,11 +97,6 @@ public class TrashObject : MonoBehaviour
         if (!enabled) return;
 
         UIManager.Instance.ActiveTrashInformation(false);
-    }
-
-    private void OnMouseDown()
-    {
-        
     }
 
 }

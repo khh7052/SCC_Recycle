@@ -21,6 +21,8 @@ public class UIManager : Singleton<UIManager>
     [Header("SperateEmission")]
     public GameObject uiSperateError;
     public GameObject uiSperateGameEnd;
+    public TMP_Text correctText;
+    public TMP_Text incorrectText;
     public GameObject uiTrashInformation;
     public TrashInformationText trashNameText;
     public TrashInformationText trashDescriptionText;
@@ -30,6 +32,7 @@ public class UIManager : Singleton<UIManager>
     public GameObject uiItemInventory;
     public GameObject uiItemCreate;
     public ItemButton createItemButton;
+    public MakeButton makeButton;
 
 
     public override void Awake()
@@ -90,6 +93,9 @@ public class UIManager : Singleton<UIManager>
         if (!errorText) return;
         errorText.TextUpdate(text);
         errorText.StartFade();
+
+        if(text != "")
+            SoundManager.Instance.PlaySFX("Error");
     }
     #endregion
 
@@ -166,6 +172,13 @@ public class UIManager : Singleton<UIManager>
         if (item == null) return;
 
         createItemButton.CreateCostUI(item);
+        makeButton.item = item;
+    }
+
+    public void OnRecycleBackButton()
+    {
+        ActiveItemInventory(true);
+        ActiveItemCreate(false);
     }
 
     #endregion

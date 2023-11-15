@@ -53,8 +53,6 @@ public class Player : MonoBehaviour
         {
             UIManager.Instance.ActiveOption(true);
         }
-
-        print(character.GetState());
     }
 
     void AnimUpdate()
@@ -120,9 +118,9 @@ public class Player : MonoBehaviour
         }
         else if (collision.CompareTag("Trash"))
         {
-            collision.gameObject.SetActive(false);
-            SoundManager.Instance.PlaySFX("Trash");
-            TrashManager.Instance.AddTrash(collision.name);
+            TrashObject trash = collision.gameObject.GetComponent<TrashObject>();
+
+            trash.StartEquip("Trash");
         }
     }
 }

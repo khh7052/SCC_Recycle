@@ -55,10 +55,10 @@ MonoBehaviour:
     rigdType: 0
     gravity: 0
     isTrigger: 1
-    onDrag: 1
+    onDrag: 0
   - sceneName: Emission
     rigdType: 0
-    gravity: 1
+    gravity: 0.2
     isTrigger: 0
     onDrag: 1
   trashes:

@@ -288,7 +288,7 @@ Transform:
   - {fileID: 1347600395583317571}
   - {fileID: 5814790791994402825}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4882158929424426221
 MonoBehaviour:
@@ -322,14 +322,10 @@ MonoBehaviour:
     clips:
     - {fileID: 8300000, guid: 35357de0c9f9b2a4bba6215cd9a39a4b, type: 3}
     volume: 1
-  - name: ChestOpen
+  - name: Correct
     clips:
     - {fileID: 8300000, guid: aae4cc67359e794458e7812208a2a822, type: 3}
     - {fileID: 8300000, guid: f4c69b108b51a4f49b19e1e3a8b14223, type: 3}
-    volume: 1
-  - name: Switch
-    clips:
-    - {fileID: 8300000, guid: 299f19e4dd256c241ab74cd3c9c5c1f4, type: 3}
     volume: 1
   - name: Step
     clips:
@@ -349,6 +345,20 @@ MonoBehaviour:
   - name: Trash
     clips:
     - {fileID: 8300000, guid: aae4cc67359e794458e7812208a2a822, type: 3}
+    volume: 0.6
+  - name: ItemMake
+    clips:
+    - {fileID: 8300000, guid: b3a414cb14a90c44bbb3423375fa7cbc, type: 3}
+    - {fileID: 8300000, guid: 12a13acc852399f4b89922f4f7499090, type: 3}
+    - {fileID: 8300000, guid: 822547082ff005c439165f81962934f4, type: 3}
+    volume: 0.6
+  - name: Error
+    clips:
+    - {fileID: 8300000, guid: 5fb8b675a9e66f945b29a97a5ff2f995, type: 3}
+    volume: 0.6
+  - name: Incorrect
+    clips:
+    - {fileID: 8300000, guid: 748bfaff907ecaa4b9ead1b20071465f, type: 3}
     volume: 0.6
   sfxSpeaker: {fileID: 5869814330490394311}
   bgmVolume: 1

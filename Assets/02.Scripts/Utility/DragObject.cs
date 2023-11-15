@@ -19,11 +19,6 @@ public class DragObject : MonoBehaviour
         coll = GetComponent<Collider2D>();
     }
 
-    private void Start()
-    {
-        
-    }
-
     private void OnMouseEnter()
     {
         if (!OnDrag) return;
@@ -42,7 +37,8 @@ public class DragObject : MonoBehaviour
     {
         if (!OnDrag) return;
 
-        coll.isTrigger = true;
+        coll.enabled = false;
+        //coll.isTrigger = true;
         offset = transform.position - GetMousePos();
     }
 
@@ -58,7 +54,8 @@ public class DragObject : MonoBehaviour
         if (!OnDrag) return;
 
         transform.position = GetMousePos() + offset;
-        coll.isTrigger = false;
+        //coll.isTrigger = false;
+        coll.enabled = true;
     }
 
     Vector3 GetMousePos()

@@ -6,6 +6,8 @@ public class SeperateEmissionManager : Singleton<SeperateEmissionManager>
 {
     public TrashSpawner spawner;
     private int trashNum = 0;
+    public RecycleActType currentActType;
+    private Trash currentTrash;
 
     public override void Awake()
     {
@@ -33,12 +35,6 @@ public class SeperateEmissionManager : Singleton<SeperateEmissionManager>
         trashNum = trashObject.GetComponentsInChildren<TrashObject>().Length;
         print(trashNum);
     }
-
-    public void TrashCheck()
-    {
-
-    }
-
     public void WasteTrash()
     {
         trashNum--;
@@ -72,14 +68,4 @@ public class SeperateEmissionManager : Singleton<SeperateEmissionManager>
             UIManager.Instance.ErrorTextUpdate("아직 쓰레기가 남아있습니다.");
         }
     }
-
-
-    // 1. 쓰레기를 생성함
-    // 2. 쓰레기를 절차대로 재활용함
-    // 3. 쓰레기의 모든 부분을 절차대로 처리했는지 확인
-    // 4. 쓰레기를
-
-    // 손(쓰레기 분리용), 송곳(부탄가스 가스빼기용)
-    // 싱크대(헹굴때 필요), 통(분리한 쓰레기 담아둘곳)
-
 }
