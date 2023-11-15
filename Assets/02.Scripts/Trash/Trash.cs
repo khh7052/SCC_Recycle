@@ -5,8 +5,27 @@ using UnityEngine;
 public enum TrashType
 {
     CAN,
+    CAN_ALUMINUM,
+    CAN_METAL,
+    CAN_END,
     PLASTIC,
+    PLASTIC_HDPE,
+    PLASTIC_LDPE,
+    PLASTIC_OTHER,
+    PLASTIC_PP,
+    PLASTIC_PS,
+    PLASTIC_PET,
+    PLASTIC_END,
+    PET,
+    PACK,
     VINYL,
+    VINYL_HDPE,
+    VINYL_LDPE,
+    VINYL_OTHER,
+    VINYL_PP,
+    VINYL_PS,
+    VINYL_PET,
+    VINYL_END,
     PAPER,
     GLASS,
     COMMON,
@@ -17,8 +36,8 @@ public enum TrashType
 public class Trash : ScriptableObject
 {
     public Sprite sprite;
-    public string trashSaveName; // ÀúÀå, Á¤º¸ ºÒ·¯¿À±â¿¡¼­ »ç¿ëµÇ´Â ÀÌ¸§
-    public string trashRealName; // UI Ç¥½Ã¿¡¼­ »ç¿ëµÇ´Â ÀÌ¸§
+    public string trashSaveName; // ì €ì¥, ì •ë³´ ë¶ˆëŸ¬ì˜¤ê¸°ì—ì„œ ì‚¬ìš©ë˜ëŠ” ì´ë¦„
+    public string trashRealName; // UI í‘œì‹œì—ì„œ ì‚¬ìš©ë˜ëŠ” ì´ë¦„
     
     [TextArea(3, 10)]
     public string description;
@@ -27,6 +46,7 @@ public class Trash : ScriptableObject
 
     // public TrashType type;
     public GameObject trashObject;
+    public RecycleActType recycleActType;
     public TrashTypeInformation trashTypeInformation;
 
     public TrashType Type
