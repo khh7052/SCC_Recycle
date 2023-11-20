@@ -71,7 +71,7 @@ public class SaveFile
         maxScore = Mathf.Max(maxScore, (int)GameManager.maxScore);
     }
 
-    // ÀÎº¥Åä¸® ÀúÀå
+    // ì¸ë²¤í† ë¦¬ ì €ì¥
     public void SaveTrashInventory()
     {
         List<TrashSaveData> trashSaveDatas = new();
@@ -112,7 +112,7 @@ public class SaveFile
     }
 
 
-    // ÀÎº¥Åä¸® ºÒ·¯¿À±â
+    // ì¸ë²¤í† ë¦¬ ë¶ˆëŸ¬ì˜¤ê¸°
     public void LoadTrashInventory()
     {
         // TrashInventory
@@ -144,7 +144,7 @@ public class SaveFile
     }
 
 
-    // ¸ğµç ¾²·¹±â ¼ıÀÚ
+    // ëª¨ë“  ì“°ë ˆê¸° ìˆ«ì
     public int GetTrashNum()
     {
         int count = 0;
@@ -157,7 +157,7 @@ public class SaveFile
         return count;
     }
 
-    // Æ¯Á¤ ¾²·¹±â ¼ıÀÚ
+    // íŠ¹ì • ì“°ë ˆê¸° ìˆ«ì
     public int GetTrashNum(string trashName)
     {
         if (!trashInventory.ContainsKey(trashName)) return 0;
@@ -165,7 +165,7 @@ public class SaveFile
         return trashInventory[trashName];
     }
 
-    // ·£´ıÇÑ ¾²·¹±â Á¾·ù ¹İÈ¯
+    // ëœë¤í•œ ì“°ë ˆê¸° ì¢…ë¥˜ ë°˜í™˜
     public List<Trash> GetRandomTrashList()
     {
         List<Trash> list = new();
@@ -189,18 +189,28 @@ public class SaveFile
         return list;
     }
 
-    // ÀçÈ°¿ë Æ÷ÀÎÆ®
+    // ì¬í™œìš© í¬ì¸íŠ¸
     public int GetRecyclePoint(TrashType type)
     {
         return recycleInventory.ContainsKey(type)? recycleInventory[type]: 0;
     }
 
-    // ÀçÈ°¿ë ¾ÆÀÌÅÛ °³¼ö
+    // ì¬í™œìš© ì•„ì´í…œ ê°œìˆ˜
     public int GetItemNum(string name)
     {
         return itemInventory.ContainsKey(name) ? itemInventory[name] : 0;
     }
 
+    // ì“°ë ˆê¸° ë°ì´í„° ì œê±° (1ê°œ)
+    public void RemoveTrash(string name)
+    {
+        if (GetTrashNum(name) == 0) return;
+        
+        trashInventory[name]--;
+        Debug.Log(name + " " + trashInventory[name]);
+        OnChange.Invoke();
+    }
+    
     public void RecycleTrash(string name)
     {
         if (GetTrashNum(name) == 0) return;
@@ -226,18 +236,18 @@ public class SaveFile
             {
                 int myPoint = recycleInventory[cost.trashType];
 
-                // Àç·á¾øÀ¸¸é Áß´Ü
+                // ì¬ë£Œì—†ìœ¼ë©´ ì¤‘ë‹¨
                 if (myPoint < cost.cost) return false;
             }
-            // ÀçÈ°¿ëÇÑÀû ¾øÀ¸¸é Áß´Ü
+            // ì¬í™œìš©í•œì  ì—†ìœ¼ë©´ ì¤‘ë‹¨
             else return false; 
         }
 
-        // Àç·á ´Ù ÀÖÀ¸¸é ¾ÆÀÌÅÛ Á¦ÀÛ
+        // ì¬ë£Œ ë‹¤ ìˆìœ¼ë©´ ì•„ì´í…œ ì œì‘
         if (itemInventory.ContainsKey(item.itemName)) itemInventory[item.itemName]++;
         else itemInventory.Add(item.itemName, 1);
 
-        // Á¦ÀÛºñ¿ë ÁöºÒ
+        // ì œì‘ë¹„ìš© ì§€ë¶ˆ
         foreach (var cost in item.costDatas)
         {
             recycleInventory[cost.trashType] -= cost.cost;

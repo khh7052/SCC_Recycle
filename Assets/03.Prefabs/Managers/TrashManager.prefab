@@ -51,7 +51,7 @@ MonoBehaviour:
     gravity: 0
     isTrigger: 1
     onDrag: 0
-  - sceneName: Seperate
+  - sceneName: Separate
     rigdType: 0
     gravity: 0
     isTrigger: 1

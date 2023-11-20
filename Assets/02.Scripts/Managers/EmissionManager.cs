@@ -16,17 +16,17 @@ public class EmissionManager : Singleton<EmissionManager>
         SaveManager.OnLoad.AddListener(GameStart);
     }
     
-    public void GameStart(SaveFile saveFile)
+    private void GameStart(SaveFile saveFile)
     {
         trashNum = saveFile.GetTrashNum();
         
         if(trashNum == 0)
         {
-            UIManager.Instance.ActiveSperateGameEnd(true);
+            UIManager.Instance.ActiveSeparateGameEnd(true);
         }
         else
         {
-            UIManager.Instance.ActiveSperateGameEnd(false);
+            UIManager.Instance.ActiveSeparateGameEnd(false);
             spawner.SpawnStart(saveFile);
         }
     }

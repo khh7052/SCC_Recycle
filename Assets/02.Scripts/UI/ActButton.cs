@@ -16,7 +16,7 @@ public class ActButton : MonoBehaviour
 
     public void Init()
     {
-        SeperateManager.Instance.currentActType = 0;
+        SeparateManager.Instance.currentActType = 0;
         image.color = Color.white;
     }
 
@@ -24,13 +24,13 @@ public class ActButton : MonoBehaviour
     {
         image.color = image.color == Color.white ? Color.black : Color.white;
         
-        if ((SeperateManager.Instance.currentActType & actType) == 0) // 버튼의 행동이 활성화 안되어있으면
+        if ((SeparateManager.Instance.currentActType & actType) == 0) // 버튼의 행동이 활성화 안되어있으면
         {
-            SeperateManager.Instance.currentActType |= actType; // 행동 추가
+            SeparateManager.Instance.currentActType |= actType; // 행동 추가
         }
         else
         {
-            SeperateManager.Instance.currentActType &= ~actType; // 행동 제거
+            SeparateManager.Instance.currentActType &= ~actType; // 행동 제거
         }
         
     }

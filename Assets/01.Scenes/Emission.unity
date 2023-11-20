@@ -365,7 +365,6 @@ Transform:
   - {fileID: 1119986401}
   - {fileID: 1569593707}
   - {fileID: 85153897}
-  - {fileID: 700720741}
   - {fileID: 589741114801552151}
   m_Father: {fileID: 0}
   m_RootOrder: 11
@@ -1943,80 +1942,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 646957307}
   m_CullTransparentMesh: 1
---- !u!1001 &700720740
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 70095921}
-    m_Modifications:
-    - target: {fileID: 3927706478989341758, guid: c261bbe4d2260e244a418fbd2c6ebbcb, type: 3}
-      propertyPath: spawner
-      value: 
-      objectReference: {fileID: 1708916123}
-    - target: {fileID: 5394376941590413230, guid: c261bbe4d2260e244a418fbd2c6ebbcb, type: 3}
-      propertyPath: m_Name
-      value: SperateEmissionManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 5394376941590413230, guid: c261bbe4d2260e244a418fbd2c6ebbcb, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8000976467123351839, guid: c261bbe4d2260e244a418fbd2c6ebbcb, type: 3}
-      propertyPath: m_RootOrder
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8000976467123351839, guid: c261bbe4d2260e244a418fbd2c6ebbcb, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8000976467123351839, guid: c261bbe4d2260e244a418fbd2c6ebbcb, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8000976467123351839, guid: c261bbe4d2260e244a418fbd2c6ebbcb, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8000976467123351839, guid: c261bbe4d2260e244a418fbd2c6ebbcb, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8000976467123351839, guid: c261bbe4d2260e244a418fbd2c6ebbcb, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8000976467123351839, guid: c261bbe4d2260e244a418fbd2c6ebbcb, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8000976467123351839, guid: c261bbe4d2260e244a418fbd2c6ebbcb, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8000976467123351839, guid: c261bbe4d2260e244a418fbd2c6ebbcb, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8000976467123351839, guid: c261bbe4d2260e244a418fbd2c6ebbcb, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8000976467123351839, guid: c261bbe4d2260e244a418fbd2c6ebbcb, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c261bbe4d2260e244a418fbd2c6ebbcb, type: 3}
---- !u!4 &700720741 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8000976467123351839, guid: c261bbe4d2260e244a418fbd2c6ebbcb, type: 3}
-  m_PrefabInstance: {fileID: 700720740}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &743598718
 GameObject:
   m_ObjectHideFlags: 0
@@ -5541,7 +5466,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3936103739633630298, guid: b4aed151c60a60348bba5586cb2e7f9e, type: 3}
       propertyPath: OnEnd.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ActiveSperateGameEnd
+      value: ActiveSeparateGameEnd
       objectReference: {fileID: 0}
     - target: {fileID: 3936103739633630298, guid: b4aed151c60a60348bba5586cb2e7f9e, type: 3}
       propertyPath: OnEnd.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName

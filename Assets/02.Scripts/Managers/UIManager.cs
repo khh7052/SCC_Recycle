@@ -19,15 +19,21 @@ public class UIManager : Singleton<UIManager>
     public TMP_Text maxScoreText;
 
     [Header("SperateEmission")]
-    public GameObject uiSperateError;
-    public GameObject uiSperateGameEnd;
-    public TMP_Text correctText;
-    public TMP_Text incorrectText;
+    public GameObject uiSeparateError;
+    public GameObject uiSeparateGameEnd;
     public GameObject uiTrashInformation;
+    public GameObject uiTrashSimpleInformation;
+    
+    public TrashInformationText trashNameTextSimple;
+    public TrashInformationImage trashTypeImageSimple;
+    
     public TrashInformationText trashNameText;
     public TrashInformationText trashDescriptionText;
+    public TrashInformationImage trashImage;
     public TrashInformationImage trashTypeImage;
 
+    
+    
     [Header("Recycle")]
     public GameObject uiItemInventory;
     public GameObject uiItemCreate;
@@ -50,8 +56,9 @@ public class UIManager : Singleton<UIManager>
         // Collect
         ActiveGameOver(false);
 
-        // SperateEmission
-        ActiveSperateGameEnd(false);
+        // SeparateEmission
+        ActiveSeparateGameEnd(false);
+        ActiveTrashSimpleInformation(false);
         ActiveTrashInformation(false);
 
         // Recycle
@@ -124,30 +131,48 @@ public class UIManager : Singleton<UIManager>
     #endregion
 
     #region SperateEmission
-    public void ActiveSperateError(bool active)
+    public void ActiveSeparateError(bool active)
     {
-        if (!uiSperateError) return;
+        if (!uiSeparateError) return;
 
-        uiSperateError.SetActive(active);
+        uiSeparateError.SetActive(active);
     }
-    public void ActiveSperateGameEnd(bool active)
+    public void ActiveSeparateGameEnd(bool active)
     {
-        if (!uiSperateGameEnd) return;
+        if (!uiSeparateGameEnd) return;
 
-        uiSperateGameEnd.SetActive(active);
+        uiSeparateGameEnd.SetActive(active);
     }
+    
+    public void ActiveTrashSimpleInformation(bool active)
+    {
+        if (!uiTrashSimpleInformation) return;
+
+        uiTrashSimpleInformation.SetActive(active);
+    }
+    
     public void ActiveTrashInformation(bool active)
     {
         if (!uiTrashInformation) return;
 
         uiTrashInformation.SetActive(active);
     }
+    
+    public void TrashSimpleInformationUpdate(Trash trash)
+    {
+        if (trash == null) return;
+
+        if (trashNameTextSimple) trashNameTextSimple.TextUpdate(trash);
+        if (trashTypeImageSimple) trashTypeImageSimple.ImageUpdate(trash);
+    }
+    
     public void TrashInformationUpdate(Trash trash)
     {
         if (trash == null) return;
 
         if (trashNameText) trashNameText.TextUpdate(trash);
         if (trashDescriptionText) trashDescriptionText.TextUpdate(trash);
+        if (trashImage) trashImage.ImageUpdate(trash);
         if (trashTypeImage) trashTypeImage.ImageUpdate(trash);
     }
     #endregion

@@ -583,7 +583,7 @@ GameObject:
   - component: {fileID: 870088154}
   - component: {fileID: 870088153}
   m_Layer: 0
-  m_Name: Intro
+  m_Name: IntroVideoPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1275,6 +1275,8 @@ MonoBehaviour:
   maxScoreText: {fileID: 0}
   uiSperateError: {fileID: 0}
   uiSperateGameEnd: {fileID: 0}
+  correctText: {fileID: 0}
+  incorrectText: {fileID: 0}
   uiTrashInformation: {fileID: 0}
   trashNameText: {fileID: 0}
   trashDescriptionText: {fileID: 0}
