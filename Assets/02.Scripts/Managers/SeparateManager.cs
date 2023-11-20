@@ -1,22 +1,24 @@
 using System.Collections;
+using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
-public class SeperateInformation
-{
-    public Trash trash;
-    public RecycleActType selectedActType; // 플레이어가 선택한 행동
-}
-
-public class SeperateManager : Singleton<SeperateManager>
+public class SeparateManager : Singleton<SeparateManager>
 {
     public TrashSpawner spawner;
     public RecycleActType currentActType;
     private Trash currentTrash;
     private GameObject currentTrashObject;
 
-    private Dictionary<Trash, int> correctTrash; // 분리수거 성공한 쓰레기들
-    private Dictionary<Trash, int> incorrectTrash; // 분리수거 실패한 쓰레기들
+    private Dictionary<Trash, int> correctTrash = new(); // 분리수거 성공한 쓰레기들
+    private Dictionary<Trash, int> incorrectTrash = new(); // 분리수거 실패한 쓰레기들
+
+    public Transform correctContent;
+    public Transform incorrectContent;
+    public TMP_Text correctText;
+    public TMP_Text incorrectText;
+    public SeparateResultTrashButton separateResultTrashButton;
 
     private ActButton[] actButtons;
 
@@ -27,15 +29,15 @@ public class SeperateManager : Singleton<SeperateManager>
         SaveManager.OnLoad.AddListener(GameStart);
     }
 
-    public void GameStart(SaveFile saveFile)
+    private void GameStart(SaveFile saveFile)
     {
         if(saveFile.GetTrashNum() == 0)
         {
-            UIManager.Instance.ActiveSperateError(true);
+            UIManager.Instance.ActiveSeparateError(true);
         }
         else
         {
-            UIManager.Instance.ActiveSperateError(false);
+            UIManager.Instance.ActiveSeparateError(false);
             spawner.SpawnStart(saveFile);
         }
     }
@@ -60,64 +62,46 @@ public class SeperateManager : Singleton<SeperateManager>
             UIManager.Instance.ErrorTextUpdate("정답!");
 
             if (correctTrash.ContainsKey(currentTrash))
-            {
                 correctTrash[currentTrash]++;
-            }
             else
-            {
                 correctTrash.Add(currentTrash, 1);
-            }
         }
         // 다를 때
         else
         {
             UIManager.Instance.ErrorTextUpdate("오답!");
             
-            if (incorrectTrash.ContainsKey(currentTrash))
-            {
-                incorrectTrash[currentTrash]++;
-            }
-            else
-            {
-                incorrectTrash.Add(currentTrash, 1);
-            }
+            SaveManager.SaveFile.RemoveTrash(currentTrash.trashSaveName); // 틀린 쓰레기는 저장하지 않음
             
-            /*
-            // 필요한 행동이 많을 때
-            if (currentActType > currentTrash.recycleActType)
-            {
-                UIManager.Instance.ErrorTextUpdate("불필요한 행동이 존재합니다!");
-            }
-            // 필요한 행동이 부족할 때
+            if (incorrectTrash.ContainsKey(currentTrash))
+                incorrectTrash[currentTrash]++;
             else
-            {
-                UIManager.Instance.ErrorTextUpdate("필요한 작업이 부족합니다!");
-            }
-            */
+                incorrectTrash.Add(currentTrash, 1);
         }
         
         currentTrashObject.gameObject.SetActive(false);
         spawner.OnSpawnToggle();
+    }
+    
+    
+    // 분리 끝나고 나온 결과 생성
+    public void SeparateResultUpdate()
+    {
+        correctText.text = $"성공 : {correctTrash.Values.Sum()}";
+        incorrectText.text = $"실패 : {incorrectTrash.Values.Sum()}";
         
-        /*
+        // correct trash
+        foreach (var resultInfo in correctTrash)
+        {
+            SeparateResultTrashButton sr = Instantiate(separateResultTrashButton, correctContent);
+            sr.Init(resultInfo.Key, resultInfo.Value);
+        }
         
-        // 모든 처리작업 완료했는지
-        if (trashNum == 0)
+        // incorrect trash
+        foreach (var resultInfo in incorrectTrash)
         {
-            // 모든 쓰레기 생성했는지
-            if (spawner.RestSpawnCount == 0)
-            {
-                UIManager.Instance.ActiveSperateGameEnd(true);
-            }
-            else
-            {
-                spawner.OnSpawnToggle();
-            }
+            SeparateResultTrashButton sr = Instantiate(separateResultTrashButton, incorrectContent);
+            sr.Init(resultInfo.Key, resultInfo.Value);
         }
-        else
-        {
-            UIManager.Instance.ErrorTextUpdate("아직 쓰레기가 남아있습니다.");
-        }
-        */
     }
 }

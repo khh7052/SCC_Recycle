@@ -88,15 +88,15 @@ public class TrashObject : MonoBehaviour
     {
         if (!enabled) return;
 
-        UIManager.Instance.ActiveTrashInformation(true);
-        UIManager.Instance.TrashInformationUpdate(trash);
+        UIManager.Instance.ActiveTrashSimpleInformation(true);
+        UIManager.Instance.TrashSimpleInformationUpdate(trash);
     }
 
     private void OnMouseExit()
     {
         if (!enabled) return;
 
-        UIManager.Instance.ActiveTrashInformation(false);
+        UIManager.Instance.ActiveTrashSimpleInformation(false);
     }
 
 }

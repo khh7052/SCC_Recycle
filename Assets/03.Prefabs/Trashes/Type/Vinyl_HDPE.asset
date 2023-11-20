@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Vinyl_HDPE
   m_EditorClassIdentifier: 
   typeName: "\uBE44\uB2D0-HDPE"
-  trashType: 13
+  originalType: 15
+  integrateType: 14
   typeSprite: {fileID: 21300000, guid: 9013d8c262c8f6c4d8c9561fff5886f0, type: 3}
   description: 

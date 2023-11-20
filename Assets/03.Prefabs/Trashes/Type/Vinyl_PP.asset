@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Vinyl_PP
   m_EditorClassIdentifier: 
   typeName: "\uBE44\uB2D0-PP"
-  trashType: 16
+  originalType: 18
+  integrateType: 14
   typeSprite: {fileID: 21300000, guid: 8ac6e977013017e4c91233759c6d4257, type: 3}
   description: 

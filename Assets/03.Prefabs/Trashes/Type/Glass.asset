@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Glass
   m_EditorClassIdentifier: 
   typeName: "\uC720\uB9AC"
-  trashType: 20
+  originalType: 23
+  integrateType: 23
   typeSprite: {fileID: 21300000, guid: a7998bc447e8ae044a340a92e274d200, type: 3}
   description: 

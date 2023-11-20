@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6c9cd319d50538409578ca4e80419d1, type: 3}
+  m_Name: Bottle05
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 36f3608a524f4af419548b89726415a1, type: 3}
+  trashSaveName: "\uD398\uD2B8\uBCD105"
+  trashRealName: "\uB77C\uBCA8\uB2EC\uB9B0 \uD398\uD2B8\uBCD1"
+  description: "1. \uB0B4\uC6A9\uBB3C\uC744 \uBE44\uC6B0\uC138\uC694.\n2. \uB0B4\uBD80\uB97C
+    \uD589\uAD88\uC8FC\uC138\uC694.\n3. \uAC01 \uC885\uB958\uC758 \uC4F0\uB808\uAE30\uB97C
+    \uBD84\uB9AC\uD574\uC8FC\uC138\uC694."
+  seperateErrorMessage: 
+  trashObject: {fileID: 1318537695714739954, guid: 3d361dcf1e47f7448b3b6d68258c159f, type: 3}
+  recycleActType: 0
+  trashTypeInformation: {fileID: 11400000, guid: 5fd50711f5fe74c4f817fc2f7bbe41fa, type: 2}

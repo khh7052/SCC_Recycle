@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public enum TrashInformationType
+public enum TrashInformationTextType
 {
     NAME,
     TYPE,
@@ -12,7 +12,7 @@ public enum TrashInformationType
 
 public class TrashInformationText : MonoBehaviour
 {
-    public TrashInformationType type;
+    public TrashInformationTextType type;
 
     private TMP_Text text;
 
@@ -28,13 +28,13 @@ public class TrashInformationText : MonoBehaviour
 
         switch (type)
         {
-            case TrashInformationType.NAME:
+            case TrashInformationTextType.NAME:
                 text.text = trash.trashRealName;
                 break;
-            case TrashInformationType.TYPE:
+            case TrashInformationTextType.TYPE:
                 text.text = trash.Type.ToString();
                 break;
-            case TrashInformationType.DESCRIPTION:
+            case TrashInformationTextType.DESCRIPTION:
                 text.text = trash.description;
                 break;
         }

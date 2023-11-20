@@ -160,6 +160,7 @@ GameObject:
   - component: {fileID: 6585709224465691624}
   - component: {fileID: 378958048564913774}
   - component: {fileID: 8433765225989066928}
+  - component: {fileID: -3490819118355786171}
   m_Layer: 5
   m_Name: TrashIcon
   m_TagString: Untagged
@@ -226,3 +227,16 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &-3490819118355786171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2768892381623272528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 966434688f160d644b27554d437e2527, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trashType: 0

@@ -16,7 +16,8 @@ public enum RecycleActType
 public class TrashTypeInformation : ScriptableObject
 {
     public string typeName;
-    public TrashType trashType;
+    public TrashType originalType;
+    public TrashType integrateType;
     public Sprite typeSprite;
     public string description;
     
