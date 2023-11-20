@@ -219,8 +219,8 @@ public class SaveFile
 
         Trash trash = TrashManager.Instance.GetTrashInform(name);
 
-        if(recycleInventory.ContainsKey(trash.Type)) recycleInventory[trash.Type]++;
-        else recycleInventory.Add(trash.Type, 1);
+        if(recycleInventory.ContainsKey(trash.trashTypeInformation.integrateType)) recycleInventory[trash.trashTypeInformation.integrateType]++;
+        else recycleInventory.Add(trash.trashTypeInformation.integrateType, 1);
 
         OnChange.Invoke();
     }

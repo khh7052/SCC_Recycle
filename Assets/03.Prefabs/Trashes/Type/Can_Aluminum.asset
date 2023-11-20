@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Can_Aluminum
   m_EditorClassIdentifier: 
   typeName: "\uCE94-\uC54C\uB958\uBBF8\uB284"
-  trashType: 1
+  originalType: 1
+  integrateType: 0
   typeSprite: {fileID: 21300000, guid: 25a58d8cf9b00d245b48c701a0f3abef, type: 3}
   description: 

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Pack
   m_EditorClassIdentifier: 
   typeName: "\uC77C\uBC18\uD329"
-  trashType: 11
+  originalType: 13
+  integrateType: 13
   typeSprite: {fileID: 21300000, guid: d89b5a4fba1a8954499f39ac1adc32da, type: 3}
   description: 

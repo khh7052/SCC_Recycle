@@ -31,6 +31,7 @@ public class TrashManager : Singleton<TrashManager>
         return TrashInform[name];
     }
 
+    
     public TrashTypeInformation GetTrashTypeInform(TrashType type)
     {
         if (!TrashTypeInform.ContainsKey(type))
@@ -58,7 +59,7 @@ public class TrashManager : Singleton<TrashManager>
 
         foreach (var type in typeInformations)
         {
-            TrashTypeInform.Add(type.trashType, type);
+            TrashTypeInform.Add(type.originalType, type);
         }
     }
 

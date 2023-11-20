@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6753e49bdd304544b931147a842e5ce7, type: 3}
-  m_Name: Can_Metal
+  m_Name: Plastic_OTHER
   m_EditorClassIdentifier: 
-  typeName: "\uCE94-\uACE0\uCCA0"
-  originalType: 2
-  integrateType: 0
-  typeSprite: {fileID: 21300000, guid: 839a6d442c3c8424788603b5cb29ef73, type: 3}
+  typeName: "\uD50C\uB77C\uC2A4\uD2F1"
+  originalType: 7
+  integrateType: 4
+  typeSprite: {fileID: 21300000, guid: d496201b45d502e4292aae9361c490a1, type: 3}
   description: 

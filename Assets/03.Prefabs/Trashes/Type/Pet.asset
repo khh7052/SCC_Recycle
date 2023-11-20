@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Pet
   m_EditorClassIdentifier: 
   typeName: "\uBB34\uC0C9\uD398\uD2B8"
-  trashType: 10
+  originalType: 12
+  integrateType: 12
   typeSprite: {fileID: 21300000, guid: 2b28782f3a8133445a8896aee47f9245, type: 3}
   description: 

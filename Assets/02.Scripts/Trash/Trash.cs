@@ -41,17 +41,14 @@ public class Trash : ScriptableObject
     
     [TextArea(3, 10)]
     public string description;
-    [TextArea(3, 10)]
-    public string seperateErrorMessage;
-
-    // public TrashType type;
+    
     public GameObject trashObject;
     public RecycleActType recycleActType;
     public TrashTypeInformation trashTypeInformation;
 
     public TrashType Type
     {
-        get { return trashTypeInformation.trashType; }
+        get { return trashTypeInformation.originalType; }
     }
 
 }

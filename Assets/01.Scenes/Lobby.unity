@@ -2365,6 +2365,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4882158929424426221, guid: 4d6c2209adb324a49acfedd229945224, type: 3}
+      propertyPath: bgmSounds.Array.data[1].clips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8234366570533540025, guid: 4d6c2209adb324a49acfedd229945224, type: 3}
       propertyPath: m_Name
       value: SoundManager
@@ -2612,7 +2616,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Seperate
+          m_StringArgument: Separate
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1268827043

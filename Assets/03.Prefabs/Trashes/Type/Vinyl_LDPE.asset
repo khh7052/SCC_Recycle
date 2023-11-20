@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Vinyl_LDPE
   m_EditorClassIdentifier: 
   typeName: "\uBE44\uB2D0-LDPE"
-  trashType: 14
+  originalType: 16
+  integrateType: 14
   typeSprite: {fileID: 21300000, guid: c35b77f666cae9f4686f16b5926bb16c, type: 3}
   description: 

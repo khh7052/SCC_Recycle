@@ -9,7 +9,6 @@ public class TrashCan : MonoBehaviour
     public UnityEvent OnRecycle;
     public TrashType type;
     public TMP_Text typeText;
-    public bool onRecycle;
     private int count = 0;
 
     public int TrashCount
@@ -23,6 +22,36 @@ public class TrashCan : MonoBehaviour
         typeText.text = type.ToString();
     }
 
+    private void CheckTrash(TrashObject trashObject)
+    {
+        if (trashObject == null) return;
+        Trash trash = trashObject.trash;
+        bool recycleOn = false;
+        
+        if (trash.trashTypeInformation.originalType == type || trash.trashTypeInformation.integrateType == type)
+            recycleOn = true;
+        
+        string sound = recycleOn ? "Correct" : "Incorrect";
+        trashObject.StartEquip(sound);
+        
+        // 타입 올바르면 재활용
+        if (recycleOn)
+        {
+            EmissionManager.Instance.CorrectTrash(trash);
+            SaveManager.SaveFile.RecycleTrash(trashObject.trash.trashSaveName);
+            count++;
+        }
+        // 타입 다르면 제거
+        else
+        {
+            EmissionManager.Instance.IncorrectTrash(trash);
+            SaveManager.SaveFile.RemoveTrash(trashObject.trash.trashSaveName);
+        }
+
+        
+        OnRecycle.Invoke();
+    }
+
     public void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("OnTriggerEnter2D " + collision.gameObject.name);
@@ -30,17 +59,7 @@ public class TrashCan : MonoBehaviour
         if (collision.gameObject.CompareTag("Trash"))
         {
             TrashObject trashObject = collision.gameObject.GetComponent<TrashObject>();
-
-            if (trashObject == null) return;
-            Trash trash = trashObject.trash;
-            string sound = (trash.Type == type) ? "Correct" : "Incorrect";
-            trashObject.StartEquip(sound);
-
-            if (trash.Type == type) count++;
-
-            if (onRecycle) SaveManager.SaveFile.RecycleTrash(collision.gameObject.name);
-
-            OnRecycle.Invoke();
+            CheckTrash(trashObject);
         }
     }
 

@@ -210,10 +210,10 @@ PrefabInstance:
     - target: {fileID: 208467013271968990, guid: e280d3695d8635a4f8b5ce0d87e6d7e4, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: c5e2877581edabb4ab7922902aac678b, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 268597334301619733, guid: e280d3695d8635a4f8b5ce0d87e6d7e4, type: 3}
       propertyPath: recycleType
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4677952142502424288, guid: e280d3695d8635a4f8b5ce0d87e6d7e4, type: 3}
       propertyPath: m_Name
@@ -302,6 +302,10 @@ PrefabInstance:
     - target: {fileID: 5884761166446033895, guid: e280d3695d8635a4f8b5ce0d87e6d7e4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7434451423665217688, guid: e280d3695d8635a4f8b5ce0d87e6d7e4, type: 3}
+      propertyPath: trashType
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -557,10 +561,10 @@ PrefabInstance:
     - target: {fileID: 208467013271968990, guid: e280d3695d8635a4f8b5ce0d87e6d7e4, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 7820d6c0c491b944d8014c06f0f98c43, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 268597334301619733, guid: e280d3695d8635a4f8b5ce0d87e6d7e4, type: 3}
       propertyPath: recycleType
-      value: 2
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 4677952142502424288, guid: e280d3695d8635a4f8b5ce0d87e6d7e4, type: 3}
       propertyPath: m_Name
@@ -649,6 +653,10 @@ PrefabInstance:
     - target: {fileID: 5884761166446033895, guid: e280d3695d8635a4f8b5ce0d87e6d7e4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7434451423665217688, guid: e280d3695d8635a4f8b5ce0d87e6d7e4, type: 3}
+      propertyPath: trashType
+      value: 22
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3081,6 +3089,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 722152661}
     m_Modifications:
+    - target: {fileID: 208467013271968990, guid: e280d3695d8635a4f8b5ce0d87e6d7e4, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 268597334301619733, guid: e280d3695d8635a4f8b5ce0d87e6d7e4, type: 3}
+      propertyPath: recycleType
+      value: 23
+      objectReference: {fileID: 0}
     - target: {fileID: 4677952142502424288, guid: e280d3695d8635a4f8b5ce0d87e6d7e4, type: 3}
       propertyPath: m_Name
       value: Glass
@@ -3168,6 +3184,10 @@ PrefabInstance:
     - target: {fileID: 5884761166446033895, guid: e280d3695d8635a4f8b5ce0d87e6d7e4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7434451423665217688, guid: e280d3695d8635a4f8b5ce0d87e6d7e4, type: 3}
+      propertyPath: trashType
+      value: 23
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3963,13 +3983,15 @@ MonoBehaviour:
   timeBar: {fileID: 0}
   scoreText: {fileID: 0}
   maxScoreText: {fileID: 0}
-  uiSperateError: {fileID: 0}
-  uiSperateGameEnd: {fileID: 0}
-  correctText: {fileID: 0}
-  incorrectText: {fileID: 0}
+  uiSeparateError: {fileID: 0}
+  uiSeparateGameEnd: {fileID: 0}
   uiTrashInformation: {fileID: 0}
+  uiTrashSimpleInformation: {fileID: 0}
+  trashNameTextSimple: {fileID: 0}
+  trashTypeImageSimple: {fileID: 0}
   trashNameText: {fileID: 0}
   trashDescriptionText: {fileID: 0}
+  trashImage: {fileID: 0}
   trashTypeImage: {fileID: 0}
   uiItemInventory: {fileID: 167874919}
   uiItemCreate: {fileID: 521011013}
@@ -4926,7 +4948,7 @@ PrefabInstance:
     - target: {fileID: 208467013271968990, guid: e280d3695d8635a4f8b5ce0d87e6d7e4, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 8beb8abc17e94744bb2527eec72a130a, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 268597334301619733, guid: e280d3695d8635a4f8b5ce0d87e6d7e4, type: 3}
       propertyPath: recycleType
       value: 0
