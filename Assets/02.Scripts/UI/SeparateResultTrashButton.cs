@@ -14,7 +14,11 @@ public class SeparateResultTrashButton : MonoBehaviour
     {
         currentTrash = trash;
         trashImage.sprite = trash.sprite;
-        trashNumText.text = $"X{num}";
+
+        if (num > 0)
+            trashNumText.text = $"X{num}";
+        else
+            trashNumText.text = "";
     }
 
     public void OnActiveTrashInformation()

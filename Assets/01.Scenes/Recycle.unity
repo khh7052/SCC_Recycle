@@ -3978,6 +3978,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onDontDestroy: 0
   uiOption: {fileID: 957911322}
+  uiInformation: {fileID: 0}
   errorText: {fileID: 739024346}
   uiGameOver: {fileID: 0}
   timeBar: {fileID: 0}

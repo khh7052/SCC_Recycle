@@ -10,8 +10,8 @@ public class SoundManager : Singleton<SoundManager>
     private Dictionary<string, Sound> bgmDictionary, sfxDictionary = new();
     public AudioSource sfxSpeaker;
     private Dictionary<GameObject, AudioSource> sfxSpeakers = new();
-    public float bgmVolume = 1f;
-    public float sfxVolume = 1f;
+    public static float BGM_Volume = 1f;
+    public static float SFX_Volume = 1f;
     private Sound currentBGM, currentSFX;
 
     public override void Awake()
@@ -78,7 +78,7 @@ public class SoundManager : Singleton<SoundManager>
         int idx = random ? Random.Range(0, clips.Length) : 0;
         AudioClip clip = clips[idx];
         
-        sfxSource.volume = sound.volume * sfxVolume;
+        sfxSource.volume = sound.volume * SFX_Volume;
         sfxSource.clip = clip;
         
         if (sfxSource.isPlaying)
@@ -121,26 +121,26 @@ public class SoundManager : Singleton<SoundManager>
     // BGM º¼·ý Á¶Àý
     public void BGMVolume(float volume)
     {
-        bgmVolume = Mathf.Clamp01(volume);
+        BGM_Volume = Mathf.Clamp01(volume);
 
         if (currentBGM != null)
-            bgmSource.volume = bgmVolume * currentBGM.volume;
+            bgmSource.volume = BGM_Volume * currentBGM.volume;
     }
 
     // SFX º¼·ý Á¶Àý
     public void SFXVolume(float volume)
     {
-        sfxVolume = Mathf.Clamp01(volume);
+        SFX_Volume = Mathf.Clamp01(volume);
 
         if(currentSFX != null) 
-            sfxSource.volume = sfxVolume * currentSFX.volume;
+            sfxSource.volume = SFX_Volume * currentSFX.volume;
     }
 
     IEnumerator FadingBGM(float targetVolume)
     {
-        while (bgmSource.volume != targetVolume * bgmVolume)
+        while (bgmSource.volume != targetVolume * BGM_Volume)
         {
-            bgmSource.volume = Mathf.MoveTowards(bgmSource.volume, targetVolume * bgmVolume, Time.deltaTime);
+            bgmSource.volume = Mathf.MoveTowards(bgmSource.volume, targetVolume * BGM_Volume, Time.deltaTime);
             yield return null;
         }
     }
