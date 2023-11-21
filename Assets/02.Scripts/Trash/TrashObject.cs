@@ -12,6 +12,8 @@ public struct TrashObjectSetting
     public float gravity;
     public bool isTrigger;
     public bool onDrag;
+    public bool onMouseAnim;
+    public bool onChild;
 }
 
 public class TrashObject : MonoBehaviour
@@ -61,7 +63,19 @@ public class TrashObject : MonoBehaviour
         }
 
         if(coll != null) coll.isTrigger = setting.isTrigger;
-        if(dragObject != null) dragObject.enabled = setting.onDrag;
+        if(dragObject != null)
+        {
+            dragObject.OnDrag = setting.onDrag;
+            dragObject.OnMouseAnim = setting.onMouseAnim;
+        }
+
+        if (!setting.onChild)
+        {
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                transform.GetChild(i).gameObject.SetActive(false);
+            }
+        }
     }
 
     public void StartEquip(string equipSFXName)
