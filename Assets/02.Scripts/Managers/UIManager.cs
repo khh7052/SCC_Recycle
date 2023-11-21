@@ -10,7 +10,9 @@ public class UIManager : Singleton<UIManager>
 {
     [Header("Common")]
     public GameObject uiOption;
+    public GameObject uiInformation;
     public FadeText errorText;
+    
 
     [Header("Collect Game")]
     public GameObject uiGameOver;
@@ -51,6 +53,7 @@ public class UIManager : Singleton<UIManager>
     {
         // Common
         ActiveOption(false);
+        ActiveInformation(false);
         ErrorTextUpdate("");
 
         // Collect
@@ -95,6 +98,15 @@ public class UIManager : Singleton<UIManager>
         uiOption.SetActive(active);
         Time.timeScale = active ? 0f : 1f;
     }
+
+    public void ActiveInformation(bool active)
+    {
+        if (!uiInformation) return;
+
+        uiInformation.SetActive(active);
+    }
+
+
     public void ErrorTextUpdate(string text)
     {
         if (!errorText) return;
