@@ -25,4 +25,10 @@ public class SoundSlider : MonoBehaviour
 
         slider.value = type == SoundType.BGM ? SoundManager.BGM_Volume : SoundManager.SFX_Volume;
     }
+
+    public void ValueUpdate()
+    {
+        if(type == SoundType.BGM) SoundManager.BGM_Volume = slider.value;
+        else if (type == SoundType.SFX) SoundManager.SFX_Volume = slider.value;
+    }
 }
