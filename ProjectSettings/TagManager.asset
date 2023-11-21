@@ -48,3 +48,6 @@ TagManager:
   - name: Forward
     uniqueID: 596224357
     locked: 0
+  - name: TrashComponent
+    uniqueID: 2174742103
+    locked: 0

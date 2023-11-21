@@ -7,10 +7,19 @@ public class DragObject : MonoBehaviour
     private Animator anim;
     private Collider2D coll;
     private Vector3 offset;
+    private bool onDrag;
+    private bool onMouseAnim;
 
     public bool OnDrag
     {
-        get { return enabled; }
+        get { return onDrag; }
+        set { onDrag = value; }
+    }
+
+    public bool OnMouseAnim
+    {
+        get { return onMouseAnim; }
+        set { onMouseAnim = value; }
     }
 
     private void Awake()
@@ -21,14 +30,14 @@ public class DragObject : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        if (!OnDrag) return;
+        if (!OnMouseAnim) return;
 
         if (anim) anim.SetBool("OnMouse", true);
     }
 
     private void OnMouseExit()
     {
-        if (!OnDrag) return;
+        if (!OnMouseAnim) return;
 
         if (anim) anim.SetBool("OnMouse", false);
     }

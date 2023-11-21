@@ -51,16 +51,22 @@ MonoBehaviour:
     gravity: 0
     isTrigger: 1
     onDrag: 0
+    onMouseAnim: 0
+    onChild: 1
   - sceneName: Separate
     rigdType: 0
     gravity: 0
     isTrigger: 1
     onDrag: 0
+    onMouseAnim: 1
+    onChild: 1
   - sceneName: Emission
     rigdType: 0
     gravity: 0.2
     isTrigger: 0
     onDrag: 1
+    onMouseAnim: 1
+    onChild: 0
   trashes:
   - {fileID: 11400000, guid: b2897935f3bcb4e40ad67aca1bd86ced, type: 2}
   - {fileID: 11400000, guid: 47b4ef76d5fe0bd40b6cd4c7be2a042d, type: 2}
