@@ -313,7 +313,7 @@ MonoBehaviour:
   - name: Play
     clips:
     - {fileID: 8300000, guid: e4d4a6f1951179c44a0db915a28b17d5, type: 3}
-    volume: 0.2
+    volume: 0.6
   sfxSounds:
   - name: Jump
     clips:
