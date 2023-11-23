@@ -88,7 +88,7 @@ public class GameManager : Singleton<GameManager>
         Time.timeScale = 1f;
 
         maxScore = saveFile.maxScore;
-
+        SoundManager.Instance.StopSFX();
         OnStart.Invoke();
     }
 
@@ -101,6 +101,8 @@ public class GameManager : Singleton<GameManager>
     void GameOver()
     {
         UIManager.Instance.ActiveGameOver(true);
+        SoundManager.Instance.PlaySFX("GameOver");
+        SoundManager.Instance.StopBGM();
         OnGameOver.Invoke();
     }
 }

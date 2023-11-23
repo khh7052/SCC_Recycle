@@ -7,7 +7,8 @@ public enum TrashInformationTextType
 {
     NAME,
     TYPE,
-    DESCRIPTION,
+    THROW,
+    INFORMATION
 }
 
 public class TrashInformationText : MonoBehaviour
@@ -34,8 +35,11 @@ public class TrashInformationText : MonoBehaviour
             case TrashInformationTextType.TYPE:
                 text.text = trash.Type.ToString();
                 break;
-            case TrashInformationTextType.DESCRIPTION:
-                text.text = trash.description;
+            case TrashInformationTextType.THROW:
+                text.text = trash.description_throw;
+                break;
+            case TrashInformationTextType.INFORMATION:
+                text.text = trash.description_information;
                 break;
         }
     }
