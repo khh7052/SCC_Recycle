@@ -119,7 +119,7 @@ public class Player : MonoBehaviour
         else if (collision.CompareTag("Trash"))
         {
             TrashObject trash = collision.gameObject.GetComponent<TrashObject>();
-
+            SoundManager.Instance.PlaySFX("HitTrash");
             trash.StartEquip("Trash");
         }
     }

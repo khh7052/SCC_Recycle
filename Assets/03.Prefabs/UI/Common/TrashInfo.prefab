@@ -729,7 +729,7 @@ GameObject:
   - component: {fileID: 4398588354473920333}
   - component: {fileID: 4099027651647322572}
   m_Layer: 5
-  m_Name: TrashDescription
+  m_Name: TrashDescription_Throw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

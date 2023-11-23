@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6c9cd319d50538409578ca4e80419d1, type: 3}
+  m_Name: GlassBottle01
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 66695d98e7738f8478f94d2e70df1726, type: 3}
+  trashSaveName: "\uC720\uB9AC\uBCD101"
+  trashRealName: "\uC74C\uB8CC\uBCD1"
+  description_throw: "-\uB0B4\uC6A9\uBB3C\uACFC \uC774\uBB3C\uC9C8(\uB2F4\uBC30\uAF41\uCD08
+    \uB4F1)\uC744 \uBE44\uC6B0\uACE0, \uBB3C\uB85C \uAE68\uB057\uC774 \uD5F9\uAD88\uB0B8
+    \uD6C4 \uBC30\uCD9C\uD574\uC694.\r\n\r\n-\uC720\uB9AC\uBCD1 \uBCF8\uCCB4\uC640
+    \uB69C\uAED1\uC740 \uBD84\uB9AC\uD574\uC11C \uC720\uB9AC\uBCD1 \uBCF8\uCCB4\uB294
+    \uC720\uB9AC\uBC15\uCE74\uC2A4\uBCD1 \uBD84\uB9AC\uC218\uAC70\uB85C, \uC720\uB9AC\uBCD1
+    \uB69C\uAED1\uC740 \uCE94\uB958\uBC15\uCE74\uC2A4\uBCD1 \uBD84\uB9AC\uC218\uAC70
+    \uB4F1 \uC7AC\uC9C8\uC5D0 \uB9DE\uAC8C \uBD84\uB9AC\uBC30\uCD9C\uD574\uC694.\r\n\r\n-\uAC89\uBA74\uC758
+    \uC0C1\uD45C \uB4F1\uC758 \uB77C\uBCA8\uC740 \uC81C\uAC70\uD560 \uC218 \uC788\uC73C\uBA74
+    \uB5BC\uC5B4\uB0B8 \uD6C4 \uBC30\uCD9C\uD574\uC694.\r\n\r\n-\uC0C9\uAE54\uBCC4\uB85C
+    \uC720\uB9AC\uBCD1 \uBC30\uCD9C\uC7A5\uC18C\uAC00 \uB098\uB258\uC5B4\uC838 \uC788\uC73C\uBA74
+    \uC0C9\uAE54\uC5D0 \uB9DE\uCDB0 \uBD84\uB9AC\uBC30\uCD9C\uD574\uC694."
+  description_information: "\uB9C8\uC2DC\uACE0 \uBC84\uB9B0 \uC74C\uB8CC\uBCD1"
+  trashObject: {fileID: 7573532624684763613, guid: 1789645a597cf45479c8edc13528d677, type: 3}
+  recycleActType: -1
+  trashTypeInformation: {fileID: 11400000, guid: 1eb9d9fa8dbf07e4083fda8d2b28e284, type: 2}

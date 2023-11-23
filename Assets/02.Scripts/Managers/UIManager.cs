@@ -28,6 +28,7 @@ public class UIManager : Singleton<UIManager>
     public GameObject uiTrashSimpleInformation;
     
     public TrashInformationText trashNameTextSimple;
+    public TrashInformationText trashInformationTextSimple;
     public TrashInformationImage trashTypeImageSimple;
     
     public TrashInformationText trashNameText;
@@ -184,6 +185,7 @@ public class UIManager : Singleton<UIManager>
         if (trash == null) return;
 
         if (trashNameTextSimple) trashNameTextSimple.TextUpdate(trash);
+        if(trashInformationTextSimple) trashInformationTextSimple.TextUpdate(trash);
         if (trashTypeImageSimple) trashTypeImageSimple.ImageUpdate(trash);
     }
     
