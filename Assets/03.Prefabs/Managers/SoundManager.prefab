@@ -308,8 +308,8 @@ MonoBehaviour:
   bgmSounds:
   - name: Lobby
     clips:
-    - {fileID: 8300000, guid: 35ee3726409d17e4d92b5e686d5c6870, type: 3}
-    volume: 1
+    - {fileID: 8300000, guid: a5d51af092079964498d4874818cca7f, type: 3}
+    volume: 0.8
   - name: Play
     clips:
     - {fileID: 8300000, guid: e4d4a6f1951179c44a0db915a28b17d5, type: 3}
