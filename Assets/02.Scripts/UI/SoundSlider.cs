@@ -28,7 +28,7 @@ public class SoundSlider : MonoBehaviour
 
     public void ValueUpdate()
     {
-        if(type == SoundType.BGM) SoundManager.BGM_Volume = slider.value;
-        else if (type == SoundType.SFX) SoundManager.SFX_Volume = slider.value;
+        if(type == SoundType.BGM) SoundManager.Instance.BGMVolume(slider.value);
+        else if (type == SoundType.SFX) SoundManager.Instance.SFXVolume(slider.value);
     }
 }
