@@ -35,9 +35,14 @@ public class TrashObject : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    private void OnEnable()
+    private void Start()
     {
         NameUpdate();
+    }
+
+    private void OnEnable()
+    {
+        
         SettingUpdate();
     }
 
@@ -80,6 +85,7 @@ public class TrashObject : MonoBehaviour
 
     public void StartEquip(string equipSFXName)
     {
+        Debug.Log("StartEquipe");
         coll.enabled = false;
         rigd.bodyType = RigidbodyType2D.Static;
         equipSFX = equipSFXName;
@@ -95,6 +101,7 @@ public class TrashObject : MonoBehaviour
         coll.enabled = true;
         SoundManager.Instance.PlaySFX(equipSFX);
 
+        animator.SetBool("Equip", false);
         OnEndEquip.Invoke();
     }
 
