@@ -19,14 +19,12 @@ public class SpawnerNumText : MonoBehaviour
         if (text == null) return;
         num = spawner.RestSpawnCount;
         text.text = num.ToString();
-        print(num + " !!");
     }
     
     public void TextDecrease()
     {
         if (text == null) return;
         num--;
-        print(num + " !! " + gameObject.name);
         text.text = num.ToString();
     }
 

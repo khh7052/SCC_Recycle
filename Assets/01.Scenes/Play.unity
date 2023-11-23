@@ -768,6 +768,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tutrorial
       objectReference: {fileID: 0}
+    - target: {fileID: 6854904482370404472, guid: 238be10d18ffbca41a6140029bf72b76, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
