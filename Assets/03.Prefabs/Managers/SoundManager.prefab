@@ -288,7 +288,7 @@ Transform:
   - {fileID: 1347600395583317571}
   - {fileID: 5814790791994402825}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4882158929424426221
 MonoBehaviour:
@@ -311,16 +311,21 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 35ee3726409d17e4d92b5e686d5c6870, type: 3}
     volume: 1
   - name: Play
-    clips: []
-    volume: 1
+    clips:
+    - {fileID: 8300000, guid: e4d4a6f1951179c44a0db915a28b17d5, type: 3}
+    volume: 0.2
   sfxSounds:
   - name: Jump
     clips:
-    - {fileID: 8300000, guid: 3c1c3816bd1ce6d49b63339fd7b6918b, type: 3}
+    - {fileID: 8300000, guid: d76730d5d80332f43875bd64fa400e74, type: 3}
+    - {fileID: 8300000, guid: 94699baf7edbc5b4f9ea1219dc88fa1e, type: 3}
+    - {fileID: 8300000, guid: a5f3e6815f836b34da7534c66b765bb4, type: 3}
     volume: 0.4
   - name: Coin
     clips:
-    - {fileID: 8300000, guid: 35357de0c9f9b2a4bba6215cd9a39a4b, type: 3}
+    - {fileID: 8300000, guid: 9e241289c7406a7478dbcfee5b94e37a, type: 3}
+    - {fileID: 8300000, guid: b5faac3efaa521444987412591320d6a, type: 3}
+    - {fileID: 8300000, guid: 145d491c0373d3a4ca1eb52d879999ca, type: 3}
     volume: 1
   - name: Correct
     clips:
@@ -335,12 +340,14 @@ MonoBehaviour:
     volume: 0.5
   - name: Landing
     clips:
-    - {fileID: 8300000, guid: 1f632739b9e63ef4faf3ef5bd8865bed, type: 3}
-    - {fileID: 8300000, guid: 75d21e02f0fb03840b43e1cd9181f020, type: 3}
+    - {fileID: 8300000, guid: b8657e6598b106c45994d84e6ed5acc0, type: 3}
+    - {fileID: 8300000, guid: 6f86595b185526846aa16b8f926aafb4, type: 3}
     volume: 0.2
   - name: Damage
     clips:
-    - {fileID: 8300000, guid: 21b8cf9003458804eaa5ec3b24c296e7, type: 3}
+    - {fileID: 8300000, guid: 0608712f21fe718478f417070a088f92, type: 3}
+    - {fileID: 8300000, guid: 935896d7905f04045bbc629345d0bbf0, type: 3}
+    - {fileID: 8300000, guid: fbcde6d1791dff74ea54d9d26a43ea45, type: 3}
     volume: 0.6
   - name: Trash
     clips:
@@ -360,6 +367,12 @@ MonoBehaviour:
     clips:
     - {fileID: 8300000, guid: 748bfaff907ecaa4b9ead1b20071465f, type: 3}
     volume: 0.6
+  - name: GameOver
+    clips:
+    - {fileID: 8300000, guid: c621a1aed15a9d3488be122f189d0554, type: 3}
+    volume: 0.6
+  - name: HitTrash
+    clips:
+    - {fileID: 8300000, guid: ea06fda4fc5db8f4baea0320af63cdcd, type: 3}
+    volume: 0.6
   sfxSpeaker: {fileID: 5869814330490394311}
-  bgmVolume: 1
-  sfxVolume: 1

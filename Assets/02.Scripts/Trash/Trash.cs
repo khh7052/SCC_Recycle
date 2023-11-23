@@ -40,8 +40,11 @@ public class Trash : ScriptableObject
     public string trashRealName; // UI 표시에서 사용되는 이름
     
     [TextArea(3, 10)]
-    public string description;
-    
+    public string description_throw;
+
+    [TextArea(3, 10)]
+    public string description_information;
+
     public GameObject trashObject;
     public RecycleActType recycleActType;
     public TrashTypeInformation trashTypeInformation;

@@ -25,7 +25,6 @@ public class TrashObject : MonoBehaviour
     private Collider2D coll;
     private DragObject dragObject;
     private Animator animator;
-    private string equipSFX = "Trash";
 
     private void Awake()
     {
@@ -88,7 +87,6 @@ public class TrashObject : MonoBehaviour
         Debug.Log("StartEquipe");
         coll.enabled = false;
         rigd.bodyType = RigidbodyType2D.Static;
-        equipSFX = equipSFXName;
         animator.SetTrigger("Equip");
     }
 
@@ -99,7 +97,7 @@ public class TrashObject : MonoBehaviour
 
         gameObject.SetActive(false);
         coll.enabled = true;
-        SoundManager.Instance.PlaySFX(equipSFX);
+        //SoundManager.Instance.PlaySFX("Equip");
 
         animator.SetBool("Equip", false);
         OnEndEquip.Invoke();

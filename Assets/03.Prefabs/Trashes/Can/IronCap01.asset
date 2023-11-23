@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6c9cd319d50538409578ca4e80419d1, type: 3}
+  m_Name: IronCap01
+  m_EditorClassIdentifier: 
+  sprite: {fileID: -7008412969330441016, guid: 2fc74fa7747dc0049add021cd64d7a48, type: 3}
+  trashSaveName: "\uCCA0\uB69C\uAED101"
+  trashRealName: "\uCCA0\uB69C\uAED1"
+  description_throw: "- \uCCA0\uB69C\uAED1\uC740 \uCE94\uB958 (\uCCA0) \uB85C \uB530\uB85C
+    \uBC30\uCD9C\uD574\uC694."
+  description_information: "\uCCA0\uB85C \uB41C \uB69C\uAED1"
+  trashObject: {fileID: 5263531136681108094, guid: 406296040b9deed4ab414abba7bca86a, type: 3}
+  recycleActType: 1
+  trashTypeInformation: {fileID: 11400000, guid: 7f80c57160dfb594784554dc430d98fe, type: 2}

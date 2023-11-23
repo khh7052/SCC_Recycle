@@ -9,7 +9,7 @@ public enum RecycleActType
     NONE = 0,
     CLEAR = 1 << 0,
     RINSE = 1 << 1,
-    DETACH = 1 << 2
+    DETACH = 1 << 2,
 }
 
 [CreateAssetMenu(menuName = "Create TrashTypeInformation")]
