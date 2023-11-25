@@ -957,6 +957,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6508823833140581783}
   - component: {fileID: 394373339436770778}
+  - component: {fileID: 3587970304260991317}
   m_Layer: 5
   m_Name: Tutrorial
   m_TagString: Untagged
@@ -1019,6 +1020,21 @@ MonoBehaviour:
   nextButton: {fileID: 8003397735699974073}
   progressButtonParent: {fileID: 3196174838466664364}
   progressButton: {fileID: 3932456787053799353, guid: 473c30c6ecf50804baac2c8e4ee5ba95, type: 3}
+--- !u!114 &3587970304260991317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6854904482370404472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d13ae4fa665e544b875445d89feb61a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 3
+  initActive: 0
+  onClickActive: 1
 --- !u!1 &7407121210545368055
 GameObject:
   m_ObjectHideFlags: 0
@@ -1107,6 +1123,7 @@ GameObject:
   - component: {fileID: 7578098663253302429}
   - component: {fileID: 2464173280451107441}
   - component: {fileID: 3109139622217516266}
+  - component: {fileID: 7131850594746133290}
   m_Layer: 5
   m_Name: CloseButton
   m_TagString: Untagged
@@ -1216,16 +1233,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2464173280451107441}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: ActiveTutorial
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+--- !u!114 &7131850594746133290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7531981960700245841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d13ae4fa665e544b875445d89feb61a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 3
+  initActive: 1
+  onClickActive: 0

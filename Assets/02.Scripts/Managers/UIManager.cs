@@ -9,21 +9,20 @@ using TMPro;
 public class UIManager : Singleton<UIManager>
 {
     [Header("Common")]
+    public GameObject uiError;
     public GameObject uiOption;
     public GameObject uiInformation;
     public GameObject uiTutorial;
+    public GameObject uiGameOver;
     public FadeText errorText;
     
 
     [Header("Collect Game")]
-    public GameObject uiGameOver;
     public Image timeBar;
     public TMP_Text scoreText;
     public TMP_Text maxScoreText;
 
     [Header("SperateEmission")]
-    public GameObject uiSeparateError;
-    public GameObject uiSeparateGameEnd;
     public GameObject uiTrashInformation;
     public GameObject uiTrashSimpleInformation;
     
@@ -48,22 +47,24 @@ public class UIManager : Singleton<UIManager>
     public override void Awake()
     {
         base.Awake();
+        foreach (var ui in FindObjectsOfType<UIActiveSetting>(true))
+        {
+            ui.Init();
+        }
         SaveManager.OnLoad.AddListener(Init);
     }
 
     private void Start()
     {
+        
+            
+
         // Common
-        ActiveOption(false);
-        ActiveInformation(false);
-        ActiveTutorial(false);
         ErrorTextUpdate("");
 
         // Collect
-        ActiveGameOver(false);
 
         // SeparateEmission
-        ActiveSeparateGameEnd(false);
         ActiveTrashSimpleInformation(false);
         ActiveTrashInformation(false);
 
@@ -94,6 +95,13 @@ public class UIManager : Singleton<UIManager>
 
 
     #region Common
+
+    public void ActiveError(bool active)
+    {
+        if (!uiError) return;
+
+        uiError.SetActive(active);
+    }
     public void ActiveOption(bool active)
     {
         if (!uiOption) return;
@@ -116,6 +124,12 @@ public class UIManager : Singleton<UIManager>
         Time.timeScale = active ? 0f : 1f;
     }
 
+    public void ActiveGameOver(bool active)
+    {
+        if (!uiGameOver) return;
+        uiGameOver.SetActive(active);
+    }
+
 
     public void ErrorTextUpdate(string text)
     {
@@ -129,12 +143,7 @@ public class UIManager : Singleton<UIManager>
     #endregion
 
     #region Collect
-    public void ActiveGameOver(bool active)
-    {
-        if (!uiGameOver) return;
 
-        uiGameOver.SetActive(active);
-    }
     public void TimeBarUpdate(float amount)
     {
         if (!timeBar) return;
@@ -153,30 +162,16 @@ public class UIManager : Singleton<UIManager>
     #endregion
 
     #region SperateEmission
-    public void ActiveSeparateError(bool active)
-    {
-        if (!uiSeparateError) return;
-
-        uiSeparateError.SetActive(active);
-    }
-    public void ActiveSeparateGameEnd(bool active)
-    {
-        if (!uiSeparateGameEnd) return;
-
-        uiSeparateGameEnd.SetActive(active);
-    }
     
     public void ActiveTrashSimpleInformation(bool active)
     {
         if (!uiTrashSimpleInformation) return;
-
         uiTrashSimpleInformation.SetActive(active);
     }
     
     public void ActiveTrashInformation(bool active)
     {
         if (!uiTrashInformation) return;
-
         uiTrashInformation.SetActive(active);
     }
     

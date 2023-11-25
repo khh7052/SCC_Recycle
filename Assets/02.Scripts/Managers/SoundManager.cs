@@ -5,14 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class SoundManager : Singleton<SoundManager>
 {
-    public AudioSource bgmSource, sfxSource;
+    public AudioSource bgmSource;
+    public AudioSource[] sfxSource;
     public Sound[] bgmSounds, sfxSounds;
     private Dictionary<string, Sound> bgmDictionary, sfxDictionary = new();
-    public AudioSource sfxSpeaker;
-    private Dictionary<GameObject, AudioSource> sfxSpeakers = new();
     public static float BGM_Volume = 1f;
     public static float SFX_Volume = 1f;
-    private Sound currentBGM, currentSFX;
+    private Sound currentBGM;
 
     public override void Awake()
     {
@@ -78,32 +77,32 @@ public class SoundManager : Singleton<SoundManager>
         int idx = random ? Random.Range(0, clips.Length) : 0;
         AudioClip clip = clips[idx];
         
-        sfxSource.volume = sound.volume * SFX_Volume;
-        sfxSource.clip = clip;
-        
-        if (sfxSource.isPlaying)
-        {
-            sfxSource.PlayOneShot(clip);
-        }
-        else
-        {
-            sfxSource.clip = clip;
-            sfxSource.Play();
-        }
 
-        currentSFX = sound;
+        foreach (var source in sfxSource)
+        {
+            if (source.isPlaying) continue;
+
+            source.clip = clip;
+            source.volume = sound.volume * SFX_Volume;
+            source.Play();
+            break;
+        }
     }
 
     // 현재 BGM 중지
     public void StopBGM()
     {
-        StartCoroutine(FadingBGM(0f));
+        bgmSource.Stop();
+        //StartCoroutine(FadingBGM(0f));
     }
 
     // 현재 SFX 중지
     public void StopSFX()
     {
-        sfxSource.Stop();
+        foreach (var source in sfxSource)
+        {
+            source.Stop();
+        }
     }
     
     // BGM Mute 토글
@@ -115,7 +114,10 @@ public class SoundManager : Singleton<SoundManager>
     // SFX Mute 토글
     public void ToggleSFX()
     {
-        sfxSource.mute = !sfxSource.mute;
+        foreach (var source in sfxSource)
+        {
+            source.mute = !source.mute;
+        }
     }
 
     // BGM 볼륨 조절
@@ -132,8 +134,11 @@ public class SoundManager : Singleton<SoundManager>
     {
         SFX_Volume = Mathf.Clamp01(volume);
 
-        if(currentSFX != null) 
-            sfxSource.volume = SFX_Volume * currentSFX.volume;
+        foreach (var source in sfxSource)
+        {
+            if(!source.isPlaying) continue;
+            source.volume = SFX_Volume * sfxDictionary[source.clip.name].volume;
+        }
     }
 
     IEnumerator FadingBGM(float targetVolume)

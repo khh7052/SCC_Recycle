@@ -33,11 +33,11 @@ public class SeparateManager : Singleton<SeparateManager>
     {
         if(saveFile.GetTrashNum() == 0)
         {
-            UIManager.Instance.ActiveSeparateError(true);
+            UIManager.Instance.ActiveError(true);
         }
         else
         {
-            UIManager.Instance.ActiveSeparateError(false);
+            UIManager.Instance.ActiveError(false);
             spawner.SpawnStart(saveFile);
         }
     }
