@@ -15,6 +15,7 @@ public class UIManager : Singleton<UIManager>
     public GameObject uiTutorial;
     public GameObject uiGameOver;
     public FadeText errorText;
+    public FadeImage resultImage;
     
 
     [Header("Collect Game")]
@@ -48,19 +49,26 @@ public class UIManager : Singleton<UIManager>
     {
         base.Awake();
         foreach (var ui in FindObjectsOfType<UIActiveSetting>(true))
-        {
             ui.Init();
+
+        foreach (var button in FindObjectsOfType<Button>(true))
+        {
+            if (!button.TryGetComponent(out SFXButton sfxButton))
+                sfxButton = button.gameObject.AddComponent<SFXButton>();
+
+            if (SceneManager.GetActiveScene().name == "Play")
+                sfxButton.Init("Button-Retro");
+            else
+                sfxButton.Init("Button");
         }
         SaveManager.OnLoad.AddListener(Init);
     }
 
     private void Start()
     {
-        
-            
-
         // Common
         ErrorTextUpdate("");
+        ActiveResultImage(false);
 
         // Collect
 
@@ -73,10 +81,16 @@ public class UIManager : Singleton<UIManager>
         ActiveItemCreate(false);
     }
 
+    public static void LoadScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+    /*
     public void LoadScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
     }
+    */
 
     public void GameExit()
     {
@@ -102,6 +116,14 @@ public class UIManager : Singleton<UIManager>
 
         uiError.SetActive(active);
     }
+
+    public void ActiveResultImage(bool active)
+    {
+        if (!resultImage) return;
+
+        resultImage.gameObject.SetActive(active);
+    }
+
     public void ActiveOption(bool active)
     {
         if (!uiOption) return;
@@ -139,6 +161,14 @@ public class UIManager : Singleton<UIManager>
 
         if(text != "")
             SoundManager.Instance.PlaySFX("Error");
+    }
+
+    public void ResultImageUpdate(Sprite sprite)
+    {
+        if (!resultImage || sprite == null) return;
+        ActiveResultImage(true);
+        resultImage.ImageUpdate(sprite);
+        resultImage.StartFade();
     }
     #endregion
 

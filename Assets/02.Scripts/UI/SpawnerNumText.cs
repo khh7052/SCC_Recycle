@@ -5,12 +5,13 @@ using TMPro;
 
 public class SpawnerNumText : MonoBehaviour
 {
-    public TrashSpawner spawner;
+    private TrashSpawner spawner;
     private TMP_Text text;
     private int num;
 
     private void Awake()
     {
+        spawner = FindObjectOfType<TrashSpawner>();
         text = GetComponent<TMP_Text>();
     }
     

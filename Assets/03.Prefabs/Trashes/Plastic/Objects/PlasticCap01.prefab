@@ -83,7 +83,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!60 &1025333915301138500
 PolygonCollider2D:
@@ -204,6 +204,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   trash: {fileID: 11400000, guid: ca3024e95bb2a7646876dcffd5099e5e, type: 2}
+  rigd: {fileID: 0}
+  coll: {fileID: 0}
 --- !u!114 &2476509825054912314
 MonoBehaviour:
   m_ObjectHideFlags: 0

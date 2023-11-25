@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12530cd5946798740aa5785bec297b75, type: 3}
   m_Name: Bag
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 6a08ec4b334ea1c46b8171679417a74f, type: 3}
+  sprite: {fileID: 21300000, guid: 61f589943353049438562d1fb89aaf1d, type: 3}
   itemName: "\uAC00\uBC29"
   description: 
   costDatas:

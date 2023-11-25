@@ -32,8 +32,9 @@ public class TrashCan : MonoBehaviour
             recycleOn = true;
         
         string sound = recycleOn ? "Correct" : "Incorrect";
-        trashObject.StartEquip(sound);
-        
+        SoundManager.Instance.PlaySFX(sound);
+        trashObject.StartEquip();
+
         // 타입 올바르면 재활용
         if (recycleOn)
         {

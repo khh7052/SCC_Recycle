@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12530cd5946798740aa5785bec297b75, type: 3}
   m_Name: T-Shirt
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: ace8a02646afeda4880fc3cb14cad705, type: 3}
+  sprite: {fileID: 21300000, guid: 9b70b50d6b63e47028c51d2320a23ef5, type: 3}
   itemName: "\uD2F0\uC154\uCE20"
   description: 
   costDatas:

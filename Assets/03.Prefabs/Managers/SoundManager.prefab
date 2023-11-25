@@ -607,8 +607,16 @@ MonoBehaviour:
     volume: 0.8
   - name: Play
     clips:
-    - {fileID: 8300000, guid: e4d4a6f1951179c44a0db915a28b17d5, type: 3}
-    volume: 0.6
+    - {fileID: 8300000, guid: a5d51af092079964498d4874818cca7f, type: 3}
+    volume: 0.4
+  - name: Separate
+    clips:
+    - {fileID: 8300000, guid: 2325ab15b906a1b4baf7526801da8aaa, type: 3}
+    volume: 0.4
+  - name: Emission
+    clips:
+    - {fileID: 8300000, guid: c3938258cdb4a594bab8667cf5cc5f7f, type: 3}
+    volume: 0.4
   sfxSounds:
   - name: Jump
     clips:
@@ -624,8 +632,7 @@ MonoBehaviour:
     volume: 1
   - name: Correct
     clips:
-    - {fileID: 8300000, guid: aae4cc67359e794458e7812208a2a822, type: 3}
-    - {fileID: 8300000, guid: f4c69b108b51a4f49b19e1e3a8b14223, type: 3}
+    - {fileID: 8300000, guid: be7951963617dc649941f492ffa06b2b, type: 3}
     volume: 1
   - name: Step
     clips:
@@ -643,7 +650,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 0608712f21fe718478f417070a088f92, type: 3}
     - {fileID: 8300000, guid: 935896d7905f04045bbc629345d0bbf0, type: 3}
     - {fileID: 8300000, guid: fbcde6d1791dff74ea54d9d26a43ea45, type: 3}
-    volume: 0.6
+    volume: 1
   - name: Trash
     clips:
     - {fileID: 8300000, guid: aae4cc67359e794458e7812208a2a822, type: 3}
@@ -660,8 +667,8 @@ MonoBehaviour:
     volume: 0.6
   - name: Incorrect
     clips:
-    - {fileID: 8300000, guid: 748bfaff907ecaa4b9ead1b20071465f, type: 3}
-    volume: 0.6
+    - {fileID: 8300000, guid: 7a5aa609f5747164eb269505ce98c4d8, type: 3}
+    volume: 1
   - name: GameOver
     clips:
     - {fileID: 8300000, guid: c621a1aed15a9d3488be122f189d0554, type: 3}
@@ -669,7 +676,15 @@ MonoBehaviour:
   - name: HitTrash
     clips:
     - {fileID: 8300000, guid: ea06fda4fc5db8f4baea0320af63cdcd, type: 3}
-    volume: 0.6
+    volume: 1
+  - name: Button
+    clips:
+    - {fileID: 8300000, guid: e7c4dbd3016b5a44387bca4d6f5cf39b, type: 3}
+    volume: 1
+  - name: Button-Retro
+    clips:
+    - {fileID: 8300000, guid: 666e4e02e1f222a48ab488e584339aca, type: 3}
+    volume: 1
 --- !u!1 &9185459022528255053
 GameObject:
   m_ObjectHideFlags: 0

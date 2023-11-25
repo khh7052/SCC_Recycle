@@ -2,6 +2,7 @@ using System.Collections;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class SeparateManager : Singleton<SeparateManager>
@@ -10,6 +11,8 @@ public class SeparateManager : Singleton<SeparateManager>
     public RecycleActType currentActType;
     private Trash currentTrash;
     private GameObject currentTrashObject;
+    public Sprite correctSprite;
+    public Sprite incorrectSprite;
 
     private Dictionary<Trash, int> correctTrash = new(); // 분리수거 성공한 쓰레기들
     private Dictionary<Trash, int> incorrectTrash = new(); // 분리수거 실패한 쓰레기들
@@ -19,6 +22,7 @@ public class SeparateManager : Singleton<SeparateManager>
     public TMP_Text correctText;
     public TMP_Text incorrectText;
     public SeparateResultTrashButton separateResultTrashButton;
+    
 
     private ActButton[] actButtons;
 
@@ -59,7 +63,8 @@ public class SeparateManager : Singleton<SeparateManager>
         if (currentActType == currentTrash.recycleActType)
         {
             // 쓰레기 스폰
-            UIManager.Instance.ErrorTextUpdate("정답!");
+            UIManager.Instance.ResultImageUpdate(correctSprite);
+            SoundManager.Instance.PlaySFX("Correct");
 
             if (correctTrash.ContainsKey(currentTrash))
                 correctTrash[currentTrash]++;
@@ -69,8 +74,9 @@ public class SeparateManager : Singleton<SeparateManager>
         // 다를 때
         else
         {
-            UIManager.Instance.ErrorTextUpdate("오답!");
-            
+            UIManager.Instance.ResultImageUpdate(incorrectSprite);
+            SoundManager.Instance.PlaySFX("Incorrect");
+
             SaveManager.SaveFile.RemoveTrash(currentTrash.trashSaveName); // 틀린 쓰레기는 저장하지 않음
             
             if (incorrectTrash.ContainsKey(currentTrash))

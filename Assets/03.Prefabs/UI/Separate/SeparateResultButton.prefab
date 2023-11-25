@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6617481857833050340}
   - component: {fileID: 429726827677648918}
   - component: {fileID: 8667759993761661557}
+  - component: {fileID: -6817454235230392859}
   m_Layer: 5
   m_Name: SeparateResultButton
   m_TagString: Untagged
@@ -150,6 +151,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trashImage: {fileID: 4465726526929075935}
   trashNumText: {fileID: 9086613993185385798}
+--- !u!114 &-6817454235230392859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2021541712487282072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0424d2cd712cee46939c6fe8d8cde37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfxName: Button
 --- !u!1 &7635967738769055537
 GameObject:
   m_ObjectHideFlags: 0

@@ -796,18 +796,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1339987162}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: ActiveOption
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1915705378}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: LoadScene
@@ -2856,7 +2844,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 4
-  active: 0
+  initActive: 0
+  onClickActive: 1
 --- !u!1 &904175321
 GameObject:
   m_ObjectHideFlags: 0
@@ -3650,7 +3639,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 3
-  active: 0
+  initActive: 0
+  onClickActive: 1
 --- !u!1 &1054871287
 GameObject:
   m_ObjectHideFlags: 0
@@ -4829,17 +4819,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1332874969}
   m_CullTransparentMesh: 1
---- !u!114 &1339987162 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 550879048539799650, guid: e5dcc7a29c0b17a4d9bf9fbad2566dd3, type: 3}
-  m_PrefabInstance: {fileID: 7996974477174996569}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4b2fc23f9f404643a56eb8135ed9e4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1339987163 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6963856811612040101, guid: e5dcc7a29c0b17a4d9bf9fbad2566dd3, type: 3}
@@ -6453,7 +6432,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
-  active: 0
+  initActive: 0
+  onClickActive: 1
 --- !u!1 &1722042373
 GameObject:
   m_ObjectHideFlags: 0
@@ -6950,7 +6930,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
-  active: 0
+  initActive: 0
+  onClickActive: 1
 --- !u!1 &1831146888
 GameObject:
   m_ObjectHideFlags: 0

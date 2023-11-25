@@ -137,6 +137,7 @@ public class SoundManager : Singleton<SoundManager>
         foreach (var source in sfxSource)
         {
             if(!source.isPlaying) continue;
+
             source.volume = SFX_Volume * sfxDictionary[source.clip.name].volume;
         }
     }

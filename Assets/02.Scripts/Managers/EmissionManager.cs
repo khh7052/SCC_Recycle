@@ -33,7 +33,7 @@ public class EmissionManager : Singleton<EmissionManager>
         
         if(trashNum == 0)
         {
-            UIManager.Instance.ActiveGameOver(true);
+            UIManager.Instance.ActiveError(true);
         }
         else
         {

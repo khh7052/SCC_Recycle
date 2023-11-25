@@ -120,7 +120,7 @@ public class Player : MonoBehaviour
         {
             TrashObject trash = collision.gameObject.GetComponent<TrashObject>();
             SoundManager.Instance.PlaySFX("HitTrash");
-            trash.StartEquip("Trash");
+            trash.StartEquip();
         }
     }
 }

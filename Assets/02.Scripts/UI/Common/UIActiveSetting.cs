@@ -12,6 +12,7 @@ public class UIActiveSetting : MonoBehaviour
         Option,
         Information,
         Tutorial,
+        ResultImage,
         GameOver,
         TrashSimpleInformation,
         TrashInformation,
@@ -76,6 +77,8 @@ public class UIActiveSetting : MonoBehaviour
                 {
                     button.onClick.AddListener(() => UIManager.Instance.ActiveTutorial(onClickActive));
                 }
+                break;
+            case UIType.ResultImage:
                 break;
             case UIType.GameOver:
                 if (button == null)

@@ -54,7 +54,7 @@ MonoBehaviour:
     onMouseAnim: 0
     onChild: 1
   - sceneName: Separate
-    rigdType: 0
+    rigdType: 1
     gravity: 0
     isTrigger: 1
     onDrag: 0

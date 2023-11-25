@@ -21,10 +21,11 @@ public class TrashObject : MonoBehaviour
     public UnityEvent OnEndEquip = new();
 
     public Trash trash;
-    private Rigidbody2D rigd;
-    private Collider2D coll;
+    public Rigidbody2D rigd;
+    public Collider2D coll;
     private DragObject dragObject;
     private Animator animator;
+    bool hasParent;
 
     private void Awake()
     {
@@ -32,6 +33,7 @@ public class TrashObject : MonoBehaviour
         coll = GetComponent<Collider2D>();
         dragObject = GetComponent<DragObject>();
         animator = GetComponent<Animator>();
+        hasParent = transform.root.GetComponent<TrashObject>() != this;
     }
 
     private void Start()
@@ -41,7 +43,6 @@ public class TrashObject : MonoBehaviour
 
     private void OnEnable()
     {
-        
         SettingUpdate();
     }
 
@@ -57,6 +58,21 @@ public class TrashObject : MonoBehaviour
         string sceneName = SceneManager.GetActiveScene().name;
         if (!TrashManager.TrashObjectSetting.ContainsKey(sceneName)) TrashManager.Instance.TrashSettingInit();
         if (!TrashManager.TrashObjectSetting.ContainsKey(sceneName)) return;
+
+        if(sceneName == "Play")
+        {
+            if (hasParent)
+            {
+                if (rigd != null) rigd.simulated = false;
+                if (coll != null) coll.enabled = false;
+                return;
+            }
+        }
+        else
+        {
+            if(hasParent)
+                if (rigd != null) rigd.WakeUp();
+        }
 
         TrashObjectSetting setting = TrashManager.TrashObjectSetting[sceneName];
 
@@ -82,7 +98,7 @@ public class TrashObject : MonoBehaviour
         }
     }
 
-    public void StartEquip(string equipSFXName)
+    public void StartEquip()
     {
         Debug.Log("StartEquipe");
         coll.enabled = false;
