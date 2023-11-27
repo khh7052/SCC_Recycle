@@ -42,9 +42,6 @@ public class Trash : ScriptableObject
     [TextArea(3, 10)]
     public string description_throw;
 
-    [TextArea(3, 10)]
-    public string description_information;
-
     public GameObject trashObject;
     public RecycleActType recycleActType;
     public TrashTypeInformation trashTypeInformation;

@@ -10,13 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c6c9cd319d50538409578ca4e80419d1, type: 3}
-  m_Name: Lighter
+  m_Name: Label02
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 4b4d00a7c4e504be6a7a4ac69fffa460, type: 3}
-  trashSaveName: Lighter01
-  trashRealName: "\uB2E4 \uC4F4 \uB77C\uC774\uD130"
+  sprite: {fileID: 21300000, guid: 8810b4f53fb0d2144b0508c0888f69de, type: 3}
+  trashSaveName: "\uB77C\uBCA802"
+  trashRealName: "\uB77C\uBCA8"
   description_throw: 
-  description_information: 
-  trashObject: {fileID: 0}
-  recycleActType: 1
-  trashTypeInformation: {fileID: 0}
+  trashObject: {fileID: 8795742038880033096, guid: 7ad4c5280b4ab6d4db11538afd7a40a9, type: 3}
+  recycleActType: 4
+  trashTypeInformation: {fileID: 11400000, guid: 0db49655bcd096641b05442d5839556e, type: 2}

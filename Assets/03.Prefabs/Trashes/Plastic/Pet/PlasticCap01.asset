@@ -15,8 +15,10 @@ MonoBehaviour:
   sprite: {fileID: 2537882373423050008, guid: 72f83bdd6ee53074b9f511db4ce1a7e4, type: 3}
   trashSaveName: "\uD50C\uB77C\uC2A4\uD2F1\uB69C\uAED101"
   trashRealName: "\uD398\uD2B8\uBCD1 \uB69C\uAED1"
-  description_throw: 
-  description_information: 
+  description_throw: "-\uD398\uD2B8\uBCD1 \uACFC \uD398\uD2B8\uBCD1 \uB69C\uAED1
+    \uC740 \uB2E4\uB978 \uC7AC\uC9C8\uC774\uBBC0\uB85C \uBD84\uB9AC\uD574\uC11C \uBC30\uCD9C\uD574\uC694.\r\n-\uBB3C\uB85C
+    \uD55C\uBC88 \uC138\uCC99\uD558\uACE0 \uC2A4\uD2F0\uCEE4\uB098 \uD14C\uC774\uD504\uAC00
+    \uBD99\uC5B4\uC788\uC73C\uBA74 \uB5BC\uC5B4\uB0B8 \uD6C4 \uBC30\uCD9C\uD574\uC694."
   trashObject: {fileID: 57670174504390953, guid: b3dceea6c6c9d2a48aeea7d5066aeb0e, type: 3}
-  recycleActType: 1
-  trashTypeInformation: {fileID: 11400000, guid: 5fd50711f5fe74c4f817fc2f7bbe41fa, type: 2}
+  recycleActType: 5
+  trashTypeInformation: {fileID: 11400000, guid: 15cdce4138e3dc84c9a8ba8d2de533d1, type: 2}
