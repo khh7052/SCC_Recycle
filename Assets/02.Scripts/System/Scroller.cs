@@ -4,13 +4,7 @@ using UnityEngine;
 
 public class Scroller : MonoBehaviour
 {
-    public int count = 0;
     public float speedRate = 1f;
-
-    void Start()
-    {
-        count = transform.childCount;
-    }
 
     void Update()
     {

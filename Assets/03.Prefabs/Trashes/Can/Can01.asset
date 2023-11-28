@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6c9cd319d50538409578ca4e80419d1, type: 3}
+  m_Name: Can01
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 6f98413a8d0fe72469e6c85be75e9c7b, type: 3}
+  trashSaveName: "\uCE9401"
+  trashRealName: "\uC74C\uB8CC\uC218\uCE94"
+  description_throw: "-\uB0B4\uC6A9\uBB3C\uC744 \uBE44\uC6B0\uACE0, \uBB3C\uB85C
+    \uAE68\uB057\uD788 \uD5F9\uAD88\uC694.\r\n-\uB77C\uBCA8, \uC2A4\uD2F0\uCEE4 \uB4F1\uC774
+    \uBD99\uC5B4\uC788\uC744 \uACBD\uC6B0 \uAE68\uB057\uD558\uAC8C \uB5BC\uC5B4\uB0B8
+    \uD6C4 \uBC84\uB824\uC694.\r\n-\uD50C\uB77C\uC2A4\uD2F1 \uB69C\uAED1 \uB4F1 \uB2E4\uB978
+    \uC7AC\uC9C8\uC740 \uBD84\uB9AC\uD574\uC11C \uBC30\uCD9C\uD574\uC694.\r\n-\uBC1C\uB85C
+    \uBC1F\uAC70\uB098 \uCD5C\uB300\uD55C \uC555\uCC29\uC2DC\uCF1C \uBD80\uD53C\uB97C
+    \uC904\uC774\uBA74 \uB354 \uC88B\uC544\uC694. (\uBC1F\uC744 \uB550 \uB2E4\uCE58\uC9C0
+    \uC54A\uAC8C \uC870\uC2EC!)"
+  description_information: "\uB0B4\uC6A9\uBB3C\uC774 \uC77C\uBD80 \uB0A8\uC740 \uC74C\uB8CC\uC218
+    \uCE94"
+  trashObject: {fileID: 5315049714560499970, guid: 503d723efac4f0c42acec05c3b3d2c96, type: 3}
+  recycleActType: 3
+  trashTypeInformation: {fileID: 11400000, guid: 4153de2a1bf3bd34893396121e070e6d, type: 2}

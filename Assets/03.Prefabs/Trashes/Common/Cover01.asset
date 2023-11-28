@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6c9cd319d50538409578ca4e80419d1, type: 3}
+  m_Name: Cover01
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 84a1d63e0a3566a469daa9b5ed0752bf, type: 3}
+  trashSaveName: "\uCEE4\uBC8401"
+  trashRealName: "\uCC45 \uCEE4\uBC84"
+  description_throw: "-\uC591\uC7A5\uBCF8 \uCC45\uC740 \uAC89\uD45C\uC9C0(\uC77C\uBC18\uC4F0\uB808\uAE30)\uC640
+    \uC18D\uC9C0(\uC885\uC774)\uB97C \uBD84\uB9AC\uD574\uC11C \uBC30\uCD9C\uD574\uC694."
+  trashObject: {fileID: 8468093527730956536, guid: ce7c65101b586d8479a4e806e13548bc, type: 3}
+  recycleActType: 4
+  trashTypeInformation: {fileID: 11400000, guid: aaceb9e22ad7b354bafc093edcb2a166, type: 2}

@@ -33,11 +33,11 @@ public class EmissionManager : Singleton<EmissionManager>
         
         if(trashNum == 0)
         {
-            UIManager.Instance.ActiveSeparateGameEnd(true);
+            UIManager.Instance.ActiveError(true);
         }
         else
         {
-            UIManager.Instance.ActiveSeparateGameEnd(false);
+            UIManager.Instance.ActiveGameOver(false);
             spawner.SpawnStart(saveFile);
         }
     }

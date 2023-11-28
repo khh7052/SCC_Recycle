@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onDontDestroy: 0
+  spawnParent: {fileID: 0}
   stages:
   - {fileID: 11400000, guid: 45a329bbf4267af40a64cb774cec5d95, type: 2}
   - {fileID: 11400000, guid: 604e2eeda95e15f4c96e4abc9199f79c, type: 2}
+  - {fileID: 11400000, guid: aef477f4dcebeba409264335093c54fc, type: 2}

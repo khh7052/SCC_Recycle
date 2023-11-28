@@ -8,7 +8,7 @@ public enum TrashInformationTextType
     NAME,
     TYPE,
     THROW,
-    INFORMATION
+    ACT
 }
 
 public class TrashInformationText : MonoBehaviour
@@ -38,8 +38,8 @@ public class TrashInformationText : MonoBehaviour
             case TrashInformationTextType.THROW:
                 text.text = trash.description_throw;
                 break;
-            case TrashInformationTextType.INFORMATION:
-                text.text = trash.description_information;
+            case TrashInformationTextType.ACT:
+                text.text = "필요한 행동 : " + trash.GetActTypeText();
                 break;
         }
     }

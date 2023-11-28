@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &199516749343873933
 MonoBehaviour:
@@ -54,7 +54,7 @@ MonoBehaviour:
     onMouseAnim: 0
     onChild: 1
   - sceneName: Separate
-    rigdType: 0
+    rigdType: 1
     gravity: 0
     isTrigger: 1
     onDrag: 0
@@ -68,13 +68,20 @@ MonoBehaviour:
     onMouseAnim: 1
     onChild: 0
   trashes:
-  - {fileID: 11400000, guid: b2897935f3bcb4e40ad67aca1bd86ced, type: 2}
   - {fileID: 11400000, guid: 47b4ef76d5fe0bd40b6cd4c7be2a042d, type: 2}
+  - {fileID: 11400000, guid: 115ac36803a3b1a4db7155c04567f420, type: 2}
+  - {fileID: 11400000, guid: 306fcd0ab6421004f9969c6c38a664ed, type: 2}
+  - {fileID: 11400000, guid: 48dcf0ff773fc634caee2bc17d3b0202, type: 2}
+  - {fileID: 11400000, guid: 1b5e5774d482d484ba0e159808f14844, type: 2}
+  - {fileID: 11400000, guid: ea2b7c318c3fd6f438ab888156295bec, type: 2}
+  - {fileID: 11400000, guid: 0dad98a4f71c9a24881d1df04722d7f8, type: 2}
+  - {fileID: 11400000, guid: e526d3f567a24d34b898022f3fa94c9b, type: 2}
   - {fileID: 11400000, guid: b545c036e7a545a4cb916ab90a51752a, type: 2}
   - {fileID: 11400000, guid: dd6ea147fa3e4144b902de0b77542c00, type: 2}
-  - {fileID: 11400000, guid: 4a380a046c89a6141b836054b6cedada, type: 2}
-  - {fileID: 11400000, guid: bc504e58a70d93849842f3ab22457a24, type: 2}
-  - {fileID: 11400000, guid: a274b71c6e15d8c4285d1e7b4d71ec90, type: 2}
+  - {fileID: 11400000, guid: b2897935f3bcb4e40ad67aca1bd86ced, type: 2}
+  - {fileID: 11400000, guid: 40b62f250c2759943ae7b71c577e9b1e, type: 2}
+  - {fileID: 11400000, guid: 871b8ac34700b7e4bb59a5a7586bed47, type: 2}
+  - {fileID: 11400000, guid: a00bc4585428db64d87d33eb361f2d5b, type: 2}
   typeInformations:
   - {fileID: 11400000, guid: 4153de2a1bf3bd34893396121e070e6d, type: 2}
   - {fileID: 11400000, guid: b02b16cfc30c65f4bb001a25f5c6fa58, type: 2}

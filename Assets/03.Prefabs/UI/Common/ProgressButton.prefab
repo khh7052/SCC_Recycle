@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5907668478388142483}
   - component: {fileID: 6031101831331322732}
   - component: {fileID: 3932456787053799353}
+  - component: {fileID: 5648469336839599288}
   m_Layer: 5
   m_Name: ProgressButton
   m_TagString: Untagged
@@ -68,7 +69,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: aa5c3f19bd2f14b32ba1992e4e83d1de, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4cc9a5a845971482ba3d802b78e4619b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -147,3 +148,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 6031101831331322732}
+--- !u!114 &5648469336839599288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6780903306877222068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0424d2cd712cee46939c6fe8d8cde37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfxName: Button

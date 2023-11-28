@@ -8,6 +8,7 @@ public class ActButton : MonoBehaviour
 {
     public RecycleActType actType;
     private Image image;
+    public Color pressedColor;
 
     private void Awake()
     {
@@ -16,15 +17,15 @@ public class ActButton : MonoBehaviour
 
     public void Init()
     {
-        SeparateManager.Instance.currentActType = 0;
+        SeparateManager.Instance.currentActType = RecycleActType.NONE;
         image.color = Color.white;
     }
 
     public void OnActButton()
     {
-        image.color = image.color == Color.white ? Color.black : Color.white;
+        image.color = image.color == Color.white ? pressedColor : Color.white;
         
-        if ((SeparateManager.Instance.currentActType & actType) == 0) // 버튼의 행동이 활성화 안되어있으면
+        if ((SeparateManager.Instance.currentActType & actType) == RecycleActType.NONE) // 버튼의 행동이 활성화 안되어있으면
         {
             SeparateManager.Instance.currentActType |= actType; // 행동 추가
         }

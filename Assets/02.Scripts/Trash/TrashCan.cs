@@ -8,18 +8,11 @@ public class TrashCan : MonoBehaviour
 {
     public UnityEvent OnRecycle;
     public TrashType type;
-    public TMP_Text typeText;
     private int count = 0;
 
     public int TrashCount
     {
         get { return count; }
-    }
-
-    private void Awake()
-    {
-        if (typeText == null) return;
-        typeText.text = type.ToString();
     }
 
     private void CheckTrash(TrashObject trashObject)
@@ -32,8 +25,9 @@ public class TrashCan : MonoBehaviour
             recycleOn = true;
         
         string sound = recycleOn ? "Correct" : "Incorrect";
-        trashObject.StartEquip(sound);
-        
+        SoundManager.Instance.PlaySFX(sound);
+        trashObject.StartEquip();
+
         // 타입 올바르면 재활용
         if (recycleOn)
         {

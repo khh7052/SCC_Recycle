@@ -19,6 +19,7 @@ public class StageManager : Singleton<StageManager>
 
     private void Start()
     {
+        StartCoroutine(CreateObstalce());
         StartCoroutine(CreatePattern());
     }
 
@@ -32,33 +33,41 @@ public class StageManager : Singleton<StageManager>
         }
     }
 
-
     void NextStage()
     {
         stageIndex = Mathf.Min(stageIndex + 1, stages.Length - 1);
         print("NextStage");
     }
 
-    public void PatternUpdate()
+    IEnumerator CreateObstalce()
     {
+        while (true)
+        {
+            GameObject obstacle = CurrentStage.GetRandomObstacle();
 
+            if(obstacle)
+                PoolManager.Instance.Pop(obstacle, obstacle.transform.position, obstacle.transform.rotation).transform.SetParent(spawnParent);
+
+            yield return new WaitForSeconds(CurrentStage.obstacleSpawnDelay);
+        }
     }
 
     IEnumerator CreatePattern()
     {
-        WaitForSeconds wait = new(5f);
-
         while (true)
         {
             GameObject pattern = CurrentStage.GetRandomPattern();
 
-            for(int i = 0; i < pattern.transform.childCount; i++)
+            if (pattern)
             {
-                Transform child = pattern.transform.GetChild(i);
-                PoolManager.Instance.Pop(child.gameObject, child.position, child.rotation).transform.SetParent(spawnParent);
+                for (int i = 0; i < pattern.transform.childCount; i++)
+                {
+                    Transform child = pattern.transform.GetChild(i);
+                    PoolManager.Instance.Pop(child.gameObject, child.position, child.rotation).transform.SetParent(spawnParent);
+                }
             }
-            
-            yield return wait;
+
+            yield return new WaitForSeconds(CurrentStage.patternSpawnDelay);
         }
     }
     

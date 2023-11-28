@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
-
 public enum TrashType
 {
     CAN,
@@ -32,6 +32,16 @@ public enum TrashType
     LENGTH
 }
 
+[Flags]
+public enum RecycleActType
+{
+    NONE = 0,
+    CLEAR = 1 << 0,
+    RINSE = 1 << 1,
+    DETACH = 1 << 2,
+    END = 1 << 3,
+}
+
 [CreateAssetMenu(menuName = "Create Trash")]
 public class Trash : ScriptableObject
 {
@@ -42,9 +52,6 @@ public class Trash : ScriptableObject
     [TextArea(3, 10)]
     public string description_throw;
 
-    [TextArea(3, 10)]
-    public string description_information;
-
     public GameObject trashObject;
     public RecycleActType recycleActType;
     public TrashTypeInformation trashTypeInformation;
@@ -52,6 +59,27 @@ public class Trash : ScriptableObject
     public TrashType Type
     {
         get { return trashTypeInformation.originalType; }
+    }
+
+
+    public string GetActTypeText()
+    {
+        string s = "";
+        if (recycleActType == RecycleActType.NONE)
+        {
+            s = "없음";
+        }
+        else
+        {
+            if((recycleActType & RecycleActType.CLEAR) != 0) s += "비우기 ";
+            if ((recycleActType & RecycleActType.RINSE) != 0) s += "헹구기 ";
+            if ((recycleActType & RecycleActType.DETACH) != 0) s += "분리하기 ";
+        }
+
+        s = s.Trim();
+        s = s.Replace(" ", ", ");
+
+        return s;
     }
 
 }

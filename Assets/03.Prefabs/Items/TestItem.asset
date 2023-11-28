@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12530cd5946798740aa5785bec297b75, type: 3}
   m_Name: TestItem
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: -6081611462039590206, guid: 0bb4f19fc2aac2148a5026320eb80842, type: 3}
   itemName: "\uD14C\uC2A4\uD2B8 \uC544\uC774\uD15C"
   description: 
   costDatas:

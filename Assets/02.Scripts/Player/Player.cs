@@ -35,9 +35,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         jumpCurrentCount = 0;
-
         AnimUpdate();
-        print(character.GetState());
     }
 
     void Update()
@@ -105,6 +103,8 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (!GameManager.IsLive) return;
+
         if (collision.CompareTag("Coin"))
         {
             collision.gameObject.SetActive(false);
@@ -120,7 +120,7 @@ public class Player : MonoBehaviour
         {
             TrashObject trash = collision.gameObject.GetComponent<TrashObject>();
             SoundManager.Instance.PlaySFX("HitTrash");
-            trash.StartEquip("Trash");
+            trash.StartEquip();
         }
     }
 }
