@@ -26,5 +26,5 @@ MonoBehaviour:
     \uC720\uB9AC\uBCD1 \uBC30\uCD9C\uC7A5\uC18C\uAC00 \uB098\uB258\uC5B4\uC838 \uC788\uC73C\uBA74
     \uC0C9\uAE54\uC5D0 \uB9DE\uCDB0 \uBD84\uB9AC\uBC30\uCD9C\uD574\uC694."
   trashObject: {fileID: 7573532624684763613, guid: 1789645a597cf45479c8edc13528d677, type: 3}
-  recycleActType: -1
+  recycleActType: 7
   trashTypeInformation: {fileID: 11400000, guid: 1eb9d9fa8dbf07e4083fda8d2b28e284, type: 2}

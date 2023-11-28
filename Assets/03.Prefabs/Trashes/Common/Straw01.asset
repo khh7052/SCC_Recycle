@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6c9cd319d50538409578ca4e80419d1, type: 3}
   m_Name: Straw01
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: bfa776e65050f754faefb1988f5891e0, type: 3}
+  sprite: {fileID: 21300000, guid: 1e731feb3f9ee9e4f82a9b623226ffdf, type: 3}
   trashSaveName: "\uD50C\uB77C\uC2A4\uD2F1\uBE68\uB30001"
   trashRealName: "\uD50C\uB77C\uC2A4\uD2F1 \uBE68\uB300"
   description_throw: "-\uBE68\uB300\uC640 \uAC19\uC774 \uBD80\uD53C\uAC00 \uC791\uAC70\uB098

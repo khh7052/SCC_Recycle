@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6c9cd319d50538409578ca4e80419d1, type: 3}
+  m_Name: Book01
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 1bb88785b8d04fc4992c013ee20e15ee, type: 3}
+  trashSaveName: "\uCC4501"
+  trashRealName: "\uC591\uC7A5\uBCF8 \uCC45"
+  description_throw: "-\uBB3C\uC774\uB098 \uC774\uBB3C\uC9C8\uC744 \uBB3B\uC9C0 \uC54A\uAC8C
+    \uD558\uACE0 \uAD6C\uACA8\uC9C0\uC9C0 \uC54A\uAC8C \uBC30\uCD9C\uD574\uC694.\r\n-\uC591\uC7A5\uBCF8
+    \uCC45\uC740 \uAC89\uD45C\uC9C0(\uC77C\uBC18\uC4F0\uB808\uAE30)\uC640 \uC18D\uC9C0(\uC885\uC774)\uB97C
+    \uBD84\uB9AC\uD574\uC11C \uBC30\uCD9C\uD574\uC694.\n-\uB178\uD2B8\uB098 \uC81C\uBCF8\uB41C
+    \uC885\uC774\uB97C \uBB36\uB294 \uC2A4\uD504\uB9C1(\uD50C\uB77C\uC2A4\uD2F1 \uB610\uB294
+    \uACE0\uCCA0)\uC740 \uBD84\uB9AC\uD574\uC11C \uBC30\uCD9C\uD574\uC694.\r\n-\uC7A1\uC9C0\uB294
+    \uBE44\uB2D0 \uCF54\uD305\uB41C \uAC89\uD45C\uC9C0(\uC77C\uBC18\uC4F0\uB808\uAE30)\uC640
+    \uC18D\uC9C0(\uC885\uC774)\uB97C \uBD84\uB9AC\uD574\uC11C \uBC30\uCD9C\uD574\uC694."
+  trashObject: {fileID: 7966961108183487883, guid: 4bae379c8fafee24dbb97831128028c4, type: 3}
+  recycleActType: 4
+  trashTypeInformation: {fileID: 11400000, guid: ddfcbd7486af1ac4b991c8ce5f796600, type: 2}

@@ -617,6 +617,10 @@ MonoBehaviour:
     clips:
     - {fileID: 8300000, guid: c3938258cdb4a594bab8667cf5cc5f7f, type: 3}
     volume: 0.4
+  - name: Recycle
+    clips:
+    - {fileID: 8300000, guid: 35ee3726409d17e4d92b5e686d5c6870, type: 3}
+    volume: 0.8
   sfxSounds:
   - name: Jump
     clips:

@@ -12,15 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6c9cd319d50538409578ca4e80419d1, type: 3}
   m_Name: PlasticCup01
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 4cc1d1a2d1004e94dba3740228e801f7, type: 3}
+  sprite: {fileID: 21300000, guid: 3a94ab49a80483b4a8ef9eea97813953, type: 3}
   trashSaveName: "\uD50C\uB77C\uC2A4\uD2F1\uCEF501"
   trashRealName: "\uC77C\uD68C\uC6A9 \uCEF5"
   description_throw: "-\uB0B4\uC6A9\uBB3C\uC744 \uBE44\uC6B0\uACE0, \uBB3C\uB85C
-    \uAE68\uB057\uC774 \uC138\uCC99\uD55C \uD6C4 \uD50C\uB77C\uC2A4\uD2F1\uC77C\uD68C\uC6A9\uCEF5
-    \uBD84\uB9AC\uC218\uAC70\uC73C\uB85C \uBC30\uCD9C\uD574\uC694.\r\n-\uB77C\uBCA8,
-    \uC0C1\uD45C \uB4F1\uC774 \uBD99\uC5B4\uC788\uC73C\uBA74 \uC644\uC804\uD788 \uB5BC\uC5B4\uB0B4\uC11C
-    \uC77C\uBC18\uC4F0\uB808\uAE30\uB85C \uBC84\uB9AC\uACE0 \uD50C\uB77C\uC2A4\uD2F1
-    \uC6A9\uAE30\uB9CC \uBC30\uCD9C\uD574\uC8FC\uC138\uC694.\r"
+    \uAE68\uB057\uC774 \uC138\uCC99\uD55C \uD6C4 \uD50C\uB77C\uC2A4\uD2F1\uC73C\uB85C
+    \uBC30\uCD9C\uD574\uC694.\r\n-\uB77C\uBCA8, \uC0C1\uD45C \uB4F1\uC774 \uBD99\uC5B4\uC788\uC73C\uBA74
+    \uC644\uC804\uD788 \uB5BC\uC5B4\uB0B4\uC11C \uC77C\uBC18\uC4F0\uB808\uAE30\uB85C
+    \uBC84\uB9AC\uACE0 \uD50C\uB77C\uC2A4\uD2F1 \uC6A9\uAE30\uB9CC \uBC30\uCD9C\uD574\uC8FC\uC138\uC694.\r"
   trashObject: {fileID: 3356267995286984804, guid: ba252faacc675a2418b0f4c7eaf612e2, type: 3}
-  recycleActType: -1
+  recycleActType: 7
   trashTypeInformation: {fileID: 11400000, guid: cbeaaaa4e0136cc478ac00dbf150b7f8, type: 2}

@@ -8,6 +8,7 @@ using TMPro;
 public class TutorialData
 {
     public Sprite sprite;
+    [Multiline()]
     public string description;
     public ProgressButton progressButton;
 }

@@ -59,6 +59,8 @@ public class SeparateManager : Singleton<SeparateManager>
 
     public void SuccessCheck()
     {
+        Debug.Log(currentActType + " " + currentTrash.recycleActType);
+
         // 쓰레기에 필요한 행동과 똑같은지 비교
         if (currentActType == currentTrash.recycleActType)
         {

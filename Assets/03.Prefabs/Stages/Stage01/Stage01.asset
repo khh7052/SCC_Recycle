@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5de27bfc3490e534182f271034c76419, type: 3}
+  m_Name: Stage01
+  m_EditorClassIdentifier: 
+  groundSprite: {fileID: 21300000, guid: e9c8f286ae390004ea025b6295f1847e, type: 3}
+  skySprite: {fileID: 21300000, guid: 686af9210bf8e3042a0ce5aae4d44e44, type: 3}
+  obstacles:
+  - {fileID: 1364911264998839446, guid: 1fbe22fb9f7132947b1a717c5e3c9818, type: 3}
+  - {fileID: 2630011927806894049, guid: 96139278e2cf61b4ab819e22e9baaa4d, type: 3}
+  - {fileID: 8465091751039293206, guid: 11248277c6d78164d92ef25ff349031b, type: 3}
+  patterns:
+  - {fileID: 1563934818124191171, guid: 7c292e27eee5ee341905c08357826716, type: 3}
+  - {fileID: 8790761310507657123, guid: d53b764772147814ba4a4d014c1fbe38, type: 3}
+  stageTime: 20
+  obstacleSpawnDelay: 5
+  patternSpawnDelay: 5

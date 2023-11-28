@@ -8,18 +8,11 @@ public class TrashCan : MonoBehaviour
 {
     public UnityEvent OnRecycle;
     public TrashType type;
-    public TMP_Text typeText;
     private int count = 0;
 
     public int TrashCount
     {
         get { return count; }
-    }
-
-    private void Awake()
-    {
-        if (typeText == null) return;
-        typeText.text = type.ToString();
     }
 
     private void CheckTrash(TrashObject trashObject)

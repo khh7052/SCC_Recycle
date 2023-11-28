@@ -33,6 +33,7 @@ public class UIManager : Singleton<UIManager>
     
     public TrashInformationText trashNameText;
     public TrashInformationText trashDescriptionText;
+    public TrashInformationText trashDescriptionActText;
     public TrashInformationImage trashImage;
     public TrashInformationImage trashTypeImage;
 
@@ -220,6 +221,7 @@ public class UIManager : Singleton<UIManager>
 
         if (trashNameText) trashNameText.TextUpdate(trash);
         if (trashDescriptionText) trashDescriptionText.TextUpdate(trash);
+        if (trashDescriptionActText) trashDescriptionActText.TextUpdate(trash);
         if (trashImage) trashImage.ImageUpdate(trash);
         if (trashTypeImage) trashTypeImage.ImageUpdate(trash);
     }

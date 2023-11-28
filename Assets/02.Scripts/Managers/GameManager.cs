@@ -7,8 +7,8 @@ using UnityEngine.UI;
 
 public class GameManager : Singleton<GameManager>
 {
-    const float ORIGIN_SPEED = 1.5f;
-    const float LEFT_TIME = 60f;
+    public float ORIGIN_SPEED = 1.5f;
+    public float LEFT_TIME = 60f;
 
     public static float globalSpeed;
     public static float score;

@@ -138,7 +138,8 @@ public class SoundManager : Singleton<SoundManager>
         {
             if(!source.isPlaying) continue;
 
-            source.volume = SFX_Volume * sfxDictionary[source.clip.name].volume;
+            if (sfxDictionary.ContainsKey(source.clip.name)) source.volume = SFX_Volume * sfxDictionary[source.clip.name].volume;
+            else source.volume = SFX_Volume;
         }
     }
 

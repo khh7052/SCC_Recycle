@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6c9cd319d50538409578ca4e80419d1, type: 3}
   m_Name: Lighter01
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 4b4d00a7c4e504be6a7a4ac69fffa460, type: 3}
+  sprite: {fileID: 21300000, guid: c63c2e62e74c749458c98ccdd4df79fc, type: 3}
   trashSaveName: "\uB77C\uC774\uD13001"
   trashRealName: "\uB77C\uC774\uD130"
   description_throw: "-\uC77C\uD68C\uC6A9 \uB77C\uC774\uD130, \uAC00\uC2A4 \uB77C\uC774\uD130,
@@ -26,6 +26,6 @@ MonoBehaviour:
     \uAC70\uC758 \uC5C6\uC73C\uB2C8 \uADF8\uB0E5 \uBC84\uB9AC\uBA74 \uB418\uACE0,
     \uAC00\uC2A4\uAC00 \uB9CE\uC774 \uB0A8\uC544\uC788\uB2E4\uBA74 \uCD5C\uB300\uD55C
     \uC18C\uC9C4\uD55C \uD6C4 \uBC84\uB9AC\uC2DC\uAE30 \uBC14\uB78D\uB2C8\uB2E4."
-  trashObject: {fileID: 0}
+  trashObject: {fileID: 6395428937063276480, guid: e3557edb6e3d4b44aa028d7001fd27d1, type: 3}
   recycleActType: 1
   trashTypeInformation: {fileID: 11400000, guid: aaceb9e22ad7b354bafc093edcb2a166, type: 2}

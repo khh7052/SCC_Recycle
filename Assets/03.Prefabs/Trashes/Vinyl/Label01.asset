@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6c9cd319d50538409578ca4e80419d1, type: 3}
   m_Name: Label01
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: da7129ed6a246f048a49d8d97de2d2d4, type: 3}
+  sprite: {fileID: 21300000, guid: 47c5dcfb34835ea4384279009ed2645f, type: 3}
   trashSaveName: "\uB77C\uBCA801"
   trashRealName: "\uB77C\uBCA8"
-  description: 
+  description_throw: 
   trashObject: {fileID: 8631357442255743781, guid: 958ca7568be7c50478363a8f6e61d045, type: 3}
   recycleActType: 4
   trashTypeInformation: {fileID: 11400000, guid: 0db49655bcd096641b05442d5839556e, type: 2}

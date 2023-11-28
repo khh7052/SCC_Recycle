@@ -100,7 +100,6 @@ public class TrashObject : MonoBehaviour
 
     public void StartEquip()
     {
-        Debug.Log("StartEquipe");
         coll.enabled = false;
         rigd.bodyType = RigidbodyType2D.Static;
         animator.SetTrigger("Equip");
